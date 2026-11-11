@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fulfillops-probe
+  namespace: fulfillops
+  labels:
+    purpose: local-rollout-measurement
+spec:
+  automountServiceAccountToken: false
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 10001
+    runAsGroup: 10001
+    fsGroup: 10001
+    seccompProfile:
+      type: RuntimeDefault
+  containers:
+    - name: proxy
+      image: fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef
+      imagePullPolicy: Never
+      command: [python, /probe/probe_proxy.py]
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop: [ALL]
+      ports:
+        - containerPort: 8080
+      resources:
+        requests:
+          cpu: 50m
+          memory: 32Mi
+        limits:
+          cpu: 250m
+          memory: 96Mi
+      readinessProbe:
+        tcpSocket:
+          port: 8080
+        periodSeconds: 2
+      volumeMounts:
+        - name: code
+          mountPath: /probe
+          readOnly: true
+  volumes:
+    - name: code
+      configMap:
+        name: fulfillops-probe-code

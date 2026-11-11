@@ -1,8 +1,10 @@
+import json
 import os
 import subprocess
 import sys
 import time
 from contextlib import contextmanager
+from datetime import UTC, datetime
 
 from fastapi.testclient import TestClient
 
@@ -90,11 +92,31 @@ def test_two_workers_complete_once():
 
 def test_worker_killed_after_claim_is_recovered():
     order_id = order()
+    EVIDENCE.mkdir(parents=True, exist_ok=True)
+    timeline = []
+
+    def capture(phase):
+        metrics = client.get("/metrics").text
+        (EVIDENCE / ("crash-" + phase + ".prom")).write_text(metrics)
+        timeline.append(
+            {
+                "time": datetime.now(UTC).isoformat(),
+                "phase": phase,
+                "order_id": order_id,
+                "state": snapshot(order_id),
+                "live": client.get("/health/live").status_code,
+                "ready": client.get("/health/ready").status_code,
+            }
+        )
+        return metrics
+
+    assert "fulfillops_worker_retries_total 0" in capture("before")
     with worker("crash-victim", WORKER_PROCESS_SECONDS="5") as victim:
         wait_for(lambda: snapshot(order_id)["state"] == "processing")
         with worker("crash-survivor") as survivor:
             victim.kill()
             victim.wait(timeout=5)
+            capture("during")
             print(
                 f"Killed worker {victim.pid} after durable claim; survivor {survivor.pid}; order {order_id}"
             )
@@ -109,6 +131,10 @@ def test_worker_killed_after_claim_is_recovered():
                     (order_id,),
                 ).fetchall()
             assert [r["outcome"] for r in attempts] == ["lease_expired", "completed"]
+            assert "fulfillops_worker_retries_total 1" in capture("after")
+            (EVIDENCE / "worker-crash-timeline.json").write_text(
+                json.dumps(timeline, indent=2) + "\n"
+            )
             print("Recovery:", result, "attempt history:", attempts)
 
 
@@ -137,6 +163,10 @@ def test_poison_job_stops_and_keeps_stock():
                 (order_id,),
             ).fetchall()
         assert [r["outcome"] for r in history] == ["retry", "retry", "failed"]
+        metrics = client.get("/metrics").text
+        assert "fulfillops_orders_failed_total 1" in metrics
+        assert "fulfillops_worker_retries_total 2" in metrics
+        (EVIDENCE / "poison-after.prom").write_text(metrics)
         print(
             f"Poison job {order_id}; workers {a.pid}/{b.pid}; result {before}; attempts {history}; stable after further polling"
         )

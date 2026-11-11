@@ -1,5 +1,6 @@
 import json
 import time
+from datetime import UTC, datetime
 from uuid import UUID, uuid4
 
 import psycopg
@@ -73,7 +74,21 @@ async def measure(request, call_next):
         else "OTHER"
     )
     requests.labels(method, path, str(response.status_code)).inc()
-    latency.labels(method, path).observe(time.perf_counter() - start)
+    duration = time.perf_counter() - start
+    latency.labels(method, path).observe(duration)
+    print(
+        json.dumps(
+            {
+                "time": datetime.now(UTC).isoformat(),
+                "event": "http_request",
+                "method": method,
+                "route": path,
+                "status": response.status_code,
+                "duration_seconds": round(duration, 6),
+            }
+        ),
+        flush=True,
+    )
     return response
 
 
