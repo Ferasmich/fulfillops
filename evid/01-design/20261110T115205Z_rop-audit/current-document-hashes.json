@@ -1,0 +1,38 @@
+[
+  {
+    "file": "README.md",
+    "sha256": "ba4ac40f065e1d51ec2e576c0719488862311e975e862e2c0e6b2993986cc2bc"
+  },
+  {
+    "file": "Project Implementation.md",
+    "sha256": "c86a1f33f1b9f6b3897862b64a42f3604ac3e3f0be0b66ed6f7e210366071d10"
+  },
+  {
+    "file": "docs/environment.md",
+    "sha256": "f6bfa39bdaa0ecd798470e391ffb0886d02ab2e756a1129a623cf8a7c5e51514"
+  },
+  {
+    "file": "docs/architecture.md",
+    "sha256": "d650f5f4626f66b2e85cf4eacb1eb1251d080af3b82fe47d6a33a64b93255325"
+  },
+  {
+    "file": "docs/threat-model.md",
+    "sha256": "cfc0784ff530acee446cb0264da693d516660df1c362c362f0d3b4295e0f6790"
+  },
+  {
+    "file": "docs/acceptance-checklist.md",
+    "sha256": "1a0bff297fc178a49226bd79e8d22bc0c025d53fd73fb5fb2ec8119f89c0bfcd"
+  },
+  {
+    "file": "docs/assistance-log.md",
+    "sha256": "1b949038b44734e6cd7470622765da7a1696a7a23d6c61bd930cf9f9240ff297"
+  },
+  {
+    "file": "docs/ADR-001.md",
+    "sha256": "ea2a7f2c83286ab0d74f886e40376c62d105211ffaef9264ae12ce5b3d37f73b"
+  },
+  {
+    "file": "docs/database-design.md",
+    "sha256": "4599280d3bfccf768a6300b831bcb15e39a31bc19e3a3386667e501d17978241"
+  }
+]

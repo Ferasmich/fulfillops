@@ -1,0 +1,37 @@
+[
+  {
+    "command": "git config --local user.name ferasmich",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": "git config --local user.email feras.mich@gmail.com",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": "git remote add origin https://github.com/Ferasmich/fulfillops.git",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": "git config --local --get user.name",
+    "exit_code": 0,
+    "output": "ferasmich\n"
+  },
+  {
+    "command": "git config --local --get user.email",
+    "exit_code": 0,
+    "output": "feras.mich@gmail.com\n"
+  },
+  {
+    "command": "git remote -v",
+    "exit_code": 0,
+    "output": "origin\thttps://github.com/Ferasmich/fulfillops.git (fetch)\norigin\thttps://github.com/Ferasmich/fulfillops.git (push)\n"
+  },
+  {
+    "command": "git ls-remote --symref origin HEAD 'refs/heads/*'",
+    "exit_code": 0,
+    "output": ""
+  }
+]

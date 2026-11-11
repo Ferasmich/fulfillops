@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-10T11:39:21.272211+00:00",
+  "documents_checked": 11,
+  "missing_local_links": [],
+  "runtime_tests": "Not run",
+  "migration_status": "Logical schema only; executable migration deferred to Part 2",
+  "git_ignore_expected": "Secret examples ignored; evidence not ignored (check-ignore exit 1 expected for evidence)"
+}

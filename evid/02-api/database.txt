@@ -1,0 +1,9 @@
+SELECT version FROM schema_migrations ORDER BY version;
+[{'version': '001_products.sql'}, {'version': '002_orders.sql'}, {'version': '003_jobs.sql'}]
+
+SELECT sku, unit_price_cents, available FROM products ORDER BY sku;
+[{'sku': 'KIT-100', 'unit_price_cents': 1299, 'available': 7}, {'sku': 'PACK-300', 'unit_price_cents': 249, 'available': 5}, {'sku': 'PART-200', 'unit_price_cents': 599, 'available': 12}]
+
+SELECT count(*) AS orders FROM orders;
+[{'orders': 0}]
+

@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-10T11:43:49.192416+00:00",
+  "old_root": "/Users/ferasmich/Documents/ChatGPT/DevOps",
+  "new_root": "/Users/ferasmich/Documents/Feras/EPITA/DevOps",
+  "moved_entries": [
+    "infra",
+    "evid",
+    "tests",
+    "requirements",
+    "assessment",
+    "docs",
+    "README.md",
+    "common",
+    ".gitignore",
+    "Project Implementation.md",
+    "scripts",
+    ".github",
+    "db",
+    "api",
+    ".git",
+    "worker"
+  ],
+  "files_hash_verified": 99,
+  "mismatches": [],
+  "old_folder_empty": true,
+  "existing_destination_entries": "Preserved; move refused all name collisions."
+}

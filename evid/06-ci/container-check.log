@@ -1,0 +1,104 @@
+$ docker compose -p fulfillops-ci-b4e751d7 up -d --no-build --wait --wait-timeout 90
+ Network fulfillops-ci-b4e751d7_default Creating 
+ Volume fulfillops-ci-b4e751d7_postgres_data Creating 
+ Volume fulfillops-ci-b4e751d7_postgres_data Creating 
+ Network fulfillops-ci-b4e751d7_default Creating 
+ Volume fulfillops-ci-b4e751d7_postgres_data Created 
+ Volume fulfillops-ci-b4e751d7_postgres_data Created 
+ Network fulfillops-ci-b4e751d7_default Created 
+ Network fulfillops-ci-b4e751d7_default Created 
+ Container fulfillops-ci-b4e751d7-db-1 Creating 
+ Container fulfillops-ci-b4e751d7-db-1 Created 
+ Container fulfillops-ci-b4e751d7-init-1 Creating 
+ Container fulfillops-ci-b4e751d7-init-1 Created 
+ Container fulfillops-ci-b4e751d7-worker-2 Creating 
+ Container fulfillops-ci-b4e751d7-worker-1 Creating 
+ Container fulfillops-ci-b4e751d7-api-1 Creating 
+ Container fulfillops-ci-b4e751d7-worker-2 Created 
+ Container fulfillops-ci-b4e751d7-worker-1 Created 
+ Container fulfillops-ci-b4e751d7-api-1 Created 
+ Container fulfillops-ci-b4e751d7-db-1 Starting 
+ Container fulfillops-ci-b4e751d7-db-1 Started 
+ Container fulfillops-ci-b4e751d7-db-1 Waiting 
+ Container fulfillops-ci-b4e751d7-db-1 Healthy 
+ Container fulfillops-ci-b4e751d7-init-1 Starting 
+ Container fulfillops-ci-b4e751d7-init-1 Started 
+ Container fulfillops-ci-b4e751d7-init-1 Waiting 
+ Container fulfillops-ci-b4e751d7-init-1 Waiting 
+ Container fulfillops-ci-b4e751d7-init-1 Exited 
+ Container fulfillops-ci-b4e751d7-api-1 Starting 
+ Container fulfillops-ci-b4e751d7-init-1 Exited 
+ Container fulfillops-ci-b4e751d7-worker-2 Starting 
+ Container fulfillops-ci-b4e751d7-api-1 Started 
+ Container fulfillops-ci-b4e751d7-worker-2 Started 
+ Container fulfillops-ci-b4e751d7-worker-1 Starting 
+ Container fulfillops-ci-b4e751d7-worker-1 Started 
+ Container fulfillops-ci-b4e751d7-init-1 Waiting 
+ Container fulfillops-ci-b4e751d7-api-1 Waiting 
+ Container fulfillops-ci-b4e751d7-worker-2 Waiting 
+ Container fulfillops-ci-b4e751d7-worker-1 Waiting 
+ Container fulfillops-ci-b4e751d7-db-1 Waiting 
+ Container fulfillops-ci-b4e751d7-db-1 Healthy 
+ Container fulfillops-ci-b4e751d7-init-1 Exited 
+ Container fulfillops-ci-b4e751d7-api-1 Healthy 
+ Container fulfillops-ci-b4e751d7-worker-2 Healthy 
+ Container fulfillops-ci-b4e751d7-worker-1 Healthy 
+
+Exit code: 0
+$ docker compose -p fulfillops-ci-b4e751d7 ps --all
+NAME                              IMAGE                                                                                 COMMAND                  SERVICE   CREATED          STATUS                     PORTS
+fulfillops-ci-b4e751d7-api-1      fulfillops:local                                                                      "python -m uvicorn a…"   api       12 seconds ago   Up 5 seconds (healthy)     127.0.0.1:51003->8080/tcp
+fulfillops-ci-b4e751d7-db-1       postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657   "docker-entrypoint.s…"   db        12 seconds ago   Up 11 seconds (healthy)    127.0.0.1:51004->5432/tcp
+fulfillops-ci-b4e751d7-init-1     fulfillops:local                                                                      "python -m db.bootst…"   init      12 seconds ago   Exited (0) 5 seconds ago   
+fulfillops-ci-b4e751d7-worker-1   fulfillops:local                                                                      "python -m worker.ma…"   worker    12 seconds ago   Up 5 seconds (healthy)     8080/tcp
+fulfillops-ci-b4e751d7-worker-2   fulfillops:local                                                                      "python -m worker.ma…"   worker    12 seconds ago   Up 5 seconds (healthy)     8080/tcp
+
+Exit code: 0
+$ /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/bin/python assessment/fulfillops_public_checker.py --base-url http://127.0.0.1:51003 --concurrency --stress
+WARNING: test orders consume stock. Run on an isolated TEST deployment; never production.
+PASS Liveness endpoint
+PASS Readiness endpoint
+PASS Catalog and fixed prices
+PASS Unknown order returns 404
+PASS Missing Idempotency-Key returns 400
+PASS Invalid item quantity returns 422
+PASS Inventory reading
+PASS Create order and idempotent retry
+PASS Conflicting idempotency payload rejected
+PASS Asynchronous worker eventually completes
+PASS Inventory reduced exactly once
+PASS Prometheus metrics exposed
+PASS Concurrent inventory reservations are atomic
+PASS Eight concurrent identical-key requests reserve once
+PASS Duplicate SKU lines aggregate and bill correctly
+
+RESULT: 15 passed / 0 failed / 0 skipped
+
+Exit code: 0
+$ docker compose -p fulfillops-ci-b4e751d7 down --volumes --remove-orphans
+ Container fulfillops-ci-b4e751d7-api-1 Stopping 
+ Container fulfillops-ci-b4e751d7-worker-2 Stopping 
+ Container fulfillops-ci-b4e751d7-worker-1 Stopping 
+ Container fulfillops-ci-b4e751d7-api-1 Stopped 
+ Container fulfillops-ci-b4e751d7-api-1 Removing 
+ Container fulfillops-ci-b4e751d7-api-1 Removed 
+ Container fulfillops-ci-b4e751d7-worker-1 Stopped 
+ Container fulfillops-ci-b4e751d7-worker-1 Removing 
+ Container fulfillops-ci-b4e751d7-worker-1 Removed 
+ Container fulfillops-ci-b4e751d7-worker-2 Stopped 
+ Container fulfillops-ci-b4e751d7-worker-2 Removing 
+ Container fulfillops-ci-b4e751d7-worker-2 Removed 
+ Container fulfillops-ci-b4e751d7-init-1 Stopping 
+ Container fulfillops-ci-b4e751d7-init-1 Stopped 
+ Container fulfillops-ci-b4e751d7-init-1 Removing 
+ Container fulfillops-ci-b4e751d7-init-1 Removed 
+ Container fulfillops-ci-b4e751d7-db-1 Stopping 
+ Container fulfillops-ci-b4e751d7-db-1 Stopped 
+ Container fulfillops-ci-b4e751d7-db-1 Removing 
+ Container fulfillops-ci-b4e751d7-db-1 Removed 
+ Volume fulfillops-ci-b4e751d7_postgres_data Removing 
+ Network fulfillops-ci-b4e751d7_default Removing 
+ Volume fulfillops-ci-b4e751d7_postgres_data Removed 
+ Network fulfillops-ci-b4e751d7_default Removed 
+
+Exit code: 0

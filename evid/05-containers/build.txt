@@ -1,0 +1,6 @@
+$ docker compose build --no-cache api
+ Image fulfillops:local Building 
+Error response from daemon: Docker Desktop is unable to start
+
+
+Exit code: 1

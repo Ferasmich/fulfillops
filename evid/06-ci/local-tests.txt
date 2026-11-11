@@ -1,0 +1,98 @@
+$ .venv/bin/ruff check api common db worker tests scripts
+All checks passed!
+
+Exit code: 0
+$ .venv/bin/ruff format --check api common db worker tests scripts
+28 files already formatted
+
+Exit code: 0
+$ .venv/bin/python -m pytest -v --junitxml=evid/06-ci/local-tests.xml
+============================= test session starts ==============================
+platform darwin -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collecting ... collected 69 items
+
+tests/integration/test_api.py::test_catalog_health_and_metrics PASSED    [  1%]
+tests/integration/test_api.py::test_receipt_replay_conflict_and_durable_job PASSED [  2%]
+tests/integration/test_api.py::test_invalid_quantity[0] PASSED           [  4%]
+tests/integration/test_api.py::test_invalid_quantity[-1] PASSED          [  5%]
+tests/integration/test_api.py::test_invalid_quantity[21] PASSED          [  7%]
+tests/integration/test_api.py::test_invalid_quantity[True] PASSED        [  8%]
+tests/integration/test_api.py::test_invalid_quantity[1.5] PASSED         [ 10%]
+tests/integration/test_api.py::test_invalid_quantity[1] PASSED           [ 11%]
+tests/integration/test_api.py::test_invalid_quantity[None] PASSED        [ 13%]
+tests/integration/test_api.py::test_invalid_request[payload0-INVALID_REQUEST] PASSED [ 14%]
+tests/integration/test_api.py::test_invalid_request[payload1-INVALID_REQUEST] PASSED [ 15%]
+tests/integration/test_api.py::test_invalid_request[payload2-INVALID_SKU] PASSED [ 17%]
+tests/integration/test_api.py::test_missing_key_invalid_json_and_unknown_resources PASSED [ 18%]
+tests/integration/test_api.py::test_body_limit_streamed_without_length PASSED [ 20%]
+tests/integration/test_api.py::test_aggregation_normalization_and_total PASSED [ 21%]
+tests/integration/test_api.py::test_insufficient_stock_rolls_back_whole_order PASSED [ 23%]
+tests/integration/test_api.py::test_migrations_and_seed_do_not_reset_stock PASSED [ 24%]
+tests/integration/test_api.py::test_seed_rejects_non_test_environment PASSED [ 26%]
+tests/integration/test_api.py::test_readiness_storage_failure_does_not_break_liveness PASSED [ 27%]
+tests/integration/test_api.py::test_real_api_restart_preserves_replay PASSED [ 28%]
+tests/integration/test_api.py::test_multi_product_total_and_completed_receipt PASSED [ 30%]
+tests/integration/test_api.py::test_invalid_idempotency_key[short] PASSED [ 31%]
+tests/integration/test_api.py::test_invalid_idempotency_key[key1] PASSED [ 33%]
+tests/integration/test_api.py::test_invalid_idempotency_key[tab\tkey-000] PASSED [ 34%]
+tests/integration/test_api.py::test_database_rejects_negative_stock PASSED [ 36%]
+tests/integration/test_api.py::test_modified_applied_migration_is_rejected PASSED [ 37%]
+tests/integration/test_worker.py::test_two_workers_complete_once PASSED  [ 39%]
+tests/integration/test_worker.py::test_worker_killed_after_claim_is_recovered PASSED [ 40%]
+tests/integration/test_worker.py::test_poison_job_stops_and_keeps_stock PASSED [ 42%]
+tests/integration/test_worker.py::test_expired_owner_cannot_complete_or_fail PASSED [ 43%]
+tests/integration/test_worker.py::test_crash_on_last_attempt_becomes_failed PASSED [ 44%]
+tests/integration/test_worker.py::test_backoff_delays_next_claim PASSED  [ 46%]
+tests/integration/test_worker.py::test_full_public_checker_with_two_workers PASSED [ 47%]
+tests/races/test_orders.py::test_same_key_across_two_api_processes PASSED [ 49%]
+tests/races/test_orders.py::test_distinct_keys_cannot_oversell_across_two_api_processes PASSED [ 50%]
+tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected PASSED [ 52%]
+tests/unit/test_security_gate.py::test_fixed_high_critical_findings_block_promotion[HIGH] PASSED [ 53%]
+tests/unit/test_security_gate.py::test_fixed_high_critical_findings_block_promotion[CRITICAL] PASSED [ 55%]
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[LOW-2.0] PASSED [ 56%]
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[MEDIUM-2.0] PASSED [ 57%]
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[HIGH-] PASSED [ 59%]
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[CRITICAL-] PASSED [ 60%]
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[UNKNOWN-] PASSED [ 62%]
+tests/unit/test_security_gate.py::test_missing_scan_fails_closed[value0] PASSED [ 63%]
+tests/unit/test_security_gate.py::test_missing_scan_fails_closed[value1] PASSED [ 65%]
+tests/unit/test_security_gate.py::test_empty_sbom_fails_closed PASSED    [ 66%]
+tests/unit/test_security_gate.py::test_missing_library_scan_fails_closed PASSED [ 68%]
+tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[production-fulfillops_test-127.0.0.1] PASSED [ 69%]
+tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[test-fulfillops-127.0.0.1] PASSED [ 71%]
+tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[test-fulfillops_test-database.example.com] PASSED [ 72%]
+tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[127.0.0.1] PASSED [ 73%]
+tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[localhost] PASSED [ 75%]
+tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[db] PASSED [ 76%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[0] PASSED [ 78%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[-1] PASSED [ 79%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[21] PASSED [ 81%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[False] PASSED [ 82%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[1.5] PASSED [ 84%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[2] PASSED [ 85%]
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[None] PASSED [ 86%]
+tests/unit/test_validation.py::test_quantity_boundaries_are_accepted[1] PASSED [ 88%]
+tests/unit/test_validation.py::test_quantity_boundaries_are_accepted[20] PASSED [ 89%]
+tests/unit/test_validation.py::test_equivalent_item_lines_normalize_identically PASSED [ 91%]
+tests/unit/test_validation.py::test_aggregate_can_exceed_per_line_limit PASSED [ 92%]
+tests/unit/test_validation.py::test_customer_id_length[0] PASSED         [ 94%]
+tests/unit/test_validation.py::test_customer_id_length[65] PASSED        [ 95%]
+tests/unit/test_validation.py::test_idempotency_key_boundaries[8] PASSED [ 97%]
+tests/unit/test_validation.py::test_idempotency_key_boundaries[128] PASSED [ 98%]
+tests/unit/test_validation.py::test_unknown_extra_fields_are_rejected PASSED [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/06-ci/local-tests.xml -
+======================== 69 passed, 1 warning in 9.40s =========================
+
+Exit code: 0

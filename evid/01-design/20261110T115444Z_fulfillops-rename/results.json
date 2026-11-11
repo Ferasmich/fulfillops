@@ -1,0 +1,27 @@
+[
+  {
+    "command": "pwd",
+    "exit_code": 0,
+    "output": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps\n"
+  },
+  {
+    "command": "git rev-parse --show-toplevel",
+    "exit_code": 0,
+    "output": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps\n"
+  },
+  {
+    "command": "git status --short --branch",
+    "exit_code": 0,
+    "output": "## No commits yet on main\n?? .github/\n?? .gitignore\n?? FulfillOps_9_5_STUDENTS_COMPLETE/\n?? \"Project Implementation.md\"\n?? README.md\n?? api/\n?? assessment/\n?? common/\n?? db/\n?? docs/\n?? evid/\n?? infra/\n?? requirements/\n?? scripts/\n?? tests/\n?? worker/\n"
+  },
+  {
+    "command": "git check-ignore .env .env.local",
+    "exit_code": 0,
+    "output": ".env\n.env.local\n"
+  },
+  {
+    "command": "git check-ignore evid/INDEX.md",
+    "exit_code": 1,
+    "output": ""
+  }
+]

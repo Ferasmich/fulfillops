@@ -1,0 +1,3 @@
+$ git -C /Users/ferasmich/Documents/Feras/EPITA/DevOps rev-parse --show-toplevel
+/Users/ferasmich/Documents/Feras/EPITA/DevOps
+EXIT_CODE=0

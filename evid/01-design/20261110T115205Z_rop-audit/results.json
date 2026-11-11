@@ -1,0 +1,77 @@
+[
+  {
+    "command": "pwd",
+    "exit_code": 0,
+    "output": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/ROP\n"
+  },
+  {
+    "command": "git rev-parse --show-toplevel",
+    "exit_code": 0,
+    "output": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/ROP\n"
+  },
+  {
+    "command": "git status --short --branch",
+    "exit_code": 0,
+    "output": "## No commits yet on main\n?? .github/\n?? .gitignore\n?? FulfillOps_9_5_STUDENTS_COMPLETE/\n?? \"Project Implementation.md\"\n?? README.md\n?? api/\n?? assessment/\n?? common/\n?? db/\n?? docs/\n?? evid/\n?? infra/\n?? requirements/\n?? scripts/\n?? tests/\n?? worker/\n"
+  },
+  {
+    "command": "git remote -v",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": "git --version",
+    "exit_code": 0,
+    "output": "git version 2.45.2\n"
+  },
+  {
+    "command": "python3 --version",
+    "exit_code": 0,
+    "output": "Python 3.12.3\n"
+  },
+  {
+    "command": "python3 -m pip --version",
+    "exit_code": 0,
+    "output": "pip 24.0 from /opt/homebrew/lib/python3.12/site-packages/pip (python 3.12)\n"
+  },
+  {
+    "command": "docker --version",
+    "exit_code": 0,
+    "output": "Docker version 29.8.1, build 4a63305\n"
+  },
+  {
+    "command": "docker compose version",
+    "exit_code": 0,
+    "output": "Docker Compose version v5.5.1\n"
+  },
+  {
+    "command": "docker info --format '{{.ServerVersion}}'",
+    "exit_code": 0,
+    "output": "29.8.1\n"
+  },
+  {
+    "command": "docker run --rm hello-world",
+    "exit_code": 0,
+    "output": "\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\n\nTo generate this message, Docker took the following steps:\n 1. The Docker client contacted the Docker daemon.\n 2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n    (arm64v8)\n 3. The Docker daemon created a new container from that image which runs the\n    executable that produces the output you are currently reading.\n 4. The Docker daemon streamed that output to the Docker client, which sent it\n    to your terminal.\n\nTo try something more ambitious, you can run an Ubuntu container with:\n $ docker run -it ubuntu bash\n\nShare images, automate workflows, and more with a free Docker ID:\n https://hub.docker.com/\n\nFor more examples and ideas, visit:\n https://docs.docker.com/get-started/\n\n"
+  },
+  {
+    "command": "kubectl version --client --output=json",
+    "exit_code": 0,
+    "output": "{\n  \"clientVersion\": {\n    \"major\": \"1\",\n    \"minor\": \"37\",\n    \"gitVersion\": \"v1.37.2\",\n    \"gitCommit\": \"c50e5395f1ae2d4a2c05f28fdcc38c0916cc1a32\",\n    \"gitTreeState\": \"clean\",\n    \"buildDate\": \"2026-10-27T12:01:04Z\",\n    \"goVersion\": \"go1.26.10\",\n    \"compiler\": \"gc\",\n    \"platform\": \"darwin/arm64\"\n  },\n  \"kustomizeVersion\": \"v5.8.1\"\n}\n"
+  },
+  {
+    "command": "kind version",
+    "exit_code": 0,
+    "output": "kind v0.33.0 go1.27.1 darwin/arm64\n"
+  },
+  {
+    "command": "git check-ignore .env .env.local .venv/example example.key",
+    "exit_code": 0,
+    "output": ".env\n.env.local\n.venv/example\nexample.key\n"
+  },
+  {
+    "command": "git check-ignore evid/INDEX.md",
+    "exit_code": 1,
+    "output": ""
+  }
+]

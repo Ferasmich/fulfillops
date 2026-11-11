@@ -1,0 +1,19 @@
+Selected image inspection fields (no container environment values):
+[
+  {
+    "tags": [
+      "fulfillops:local"
+    ],
+    "id": "sha256:b9521ca2832eb220ab08a4afb2024aedfe7df8466f287867d5b4a3f347f61d5a",
+    "bytes": 192614009,
+    "user": "10001:10001"
+  },
+  {
+    "tags": [
+      "fulfillops:baseline"
+    ],
+    "id": "sha256:5e14de1a4a2e7cadcfeb7fe4a098f4dedc923d150dba8758e70e0c62923313b9",
+    "bytes": 264756846,
+    "user": "default root"
+  }
+]

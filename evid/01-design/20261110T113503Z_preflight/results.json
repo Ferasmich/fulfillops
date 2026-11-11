@@ -1,0 +1,47 @@
+[
+  {
+    "command": "git --version",
+    "exit_code": 0,
+    "output": "git version 2.45.2\n"
+  },
+  {
+    "command": "git rev-parse --show-toplevel",
+    "exit_code": 128,
+    "output": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  {
+    "command": "docker --version",
+    "exit_code": 0,
+    "output": "Docker version 29.8.1, build 4a63305\n"
+  },
+  {
+    "command": "docker compose version",
+    "exit_code": 0,
+    "output": "Docker Compose version v5.5.1\n"
+  },
+  {
+    "command": "docker info --format '{{.ServerVersion}}'",
+    "exit_code": 1,
+    "output": "\npermission denied while trying to connect to the docker API at unix:///Users/ferasmich/.docker/run/docker.sock\n"
+  },
+  {
+    "command": "python3 --version",
+    "exit_code": 0,
+    "output": "Python 3.12.3\n"
+  },
+  {
+    "command": "kubectl version --client --output=json",
+    "exit_code": 0,
+    "output": "{\n  \"clientVersion\": {\n    \"major\": \"1\",\n    \"minor\": \"37\",\n    \"gitVersion\": \"v1.37.2\",\n    \"gitCommit\": \"c50e5395f1ae2d4a2c05f28fdcc38c0916cc1a32\",\n    \"gitTreeState\": \"clean\",\n    \"buildDate\": \"2026-10-27T12:01:04Z\",\n    \"goVersion\": \"go1.26.10\",\n    \"compiler\": \"gc\",\n    \"platform\": \"darwin/arm64\"\n  },\n  \"kustomizeVersion\": \"v5.8.1\"\n}\n"
+  },
+  {
+    "command": "kind version",
+    "exit_code": 0,
+    "output": "kind v0.33.0 go1.27.1 darwin/arm64\n"
+  },
+  {
+    "command": "uv --version",
+    "exit_code": 127,
+    "output": "Executable not found on PATH\n"
+  }
+]

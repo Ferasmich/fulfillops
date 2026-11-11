@@ -1,0 +1,16 @@
+{"time": "2026-11-10T15:09:47.224505+00:00", "event": "worker_started", "order_id": null}
+{"time": "2026-11-10T15:09:48.026761+00:00", "event": "claimed", "order_id": "354700b9-02f0-49ec-b324-ed3fe7083392", "attempt": 1}
+{"time": "2026-11-10T15:09:48.097862+00:00", "event": "completed", "order_id": "354700b9-02f0-49ec-b324-ed3fe7083392"}
+{"time": "2026-11-10T15:09:48.113626+00:00", "event": "claimed", "order_id": "d65a5f69-464e-469a-a084-58368f9eb7cd", "attempt": 1}
+{"time": "2026-11-10T15:09:48.178162+00:00", "event": "completed", "order_id": "d65a5f69-464e-469a-a084-58368f9eb7cd"}
+{"time": "2026-11-10T15:09:48.191324+00:00", "event": "claimed", "order_id": "304a1f9f-17a1-4bf9-be1d-b3a79212eff2", "attempt": 1}
+{"time": "2026-11-10T15:09:48.256676+00:00", "event": "completed", "order_id": "304a1f9f-17a1-4bf9-be1d-b3a79212eff2"}
+{"time": "2026-11-10T15:09:48.267472+00:00", "event": "claimed", "order_id": "d0a1c59a-41a2-4da8-9790-c567e5ee9c32", "attempt": 1}
+{"time": "2026-11-10T15:09:48.339987+00:00", "event": "completed", "order_id": "d0a1c59a-41a2-4da8-9790-c567e5ee9c32"}
+{"time": "2026-11-10T15:09:48.354439+00:00", "event": "claimed", "order_id": "366c15a0-58fb-4b5c-a184-b71530e303b5", "attempt": 1}
+{"time": "2026-11-10T15:09:48.434823+00:00", "event": "completed", "order_id": "366c15a0-58fb-4b5c-a184-b71530e303b5"}
+{"time": "2026-11-10T15:09:48.445478+00:00", "event": "claimed", "order_id": "f1f6d8f7-6f2f-4850-9712-3c5d9385ff3e", "attempt": 1}
+{"time": "2026-11-10T15:09:48.517255+00:00", "event": "completed", "order_id": "f1f6d8f7-6f2f-4850-9712-3c5d9385ff3e"}
+{"time": "2026-11-10T15:09:48.531083+00:00", "event": "claimed", "order_id": "0012c062-3106-4242-b0c0-5fd986f61430", "attempt": 1}
+{"time": "2026-11-10T15:09:48.599641+00:00", "event": "completed", "order_id": "0012c062-3106-4242-b0c0-5fd986f61430"}
+{"time": "2026-11-10T15:09:48.969832+00:00", "event": "worker_stopped", "order_id": null}

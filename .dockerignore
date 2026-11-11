@@ -1,0 +1,14 @@
+**
+!requirements/
+!requirements/runtime.txt
+!requirements/development.txt
+!api/
+!api/**
+!common/
+!common/**
+!db/
+!db/**
+!worker/
+!worker/**
+**/__pycache__/
+**/*.pyc

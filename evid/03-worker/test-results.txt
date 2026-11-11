@@ -1,0 +1,133 @@
+$ .venv/bin/ruff check api common db worker tests
+All checks passed!
+
+Exit code: 0
+$ .venv/bin/python -m pytest -v -s --junitxml=evid/03-worker/test-results.xml
+============================= test session starts ==============================
+platform darwin -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collecting ... collected 34 items
+
+tests/integration/test_api.py::test_catalog_health_and_metrics Applied: 001_products.sql
+Applied: 002_orders.sql
+Applied: 003_jobs.sql
+Migrations committed
+Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_receipt_replay_conflict_and_durable_job Test catalog seeded; existing stock was not changed
+Replay: one order, one job, KIT-100 stock 7 -> 6; changed payload rejected
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[0] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[-1] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[21] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[True] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[1.5] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[1] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[None] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload0-INVALID_REQUEST] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload1-INVALID_REQUEST] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload2-INVALID_SKU] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_missing_key_invalid_json_and_unknown_resources Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_body_limit_streamed_without_length Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_aggregation_normalization_and_total Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_insufficient_stock_rolls_back_whole_order Test catalog seeded; existing stock was not changed
+Insufficient multi-item order: no partial allocation or orphan order/key/job
+PASSED
+tests/integration/test_api.py::test_migrations_and_seed_do_not_reset_stock Test catalog seeded; existing stock was not changed
+Already applied: 001_products.sql
+Already applied: 002_orders.sql
+Already applied: 003_jobs.sql
+Migrations committed
+Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_seed_rejects_non_test_environment Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_readiness_storage_failure_does_not_break_liveness Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_real_api_restart_preserves_replay Test catalog seeded; existing stock was not changed
+API restart 14935 -> 14937: stable order 08c2d97d-6410-482a-af40-87b21609a71f; stock stays 6
+PASSED
+tests/integration/test_api.py::test_two_api_replicas_same_key_and_competing_orders Test catalog seeded; existing stock was not changed
+Two API PIDs 14938/14943: eight same-key calls -> one order; 12 competing calls -> 6 accepted, 6 rejected; stock 0
+PASSED
+tests/integration/test_api.py::test_multi_product_total_and_completed_receipt Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[short] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[key1] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[tab\tkey-000] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_database_rejects_negative_stock Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_modified_applied_migration_is_rejected Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_worker.py::test_two_workers_complete_once Test catalog seeded; existing stock was not changed
+Two workers 14945/14946; order 1def9c30-1a89-4b51-b239-6843997a759b; result {'status': 'completed', 'state': 'completed', 'attempts': 1, 'receipts': 1, 'stock': 6}
+PASSED
+tests/integration/test_worker.py::test_worker_killed_after_claim_is_recovered Test catalog seeded; existing stock was not changed
+Killed worker 14947 after durable claim; survivor 14948; order 8405e2ed-56ed-410a-bb8a-e5e4753649bb
+Recovery: {'status': 'completed', 'state': 'completed', 'attempts': 2, 'receipts': 1, 'stock': 6} attempt history: [{'attempt_number': 1, 'outcome': 'lease_expired'}, {'attempt_number': 2, 'outcome': 'completed'}]
+PASSED
+tests/integration/test_worker.py::test_poison_job_stops_and_keeps_stock Test catalog seeded; existing stock was not changed
+Poison job dddf3673-5e38-45cf-a17a-61e467248245; workers 14951/14952; result {'status': 'failed', 'state': 'failed', 'attempts': 3, 'receipts': 0, 'stock': 6}; attempts [{'attempt_number': 1, 'outcome': 'retry'}, {'attempt_number': 2, 'outcome': 'retry'}, {'attempt_number': 3, 'outcome': 'failed'}]; stable after further polling
+PASSED
+tests/integration/test_worker.py::test_expired_owner_cannot_complete_or_fail Test catalog seeded; existing stock was not changed
+Stale claim fenced; current owner completed once: {'status': 'completed', 'state': 'completed', 'attempts': 2, 'receipts': 1, 'stock': 6}
+PASSED
+tests/integration/test_worker.py::test_crash_on_last_attempt_becomes_failed Test catalog seeded; existing stock was not changed
+Expired final claim persisted as failed without another attempt or restock
+PASSED
+tests/integration/test_worker.py::test_backoff_delays_next_claim Test catalog seeded; existing stock was not changed
+Retry persisted with approximately two-second backoff
+PASSED
+tests/integration/test_worker.py::test_full_public_checker_with_two_workers Test catalog seeded; existing stock was not changed
+Full checker: API 14958; workers 14956/14957
+WARNING: test orders consume stock. Run on an isolated TEST deployment; never production.
+PASS Liveness endpoint
+PASS Readiness endpoint
+PASS Catalog and fixed prices
+PASS Unknown order returns 404
+PASS Missing Idempotency-Key returns 400
+PASS Invalid item quantity returns 422
+PASS Inventory reading
+PASS Create order and idempotent retry
+PASS Conflicting idempotency payload rejected
+PASS Asynchronous worker eventually completes
+PASS Inventory reduced exactly once
+PASS Prometheus metrics exposed
+PASS Concurrent inventory reservations are atomic
+PASS Eight concurrent identical-key requests reserve once
+PASS Duplicate SKU lines aggregate and bill correctly
+
+RESULT: 15 passed / 0 failed / 0 skipped
+
+PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/03-worker/test-results.xml -
+======================== 34 passed, 1 warning in 9.12s =========================
+
+Exit code: 0

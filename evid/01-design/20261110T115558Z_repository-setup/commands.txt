@@ -1,0 +1,7 @@
+git config --local user.name ferasmich
+git config --local user.email feras.mich@gmail.com
+git remote add origin https://github.com/Ferasmich/fulfillops.git
+git config --local --get user.name
+git config --local --get user.email
+git remote -v
+git ls-remote --symref origin HEAD 'refs/heads/*'

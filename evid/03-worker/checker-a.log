@@ -1,0 +1,18 @@
+{"time": "2026-11-10T14:31:59.210271+00:00", "event": "worker_started", "order_id": null}
+{"time": "2026-11-10T14:31:59.571041+00:00", "event": "claimed", "order_id": "f981ed5c-180c-4777-95e8-ce693c43a343", "attempt": 1}
+{"time": "2026-11-10T14:31:59.638387+00:00", "event": "completed", "order_id": "f981ed5c-180c-4777-95e8-ce693c43a343"}
+{"time": "2026-11-10T14:32:00.044322+00:00", "event": "claimed", "order_id": "ad7268f5-22a3-420e-883f-f992f2c73f70", "attempt": 1}
+{"time": "2026-11-10T14:32:00.113972+00:00", "event": "completed", "order_id": "ad7268f5-22a3-420e-883f-f992f2c73f70"}
+{"time": "2026-11-10T14:32:00.123386+00:00", "event": "claimed", "order_id": "a79e2c9a-8e92-49fc-b0e0-43fe7d2853b7", "attempt": 1}
+{"time": "2026-11-10T14:32:00.191072+00:00", "event": "completed", "order_id": "a79e2c9a-8e92-49fc-b0e0-43fe7d2853b7"}
+{"time": "2026-11-10T14:32:00.204542+00:00", "event": "claimed", "order_id": "7260a7a4-29a6-4c02-84c9-32298da16108", "attempt": 1}
+{"time": "2026-11-10T14:32:00.274169+00:00", "event": "completed", "order_id": "7260a7a4-29a6-4c02-84c9-32298da16108"}
+{"time": "2026-11-10T14:32:00.286238+00:00", "event": "claimed", "order_id": "61a35a9a-64aa-4014-a82f-92f6b29e3a91", "attempt": 1}
+{"time": "2026-11-10T14:32:00.354183+00:00", "event": "completed", "order_id": "61a35a9a-64aa-4014-a82f-92f6b29e3a91"}
+{"time": "2026-11-10T14:32:00.366873+00:00", "event": "claimed", "order_id": "dd219004-411b-4510-af22-cb65ddde7806", "attempt": 1}
+{"time": "2026-11-10T14:32:00.431398+00:00", "event": "completed", "order_id": "dd219004-411b-4510-af22-cb65ddde7806"}
+{"time": "2026-11-10T14:32:00.442024+00:00", "event": "claimed", "order_id": "3ce1e358-8ec0-4ee6-86e3-db008f4fe393", "attempt": 1}
+{"time": "2026-11-10T14:32:00.513433+00:00", "event": "completed", "order_id": "3ce1e358-8ec0-4ee6-86e3-db008f4fe393"}
+{"time": "2026-11-10T14:32:00.527952+00:00", "event": "claimed", "order_id": "9f761e20-30a3-4508-a1bd-84d4de48b504", "attempt": 1}
+{"time": "2026-11-10T14:32:00.601811+00:00", "event": "completed", "order_id": "9f761e20-30a3-4508-a1bd-84d4de48b504"}
+{"time": "2026-11-10T14:32:00.961573+00:00", "event": "worker_stopped", "order_id": null}

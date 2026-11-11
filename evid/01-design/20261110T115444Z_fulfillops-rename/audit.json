@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-10T11:54:44.582366+00:00",
+  "previous_root": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/ROP",
+  "current_root": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps",
+  "files_verified_after_rename": 130,
+  "rename_hash_mismatches": [],
+  "updated_files": [
+    "README.md",
+    "Project Implementation.md",
+    "docs/environment.md",
+    "evid/INDEX.md",
+    "evid/01-design/20261110T113503Z_preflight/context.md",
+    "evid/01-design/20261110T115205Z_rop-audit/context.md",
+    "evid/01-design/20261110T114349Z_relocation/context.md",
+    "evid/01-design/20261110T113503Z_preflight/supplied-materials.json"
+  ],
+  "git_root_correct": true,
+  "missing_local_links": [],
+  "supplied_files_unchanged": true,
+  "historical_evidence": "Original logs, snapshots and recorded execution paths retain historical folder names. Current context/source metadata updated; originals backed up."
+}

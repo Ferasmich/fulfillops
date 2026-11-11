@@ -1,0 +1,5 @@
+pwd
+git rev-parse --show-toplevel
+git status --short --branch
+git check-ignore .env .env.local
+git check-ignore evid/INDEX.md

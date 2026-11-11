@@ -1,0 +1,91 @@
+$ .venv/bin/ruff check api common db tests
+All checks passed!
+
+Exit code: 0
+$ .venv/bin/python -m pytest tests/integration/test_api.py -v -s --junitxml=evid/02-api/test-results.xml
+============================= test session starts ==============================
+platform darwin -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps
+configfile: pytest.ini
+plugins: anyio-4.16.0
+collecting ... collected 27 items
+
+tests/integration/test_api.py::test_catalog_health_and_metrics Applied: 001_products.sql
+Applied: 002_orders.sql
+Applied: 003_jobs.sql
+Migrations committed
+Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_receipt_replay_conflict_and_durable_job Test catalog seeded; existing stock was not changed
+Replay: one order, one job, KIT-100 stock 7 -> 6; changed payload rejected
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[0] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[-1] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[21] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[True] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[1.5] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[1] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[None] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload0-INVALID_REQUEST] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload1-INVALID_REQUEST] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload2-INVALID_SKU] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_missing_key_invalid_json_and_unknown_resources Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_body_limit_streamed_without_length Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_aggregation_normalization_and_total Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_insufficient_stock_rolls_back_whole_order Test catalog seeded; existing stock was not changed
+Insufficient multi-item order: no partial allocation or orphan order/key/job
+PASSED
+tests/integration/test_api.py::test_migrations_and_seed_do_not_reset_stock Test catalog seeded; existing stock was not changed
+Already applied: 001_products.sql
+Already applied: 002_orders.sql
+Already applied: 003_jobs.sql
+Migrations committed
+Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_seed_rejects_non_test_environment Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_readiness_storage_failure_does_not_break_liveness Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_real_api_restart_preserves_replay Test catalog seeded; existing stock was not changed
+API restart 12148 -> 12149: stable order fc9d235d-cc0d-4d39-aab1-097a831187d7; stock stays 6
+PASSED
+tests/integration/test_api.py::test_two_api_replicas_same_key_and_competing_orders Test catalog seeded; existing stock was not changed
+Two API PIDs 12150/12151: eight same-key calls -> one order; 12 competing calls -> 6 accepted, 6 rejected; stock 0
+PASSED
+tests/integration/test_api.py::test_multi_product_total_and_completed_receipt Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[short] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[key1] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[tab\tkey-000] Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_database_rejects_negative_stock Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_modified_applied_migration_is_rejected Test catalog seeded; existing stock was not changed
+PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/02-api/test-results.xml -
+======================== 27 passed, 1 warning in 4.21s =========================
+
+Exit code: 0

@@ -1,0 +1,8 @@
+{"time": "2026-11-10T14:31:57.827902+00:00", "event": "worker_started", "order_id": null}
+{"time": "2026-11-10T14:31:57.841566+00:00", "event": "claimed", "order_id": "dddf3673-5e38-45cf-a17a-61e467248245", "attempt": 1}
+{"time": "2026-11-10T14:31:57.905409+00:00", "event": "processing_failed", "order_id": "dddf3673-5e38-45cf-a17a-61e467248245", "attempt": 1}
+{"time": "2026-11-10T14:31:57.979525+00:00", "event": "claimed", "order_id": "dddf3673-5e38-45cf-a17a-61e467248245", "attempt": 2}
+{"time": "2026-11-10T14:31:58.040790+00:00", "event": "processing_failed", "order_id": "dddf3673-5e38-45cf-a17a-61e467248245", "attempt": 2}
+{"time": "2026-11-10T14:31:58.148568+00:00", "event": "claimed", "order_id": "dddf3673-5e38-45cf-a17a-61e467248245", "attempt": 3}
+{"time": "2026-11-10T14:31:58.218952+00:00", "event": "processing_failed", "order_id": "dddf3673-5e38-45cf-a17a-61e467248245", "attempt": 3}
+{"time": "2026-11-10T14:31:58.475162+00:00", "event": "worker_stopped", "order_id": null}

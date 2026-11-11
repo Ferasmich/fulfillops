@@ -1,0 +1,18 @@
+{
+  "sbom_format": "CycloneDX",
+  "component_count": 124,
+  "blocking": 0,
+  "informational": 351,
+  "scan_targets": [
+    [
+      "os-pkgs",
+      "debian"
+    ],
+    [
+      "lang-pkgs",
+      "python-pkg"
+    ]
+  ],
+  "live_ci": "Not run",
+  "published_image": "None"
+}

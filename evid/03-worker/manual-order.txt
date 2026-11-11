@@ -1,0 +1,15 @@
+Manual order test — 10 November 2026
+Source: terminal output pasted by the project owner in chat.
+
+POST /api/v1/orders
+Payload: {"customer_id":"CUST-042","items":[{"sku":"KIT-100","quantity":1}]}
+Idempotency key command: demo-$(date +%s) (expanded value not captured)
+HTTP/1.1 202 Accepted
+Response: {"order_id":"e7f73845-33e1-405d-bac5-8e662bd8f92b","status":"queued"}
+
+GET /api/v1/orders/e7f73845-33e1-405d-bac5-8e662bd8f92b
+Response: {"order_id":"e7f73845-33e1-405d-bac5-8e662bd8f92b","status":"completed","total_cents":1299}
+
+Observed: accepted order subsequently reached completed with the expected price.
+Worker logs and before/after inventory were not supplied for this manual test.
+This example does not independently prove exactly-once processing; automated recovery/race evidence is saved separately.

@@ -1,0 +1,15 @@
+pwd
+git rev-parse --show-toplevel
+git status --short --branch
+git remote -v
+git --version
+python3 --version
+python3 -m pip --version
+docker --version
+docker compose version
+docker info --format '{{.ServerVersion}}'
+docker run --rm hello-world
+kubectl version --client --output=json
+kind version
+git check-ignore .env .env.local .venv/example example.key
+git check-ignore evid/INDEX.md

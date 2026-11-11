@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-10T11:52:08.209969+00:00",
+  "current_root": "/Users/ferasmich/Documents/Feras/EPITA/DevOps/ROP",
+  "hidden_entries_moved": [
+    ".git",
+    ".github",
+    ".gitignore"
+  ],
+  "git_root_correct": true,
+  "unexpected_failed_commands": [],
+  "source_checks_all_match": true,
+  "missing_local_links": [],
+  "runtime_application_tests": "Not run; application not implemented",
+  "original_terminal_logs": "Unchanged; old paths in logs/relocation JSON are historical",
+  "updated_metadata_backups": "evid/01-design/20261110T115205Z_rop-audit/original-metadata"
+}

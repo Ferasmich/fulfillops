@@ -1,0 +1,6 @@
+{"time": "2026-11-11T16:52:20.530412+00:00", "event": "worker_started", "order_id": null}
+{"time": "2026-11-11T16:52:20.544584+00:00", "event": "claimed", "order_id": "6d1df473-eb88-41b5-837f-d1f312160318", "attempt": 1}
+{"time": "2026-11-11T16:52:20.607149+00:00", "event": "processing_failed", "order_id": "6d1df473-eb88-41b5-837f-d1f312160318", "attempt": 1}
+{"time": "2026-11-11T16:52:20.847471+00:00", "event": "claimed", "order_id": "6d1df473-eb88-41b5-837f-d1f312160318", "attempt": 3}
+{"time": "2026-11-11T16:52:20.908767+00:00", "event": "processing_failed", "order_id": "6d1df473-eb88-41b5-837f-d1f312160318", "attempt": 3}
+{"time": "2026-11-11T16:52:21.189649+00:00", "event": "worker_stopped", "order_id": null}

@@ -1,0 +1,32 @@
+
+$ git config --local user.name ferasmich
+
+EXIT_CODE=0
+
+$ git config --local user.email feras.mich@gmail.com
+
+EXIT_CODE=0
+
+$ git remote add origin https://github.com/Ferasmich/fulfillops.git
+
+EXIT_CODE=0
+
+$ git config --local --get user.name
+ferasmich
+
+EXIT_CODE=0
+
+$ git config --local --get user.email
+feras.mich@gmail.com
+
+EXIT_CODE=0
+
+$ git remote -v
+origin	https://github.com/Ferasmich/fulfillops.git (fetch)
+origin	https://github.com/Ferasmich/fulfillops.git (push)
+
+EXIT_CODE=0
+
+$ git ls-remote --symref origin HEAD 'refs/heads/*'
+
+EXIT_CODE=0

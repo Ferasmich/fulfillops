@@ -1,0 +1,36 @@
+
+$ pwd
+/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps
+EXIT_CODE=0
+
+$ git rev-parse --show-toplevel
+/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps
+EXIT_CODE=0
+
+$ git status --short --branch
+## No commits yet on main
+?? .github/
+?? .gitignore
+?? FulfillOps_9_5_STUDENTS_COMPLETE/
+?? "Project Implementation.md"
+?? README.md
+?? api/
+?? assessment/
+?? common/
+?? db/
+?? docs/
+?? evid/
+?? infra/
+?? requirements/
+?? scripts/
+?? tests/
+?? worker/
+EXIT_CODE=0
+
+$ git check-ignore .env .env.local
+.env
+.env.local
+EXIT_CODE=0
+
+$ git check-ignore evid/INDEX.md
+EXIT_CODE=1

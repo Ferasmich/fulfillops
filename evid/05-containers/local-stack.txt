@@ -1,0 +1,132 @@
+$ docker compose up -d --build --wait --wait-timeout 90
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.52kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.01kB done
+#2 DONE 0.0s
+
+#3 [api internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#3 DONE 0.0s
+
+#4 [api internal] load .dockerignore
+#4 transferring context: 207B done
+#4 DONE 0.0s
+
+#5 [worker builder 1/4] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 DONE 0.0s
+
+#6 [worker internal] load build context
+#6 transferring context: 902B done
+#6 DONE 0.0s
+
+#7 [init runtime 6/9] COPY api ./api
+#7 CACHED
+
+#8 [init runtime 4/9] COPY requirements/runtime.txt /tmp/requirements.txt
+#8 CACHED
+
+#9 [init builder 3/4] COPY requirements/runtime.txt ./requirements.txt
+#9 CACHED
+
+#10 [init builder 2/4] WORKDIR /build
+#10 CACHED
+
+#11 [init runtime 7/9] COPY common ./common
+#11 CACHED
+
+#12 [init runtime 8/9] COPY db ./db
+#12 CACHED
+
+#13 [init runtime 3/9] RUN groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+#13 CACHED
+
+#14 [init runtime 2/9] WORKDIR /app
+#14 CACHED
+
+#15 [init builder 4/4] RUN python -m pip wheel --no-cache-dir --only-binary=:all: --wheel-dir=/wheels -r requirements.txt
+#15 CACHED
+
+#16 [init runtime 5/9] RUN --mount=type=bind,from=builder,source=/wheels,target=/wheels     python -m pip install --no-cache-dir --no-index --find-links=/wheels -r /tmp/requirements.txt     && rm /tmp/requirements.txt
+#16 CACHED
+
+#17 [init runtime 9/9] COPY worker ./worker
+#17 CACHED
+
+#18 [init] exporting to image
+#18 exporting layers done
+#18 writing image sha256:6fae34861196f951248b08ca9d05756599b492406589190eda97a649eba18cf2 done
+#18 naming to docker.io/library/fulfillops:local done
+#18 DONE 0.0s
+
+#19 [worker] exporting to image
+#19 exporting layers done
+#19 writing image sha256:b9521ca2832eb220ab08a4afb2024aedfe7df8466f287867d5b4a3f347f61d5a done
+#19 naming to docker.io/library/fulfillops:local done
+#19 DONE 0.0s
+
+#20 [api] exporting to image
+#20 exporting layers done
+#20 writing image sha256:a4b2b113b9b8764c1a9d7fc2b384429356a221f424e1b7a5cfa08b35bbefb249 done
+#20 naming to docker.io/library/fulfillops:local done
+#20 DONE 0.0s
+
+#21 [init] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image fulfillops:local Building 
+ Image fulfillops:local Building 
+ Image fulfillops:local Building 
+ Image fulfillops:local Built 
+ Image fulfillops:local Built 
+ Image fulfillops:local Built 
+ Container fulfillops-db-1 Running 
+ Container fulfillops-init-1 Creating 
+ Container fulfillops-init-1 Created 
+ Container fulfillops-api-1 Creating 
+ Container fulfillops-worker-2 Creating 
+ Container fulfillops-worker-1 Creating 
+ Container fulfillops-api-1 Created 
+ Container fulfillops-worker-1 Created 
+ Container fulfillops-worker-2 Created 
+ Container fulfillops-db-1 Waiting 
+ Container fulfillops-db-1 Healthy 
+ Container fulfillops-init-1 Starting 
+ Container fulfillops-init-1 Started 
+ Container fulfillops-init-1 Waiting 
+ Container fulfillops-init-1 Waiting 
+ Container fulfillops-init-1 Exited 
+ Container fulfillops-init-1 Exited 
+ Container fulfillops-api-1 Starting 
+ Container fulfillops-worker-2 Starting 
+ Container fulfillops-api-1 Started 
+ Container fulfillops-worker-2 Started 
+ Container fulfillops-worker-1 Starting 
+ Container fulfillops-worker-1 Started 
+ Container fulfillops-init-1 Waiting 
+ Container fulfillops-api-1 Waiting 
+ Container fulfillops-worker-2 Waiting 
+ Container fulfillops-worker-1 Waiting 
+ Container fulfillops-db-1 Waiting 
+ Container fulfillops-init-1 Exited 
+ Container fulfillops-db-1 Healthy 
+ Container fulfillops-api-1 Healthy 
+ Container fulfillops-worker-2 Healthy 
+ Container fulfillops-worker-1 Healthy 
+
+Exit code: 0
+$ docker compose ps --all
+NAME                  IMAGE                                                                                 COMMAND                  SERVICE   CREATED          STATUS                     PORTS
+fulfillops-api-1      fulfillops:local                                                                      "python -m uvicorn a…"   api       8 seconds ago    Up 6 seconds (healthy)     127.0.0.1:8080->8080/tcp
+fulfillops-db-1       postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657   "docker-entrypoint.s…"   db        58 seconds ago   Up 57 seconds (healthy)    127.0.0.1:5433->5432/tcp
+fulfillops-init-1     fulfillops:local                                                                      "python -m db.bootst…"   init      8 seconds ago    Exited (0) 6 seconds ago   
+fulfillops-worker-1   fulfillops:local                                                                      "python -m worker.ma…"   worker    8 seconds ago    Up 6 seconds (healthy)     8080/tcp
+fulfillops-worker-2   fulfillops:local                                                                      "python -m worker.ma…"   worker    8 seconds ago    Up 6 seconds (healthy)     8080/tcp
+
+Exit code: 0
