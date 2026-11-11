@@ -135,7 +135,7 @@ def validate(body, key):
         if not isinstance(item, dict) or set(item) != {"sku", "quantity"}:
             raise Problem(400, "INVALID_REQUEST", "Expected sku and quantity")
         sku, quantity = item["sku"], item["quantity"]
-        if not isinstance(quantity, int) or not 1 <= quantity <= 20:
+        if type(quantity) is not int or not 1 <= quantity <= 20:
             raise Problem(
                 422, "INVALID_QUANTITY", "Quantity must be an integer from 1 to 20"
             )
