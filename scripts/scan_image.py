@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -20,6 +21,11 @@ def main():
     for generated in ("image.cdx.json", "vulnerabilities.json", "security-gate.json"):
         (out / generated).unlink(missing_ok=True)
     scanner = (ROOT / ".github/trivy-image.txt").read_text().strip()
+    cache = (
+        Path(os.environ.get("XDG_CACHE_HOME", str(Path.home() / ".cache")))
+        / "fulfillops-trivy"
+    )
+    cache.mkdir(parents=True, exist_ok=True)
     with (out / "scan.log").open("w") as log:
 
         def run(command):
@@ -68,6 +74,8 @@ def main():
                 "docker",
                 "run",
                 "--rm",
+                "--user",
+                f"{os.getuid()}:{os.getgid()}",
                 "--cap-drop=ALL",
                 "--security-opt=no-new-privileges",
                 "--read-only",
@@ -78,7 +86,7 @@ def main():
                 "-v",
                 str(out) + ":/output",
                 "-v",
-                "fulfillops-trivy-cache:/cache",
+                str(cache.resolve()) + ":/cache",
                 scanner,
                 "image",
                 "--cache-dir",
