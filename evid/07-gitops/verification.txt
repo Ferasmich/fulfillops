@@ -1,0 +1,78 @@
+2026-11-11T18:17:30.670210+00:00 Starting verification in explicit local context kind-fulfillops
+$ kubectl --context kind-fulfillops -n fulfillops get deployment,statefulset,pods,services,pvc -o wide
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                SELECTOR
+deployment.apps/fulfillops-api      2/2     2            2           5m10s   api          fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef   app=fulfillops-api
+deployment.apps/fulfillops-worker   2/2     2            2           5m10s   worker       fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef   app=fulfillops-worker
+
+NAME                        READY   AGE     CONTAINERS   IMAGES
+statefulset.apps/postgres   1/1     5m50s   postgres     postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+
+NAME                                    READY   STATUS      RESTARTS   AGE     IP            NODE                       NOMINATED NODE   READINESS GATES
+pod/fulfillops-api-55cdc6dc75-jgqpl     1/1     Running     0          5m10s   10.244.0.16   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-api-55cdc6dc75-z476h     1/1     Running     0          5m10s   10.244.0.18   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-bootstrap-s4rcc          0/1     Completed   0          5m20s   10.244.0.14   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-worker-dc6dd65bf-jhlp4   1/1     Running     0          5m10s   10.244.0.17   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-worker-dc6dd65bf-m8mjd   1/1     Running     0          5m10s   10.244.0.15   fulfillops-control-plane   <none>           <none>
+pod/postgres-0                          1/1     Running     0          5m50s   10.244.0.13   fulfillops-control-plane   <none>           <none>
+
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE     SELECTOR
+service/db               ClusterIP   None           <none>        5432/TCP   5m52s   app=fulfillops-db
+service/fulfillops-api   ClusterIP   10.96.143.93   <none>        80/TCP     5m52s   app=fulfillops-api
+
+NAME                                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE     VOLUMEMODE
+persistentvolumeclaim/postgres-data   Bound    pvc-09fb9f63-dfdb-48a8-9d85-7e01ee17ca87   1Gi        RWO            standard       <unset>                 5m50s   Filesystem
+Exit code: 0
+2026-11-11T18:17:31.055397+00:00 Git revision 933b087c2aa506558de0c57ab6af93ffe1c971e1; two ready API pods and two ready worker pods
+2026-11-11T18:17:34.973591+00:00 Kubernetes public checker: 15 passed / 0 failed / 0 skipped
+2026-11-11T18:17:35.224362+00:00 Cross-pod races: eight same-key -> one ID/one decrement; 12 competing -> five accepted/seven rejected; KIT stock zero
+2026-11-11T18:17:36.067847+00:00 Database before drift/restart: {"order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09", "status": "completed", "total_cents": 1299, "orders": 21, "receipts": 21, "stock": 0}
+$ kubectl --context kind-fulfillops -n argocd patch application fulfillops --type merge -p {"spec":{"syncPolicy":{"automated":{"selfHeal":false}}}}
+application.argoproj.io/fulfillops patched
+Exit code: 0
+$ kubectl --context kind-fulfillops -n fulfillops scale deployment/fulfillops-api --replicas=3
+deployment.apps/fulfillops-api scaled
+Exit code: 0
+$ kubectl --context kind-fulfillops -n argocd annotate application fulfillops argocd.argoproj.io/refresh=hard --overwrite
+application.argoproj.io/fulfillops annotated
+Exit code: 0
+2026-11-11T18:17:37.023927+00:00 Observed OutOfSync: API replicas manually three, Git specifies two; repair temporarily paused
+$ kubectl --context kind-fulfillops apply -f /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/infra/argocd/application.yaml
+application.argoproj.io/fulfillops configured
+Exit code: 0
+$ kubectl --context kind-fulfillops -n fulfillops rollout status deployment/fulfillops-api --timeout=90s
+deployment "fulfillops-api" successfully rolled out
+Exit code: 0
+2026-11-11T18:17:37.986276+00:00 Self-heal restored from committed Application: Synced/Healthy and two API replicas
+$ kubectl --context kind-fulfillops -n fulfillops delete pod postgres-0 --wait=true
+pod "postgres-0" deleted from fulfillops namespace
+Exit code: 0
+$ kubectl --context kind-fulfillops -n fulfillops rollout status statefulset/postgres --timeout=90s
+partitioned roll out complete: 1 new pods have been updated...
+Exit code: 0
+$ kubectl --context kind-fulfillops -n fulfillops get deployments,statefulset,pods,pvc -o wide
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                SELECTOR
+deployment.apps/fulfillops-api      2/2     2            2           5m22s   api          fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef   app=fulfillops-api
+deployment.apps/fulfillops-worker   2/2     2            2           5m22s   worker       fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef   app=fulfillops-worker
+
+NAME                        READY   AGE    CONTAINERS   IMAGES
+statefulset.apps/postgres   1/1     6m2s   postgres     postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+
+NAME                                    READY   STATUS        RESTARTS   AGE     IP            NODE                       NOMINATED NODE   READINESS GATES
+pod/fulfillops-api-55cdc6dc75-dxn9l     0/1     Terminating   0          7s      10.244.0.19   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-api-55cdc6dc75-jgqpl     1/1     Running       0          5m22s   10.244.0.16   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-api-55cdc6dc75-z476h     1/1     Running       0          5m22s   10.244.0.18   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-bootstrap-s4rcc          0/1     Completed     0          5m32s   10.244.0.14   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-worker-dc6dd65bf-jhlp4   1/1     Running       0          5m22s   10.244.0.17   fulfillops-control-plane   <none>           <none>
+pod/fulfillops-worker-dc6dd65bf-m8mjd   1/1     Running       0          5m22s   10.244.0.15   fulfillops-control-plane   <none>           <none>
+pod/postgres-0                          1/1     Running       0          5s      10.244.0.20   fulfillops-control-plane   <none>           <none>
+
+NAME                                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE    VOLUMEMODE
+persistentvolumeclaim/postgres-data   Bound    pvc-09fb9f63-dfdb-48a8-9d85-7e01ee17ca87   1Gi        RWO            standard       <unset>                 6m2s   Filesystem
+Exit code: 0
+$ kubectl --context kind-fulfillops -n fulfillops rollout history deployment/fulfillops-api
+deployment.apps/fulfillops-api 
+REVISION  CHANGE-CAUSE
+1         <none>
+
+Exit code: 0
+2026-11-11T18:17:43.238859+00:00 PASS: Git sync, two APIs/two workers, real cross-pod races, drift repair and persistent order/stock/receipt after database pod replacement

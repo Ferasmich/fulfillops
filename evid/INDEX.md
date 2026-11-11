@@ -12,7 +12,7 @@ This lists the evidence needed for the assignment. Add a file or link when it is
 | Tests | Unit/integration/owned race results; failing test then corrected run; checker 15 passed, no failures/skips | [52 tests, dedicated races and failing/fixed regression](04-tests/README.md); [checker 15/0/0](04-tests/worker/public-checker.txt) |
 | Containers | Clean build, healthy Compose, non-root user, persistence, image-size comparison | [Build, health, persistence and size comparison](05-containers/README.md) |
 | CI | PR/run URLs, red-to-green, blocked promotion, SBOM, scans, immutable image reference | [Live PR red-to-green, CI SBOM/scan and accepted image](06-ci/README.md); registry promotion not triggered |
-| GitOps | Two API/two worker pods, Argo Synced/Healthy, manual drift correction, rollout history | Pending — `07-gitops/` |
+| GitOps | Two API/two worker pods, Argo Synced/Healthy, manual drift correction, rollout history | [Live sync, replicas, drift correction and storage proof](07-gitops/README.md) |
 | Reliability | Two fault drills, healthy 30-second rollout CSV, unhealthy rollout stopped and restored through Git | Pending — `08-reliability/` |
 | Observability | Required metrics, 200+ HTTP samples, p95 calculation, SLO targets and limitations | Pending — `08-reliability/` |
 | Incident | Timeline, cause, recovery and prevention | Pending — `docs/incident-postmortem.md` with links to logs |

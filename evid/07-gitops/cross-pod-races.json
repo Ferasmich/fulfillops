@@ -1,0 +1,180 @@
+{
+  "same_key": [
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+        "status": "queued"
+      }
+    }
+  ],
+  "different_keys": [
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "35a63cbe-e30c-49d8-831b-b32e2874a236",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "OUT_OF_STOCK",
+          "message": "Not enough items available"
+        }
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 202,
+      "body": {
+        "order_id": "dfe0ca2b-b84a-423d-bba9-55551905f885",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "649b321c-2ec1-489a-8f6a-df09207f232a",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-jgqpl",
+      "status": 202,
+      "body": {
+        "order_id": "3da3aea5-0fb2-4d0e-92c0-48f1811b34e0",
+        "status": "queued"
+      }
+    },
+    {
+      "pod": "fulfillops-api-55cdc6dc75-z476h",
+      "status": 202,
+      "body": {
+        "order_id": "08fcf4b2-4ede-4f47-9248-cf83d1caf57f",
+        "status": "queued"
+      }
+    }
+  ]
+}

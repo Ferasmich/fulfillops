@@ -1,0 +1,9 @@
+{
+  "source_commit": "93a817a45f01d3dd3706207c8dffa706800ff0ef",
+  "local_image_id": "sha256:d66001eb3a95203328ea7b4fd98c82b816e2fa4214f963f3f315a602c1a5324b",
+  "local_image_architecture": "arm64",
+  "local_image_os": "linux",
+  "kubernetes_architecture": "arm64",
+  "kubernetes_version": "v1.37.0",
+  "note": "Local ARM64 rebuild from a CI-validated source commit; not the same binary image as the Linux AMD64 CI artifact."
+}

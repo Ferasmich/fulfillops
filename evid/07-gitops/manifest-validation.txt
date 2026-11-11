@@ -1,0 +1,8 @@
+configmap/fulfillops-config created (server dry run)
+service/db created (server dry run)
+service/fulfillops-api created (server dry run)
+persistentvolumeclaim/postgres-data created (server dry run)
+deployment.apps/fulfillops-api created (server dry run)
+deployment.apps/fulfillops-worker created (server dry run)
+statefulset.apps/postgres created (server dry run)
+job.batch/fulfillops-bootstrap created (server dry run)

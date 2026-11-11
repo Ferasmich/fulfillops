@@ -1,6 +1,6 @@
 # Contract and evidence checklist
 
-All items are planned and unchecked. Source: supplied API contract v1.1 and assignment. Test identifiers below are planned owned tests, not existing passing tests.
+This checklist was written before implementation. See `evid/INDEX.md` for the current verified results and remaining work. Source: supplied API contract v1.1 and assignment. Test identifiers below are planned owned tests, not existing passing tests.
 
 | ID | Required behavior | Planned verification |
 |---|---|---|

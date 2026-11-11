@@ -8,7 +8,7 @@ Build the order-processing platform as a solo project. Start with the API and da
 
 This is a solo execution plan. The supplied assignment specifies teams of 2–3; solo submission and any assessment adjustments must be agreed with the instructor. The technical scope below retains the assignment's requirements. Two API replicas and two worker instances are still required: these are running processes, not people.
 
-**Current status:** Parts 1–5 verified locally; Part 6 now has real GitHub quality, SBOM/scan and red-to-green PR evidence. Main: 69 tests; fixed PR: 70; checker 15/0/0. Accepted CI image artifact is preserved. PR #1 is unmerged; registry promotion remains disabled. See `docs/ci-live-results.md`. Next implementation stage: Part 7 Kubernetes/GitOps.
+**Current status:** Part 7 local Kubernetes/GitOps is verified: two APIs/two workers, Argo Synced/Healthy, real cross-pod races, drift correction and PVC persistence. Checker 15/0/0; host suite 69 passed. Evidence: `evid/07-gitops/`. Registry publication remains disabled; PR #1 remains unmerged. Part 8 rollout/fault/observability proof is next.
 
 **Source pack:** `FulfillOps_9_5_STUDENTS_COMPLETE/` (inside the current project root).
 

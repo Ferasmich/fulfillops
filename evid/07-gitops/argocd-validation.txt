@@ -1,0 +1,2 @@
+appproject.argoproj.io/fulfillops created (server dry run)
+application.argoproj.io/fulfillops created (server dry run)

@@ -135,6 +135,16 @@ python -m scripts.scan_image --image fulfillops:local --output evid/06-ci
 
 The first command requires the local image and database settings and starts only a private disposable test stack. The second scans a saved image without exposing the Docker socket or local credentials to the scanner.
 
+## Kubernetes and GitOps
+
+The local kind cluster runs two APIs, two workers and PostgreSQL with a PVC. Argo CD reads `infra/k8s` from main and reports Synced/Healthy. [Setup/access guide](docs/kubernetes.md), [results](evid/07-gitops/README.md) and [report questions](docs/part7-notes.md).
+
+```bash
+kubectl --context kind-fulfillops -n fulfillops port-forward --address 127.0.0.1 svc/fulfillops-api 8081:80
+```
+
+Use `http://127.0.0.1:8081/health/ready`. This is a separate database from Compose on port 8080. The Kubernetes test inventory is exhausted after the saved checker/race run; automatic startup never restores it. Drift correction and order persistence across database-pod replacement are proven. Continuous rolling-update/fault evidence is next in Part 8.
+
 ## Notes and design
 
 - [Project plan](Project%20Implementation.md)
@@ -146,6 +156,7 @@ The first command requires the local image and database settings and starts only
 - [Part 4 report notes and defense questions](docs/part4-notes.md)
 - [Part 5 report notes and defense questions](docs/part5-notes.md)
 - [Part 6 report notes and defense questions](docs/part6-notes.md)
+- [Part 7 report notes and defense questions](docs/part7-notes.md)
 - [Assistance log](docs/assistance-log.md)
 
 The original source pack is kept locally in `FulfillOps_9_5_STUDENTS_COMPLETE/` and excluded from Git; unchanged text/checker copies are in `assessment/`. The assignment specifies teams of 2–3; solo assessment approval remains unverified. The project is pushed to [GitHub](https://github.com/Ferasmich/fulfillops). [PR #1](https://github.com/Ferasmich/fulfillops/pull/1) is open with green checks; no registry publication or PR merge was performed.

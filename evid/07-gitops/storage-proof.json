@@ -1,0 +1,6 @@
+{
+  "before_pod_uid": "89706a29-92cf-4c97-bd21-86d41d9afa13",
+  "after_pod_uid": "1b796dcd-ccea-48c9-9314-73613c1ac553",
+  "pvc_uid": "09fb9f63-dfdb-48a8-9d85-7e01ee17ca87",
+  "volume": "pvc-09fb9f63-dfdb-48a8-9d85-7e01ee17ca87"
+}
