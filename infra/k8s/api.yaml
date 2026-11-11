@@ -20,7 +20,7 @@ spec:
   template:
     metadata:
       annotations:
-        fulfillops.io/release: part8-bad-20261111T201834Z
+        fulfillops.io/release: part8-good-20261111T201834Z
       labels:
         app: fulfillops-api
     spec:
@@ -74,7 +74,7 @@ spec:
             failureThreshold: 30
           readinessProbe:
             httpGet:
-              path: /health/forced-not-ready
+              path: /health/ready
               port: 8080
             periodSeconds: 2
             timeoutSeconds: 4
