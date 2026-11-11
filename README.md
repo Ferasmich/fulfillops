@@ -126,7 +126,7 @@ Stop the API and both workers with Ctrl+C. Stop the database with `docker compos
 
 [The workflow](.github/workflows/ci.yml) checks PRs/pushes to main. It runs tests, builds/checks the image, generates an SBOM and enforces the [security policy](docs/security-policy.md). Publication is a separate manual dispatch on main with `publish=true`, and only runs after all quality checks pass. It promotes the accepted image archive instead of rebuilding.
 
-Local verification: [Part 6 evidence](evid/06-ci/README.md). Live runs, CI artifacts and the published digest are still pending the initial commit/push and release approval. The current scan has unfixed High/Critical findings; a passing policy gate does not mean no vulnerabilities.
+Local verification: [Part 6 evidence](evid/06-ci/README.md). [Live CI results](docs/ci-live-results.md): main passed 69 tests and PR #1 passed 70 after the controlled failure. CI SBOM/scan and accepted-image artifacts are saved. Registry promotion still requires separate release approval. The current scan has unfixed High/Critical findings; a passing policy gate does not mean no vulnerabilities.
 
 ```bash
 python -m scripts.ci_stack
@@ -148,4 +148,4 @@ The first command requires the local image and database settings and starts only
 - [Part 6 report notes and defense questions](docs/part6-notes.md)
 - [Assistance log](docs/assistance-log.md)
 
-The original source pack is kept locally in `FulfillOps_9_5_STUDENTS_COMPLETE/` and excluded from Git; unchanged text/checker copies are in `assessment/`. The assignment specifies teams of 2–3; solo assessment approval remains unverified. No commits or pushes have been made.
+The original source pack is kept locally in `FulfillOps_9_5_STUDENTS_COMPLETE/` and excluded from Git; unchanged text/checker copies are in `assessment/`. The assignment specifies teams of 2–3; solo assessment approval remains unverified. The project is pushed to [GitHub](https://github.com/Ferasmich/fulfillops). [PR #1](https://github.com/Ferasmich/fulfillops/pull/1) is open with green checks; no registry publication or PR merge was performed.

@@ -1,0 +1,1041 @@
+quality-gate	Set up job	﻿2026-11-11T17:43:33.7932881Z Current runner version: '2.338.2'
+quality-gate	Set up job	2026-11-11T17:43:33.7960941Z ##[group]Runner Image Provisioner
+quality-gate	Set up job	2026-11-11T17:43:33.7961771Z Hosted Compute Agent
+quality-gate	Set up job	2026-11-11T17:43:33.7962281Z Version: 20261028.624
+quality-gate	Set up job	2026-11-11T17:43:33.7962878Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+quality-gate	Set up job	2026-11-11T17:43:33.7963514Z Build Date: 2026-10-28T21:51:42Z
+quality-gate	Set up job	2026-11-11T17:43:33.7964106Z Worker ID: {cae020ff-ade3-4613-91ab-202b78c904d1}
+quality-gate	Set up job	2026-11-11T17:43:33.7964739Z Region: eastus2
+quality-gate	Set up job	2026-11-11T17:43:33.7965220Z Cloud: Azure
+quality-gate	Set up job	2026-11-11T17:43:33.7965702Z ##[endgroup]
+quality-gate	Set up job	2026-11-11T17:43:33.7967122Z ##[group]Operating System
+quality-gate	Set up job	2026-11-11T17:43:33.7967682Z Ubuntu
+quality-gate	Set up job	2026-11-11T17:43:33.7968246Z 24.04.5
+quality-gate	Set up job	2026-11-11T17:43:33.7968737Z LTS
+quality-gate	Set up job	2026-11-11T17:43:33.7969196Z ##[endgroup]
+quality-gate	Set up job	2026-11-11T17:43:33.7969724Z ##[group]Runner Image
+quality-gate	Set up job	2026-11-11T17:43:33.7970245Z Image: ubuntu-24.04
+quality-gate	Set up job	2026-11-11T17:43:33.7970754Z Version: 20261101.360.1
+quality-gate	Set up job	2026-11-11T17:43:33.7971660Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+quality-gate	Set up job	2026-11-11T17:43:33.7973181Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+quality-gate	Set up job	2026-11-11T17:43:33.7974091Z ##[endgroup]
+quality-gate	Set up job	2026-11-11T17:43:33.7975516Z ##[group]GITHUB_TOKEN Permissions
+quality-gate	Set up job	2026-11-11T17:43:33.7978027Z Contents: read
+quality-gate	Set up job	2026-11-11T17:43:33.7978847Z Metadata: read
+quality-gate	Set up job	2026-11-11T17:43:33.7979624Z ##[endgroup]
+quality-gate	Set up job	2026-11-11T17:43:33.7981660Z Secret source: Actions
+quality-gate	Set up job	2026-11-11T17:43:33.7982947Z Cache mode: write
+quality-gate	Set up job	2026-11-11T17:43:33.7984167Z Prepare workflow directory
+quality-gate	Set up job	2026-11-11T17:43:33.8441307Z Prepare all required actions
+quality-gate	Set up job	2026-11-11T17:43:33.8494742Z Getting action download info
+quality-gate	Set up job	2026-11-11T17:43:34.0646578Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+quality-gate	Set up job	2026-11-11T17:43:34.1738872Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+quality-gate	Set up job	2026-11-11T17:43:34.2821735Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+quality-gate	Set up job	2026-11-11T17:43:34.6508426Z Complete job name: quality-gate
+quality-gate	Initialize containers	﻿2026-11-11T17:43:34.7064472Z ##[group]Checking docker version
+quality-gate	Initialize containers	2026-11-11T17:43:34.7075330Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+quality-gate	Initialize containers	2026-11-11T17:43:34.7920314Z '1.48'
+quality-gate	Initialize containers	2026-11-11T17:43:34.7936171Z Docker daemon API version: '1.48'
+quality-gate	Initialize containers	2026-11-11T17:43:34.7937166Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+quality-gate	Initialize containers	2026-11-11T17:43:34.8122978Z '1.48'
+quality-gate	Initialize containers	2026-11-11T17:43:34.8138898Z Docker client API version: '1.48'
+quality-gate	Initialize containers	2026-11-11T17:43:34.8142999Z ##[endgroup]
+quality-gate	Initialize containers	2026-11-11T17:43:34.8145553Z ##[group]Clean up resources from previous jobs
+quality-gate	Initialize containers	2026-11-11T17:43:34.8149910Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=826ff7"
+quality-gate	Initialize containers	2026-11-11T17:43:34.8303816Z ##[command]/usr/bin/docker network prune --force --filter "label=826ff7"
+quality-gate	Initialize containers	2026-11-11T17:43:34.8453706Z ##[endgroup]
+quality-gate	Initialize containers	2026-11-11T17:43:34.8454497Z ##[group]Create local container network
+quality-gate	Initialize containers	2026-11-11T17:43:34.8463480Z ##[command]/usr/bin/docker network create --label 826ff7 github_network_3bce4cf1aed840e5b085452bd6af93a7
+quality-gate	Initialize containers	2026-11-11T17:43:35.1636941Z b6d210e7b206e913a8cc3b56992edf38beeaf2692a5c106540c4304178b2a5fe
+quality-gate	Initialize containers	2026-11-11T17:43:35.1660333Z ##[endgroup]
+quality-gate	Initialize containers	2026-11-11T17:43:35.1680593Z ##[group]Starting postgres service container
+quality-gate	Initialize containers	2026-11-11T17:43:35.1698363Z ##[command]/usr/bin/docker pull postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+quality-gate	Initialize containers	2026-11-11T17:43:35.4730880Z docker.io/library/postgres@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657: Pulling from library/postgres
+quality-gate	Initialize containers	2026-11-11T17:43:35.5608366Z 37fb86c2a767: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5609909Z e9dd37612d7b: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5610933Z 369949eb0229: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5615616Z 7e0f86eb8508: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5616848Z da434b32d480: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5617952Z bcc75ab4e010: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5618705Z a28de24f57c0: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5619422Z 6d141360b363: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5620167Z 379ccbe62e26: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5620954Z 1244f763be36: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5621714Z 9732cf873eb7: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5622504Z c924699dde26: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5623351Z d9f83a042741: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5624166Z be193f0583fb: Pulling fs layer
+quality-gate	Initialize containers	2026-11-11T17:43:35.5624974Z 7e0f86eb8508: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5625701Z da434b32d480: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5626584Z bcc75ab4e010: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5627333Z a28de24f57c0: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5628042Z 6d141360b363: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5628752Z 379ccbe62e26: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5629654Z 1244f763be36: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5630608Z 9732cf873eb7: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5631596Z be193f0583fb: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5632629Z c924699dde26: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.5633649Z d9f83a042741: Waiting
+quality-gate	Initialize containers	2026-11-11T17:43:35.6745536Z e9dd37612d7b: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.7243380Z 369949eb0229: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.7246488Z 369949eb0229: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.7532746Z 7e0f86eb8508: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.7534786Z 7e0f86eb8508: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.7915943Z 37fb86c2a767: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.7917772Z 37fb86c2a767: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.8232510Z da434b32d480: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.8234081Z da434b32d480: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.8419684Z bcc75ab4e010: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.8424345Z a28de24f57c0: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.8736116Z 6d141360b363: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.8741403Z 6d141360b363: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.8943400Z 1244f763be36: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.8944925Z 1244f763be36: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.9213859Z 9732cf873eb7: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.9215937Z 9732cf873eb7: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.9478076Z c924699dde26: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.9482330Z c924699dde26: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:35.9719736Z d9f83a042741: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:35.9723263Z d9f83a042741: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:36.0005337Z be193f0583fb: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:36.0007015Z be193f0583fb: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:36.2370624Z 379ccbe62e26: Verifying Checksum
+quality-gate	Initialize containers	2026-11-11T17:43:36.2372415Z 379ccbe62e26: Download complete
+quality-gate	Initialize containers	2026-11-11T17:43:36.7255931Z 37fb86c2a767: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:38.3181427Z e9dd37612d7b: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:38.5503541Z 369949eb0229: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:38.7612757Z 7e0f86eb8508: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:39.3847259Z da434b32d480: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:39.4677172Z bcc75ab4e010: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:39.4766461Z a28de24f57c0: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:39.4865443Z 6d141360b363: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2246604Z 379ccbe62e26: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2351937Z 1244f763be36: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2454033Z 9732cf873eb7: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2592254Z c924699dde26: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2667120Z d9f83a042741: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2734418Z be193f0583fb: Pull complete
+quality-gate	Initialize containers	2026-11-11T17:43:43.2765138Z Digest: sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+quality-gate	Initialize containers	2026-11-11T17:43:43.2774168Z Status: Downloaded newer image for postgres@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+quality-gate	Initialize containers	2026-11-11T17:43:43.2843259Z docker.io/library/postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+quality-gate	Initialize containers	2026-11-11T17:43:43.2898159Z ##[command]/usr/bin/docker create --name 2d21f3ceb958457d8a568013ef6d6c38_postgres16sha256f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657_7d2a94 --label 826ff7 --network github_network_3bce4cf1aed840e5b085452bd6af93a7 --network-alias postgres -p 5433:5432 --health-cmd "pg_isready -U fulfillops -d fulfillops_test_ci" --health-interval 5s --health-timeout 3s --health-retries 15 -e "POSTGRES_DB=fulfillops_test_ci" -e "POSTGRES_USER=fulfillops" -e "POSTGRES_PASSWORD=ci-owner-disposable" -e GITHUB_ACTIONS=true -e CI=true postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+quality-gate	Initialize containers	2026-11-11T17:43:43.3127246Z 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:43.3148424Z ##[command]/usr/bin/docker start 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:43.5050433Z 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:43.5079477Z ##[command]/usr/bin/docker ps --all --filter id=58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+quality-gate	Initialize containers	2026-11-11T17:43:43.5205938Z 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b Up Less than a second (health: starting)
+quality-gate	Initialize containers	2026-11-11T17:43:43.5300447Z ##[command]/usr/bin/docker port 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:43.5444258Z 5432/tcp -> 0.0.0.0:5433
+quality-gate	Initialize containers	2026-11-11T17:43:43.5444651Z 5432/tcp -> [::]:5433
+quality-gate	Initialize containers	2026-11-11T17:43:43.5489210Z ##[endgroup]
+quality-gate	Initialize containers	2026-11-11T17:43:43.5496813Z ##[group]Waiting for all services to be ready
+quality-gate	Initialize containers	2026-11-11T17:43:43.5508658Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:43.5641430Z starting
+quality-gate	Initialize containers	2026-11-11T17:43:43.5663382Z postgres service is starting, waiting 2 seconds before checking again.
+quality-gate	Initialize containers	2026-11-11T17:43:45.5653561Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:45.5779256Z starting
+quality-gate	Initialize containers	2026-11-11T17:43:45.5792129Z postgres service is starting, waiting 3 seconds before checking again.
+quality-gate	Initialize containers	2026-11-11T17:43:49.4828333Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Initialize containers	2026-11-11T17:43:49.4954797Z healthy
+quality-gate	Initialize containers	2026-11-11T17:43:49.4972881Z postgres service is healthy.
+quality-gate	Initialize containers	2026-11-11T17:43:49.4973499Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-11-11T17:43:49.5204032Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5204522Z with:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5204702Z   persist-credentials: false
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5204936Z   repository: Ferasmich/fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5207180Z   token: ***
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5207366Z   ssh-strict: true
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5207542Z   ssh-user: git
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5207707Z   clean: true
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5207884Z   sparse-checkout-cone-mode: true
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5208092Z   fetch-depth: 1
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5208255Z   fetch-tags: false
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5208424Z   show-progress: true
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5208593Z   lfs: false
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5208766Z   submodules: false
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5208935Z   set-safe-directory: true
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5209134Z   allow-unsafe-pr-checkout: false
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5209526Z env:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5209688Z   APP_ENV: test
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5209852Z   DB_HOST: 127.0.0.1
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5210016Z   DB_PORT: 5433
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5210218Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5210419Z   POSTGRES_USER: fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5210627Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5210854Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5211075Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5211307Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.5211524Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8905212Z Syncing repository: Ferasmich/fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8906714Z ##[group]Getting Git version info
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8907161Z Working directory is '/home/runner/work/fulfillops/fulfillops'
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8908124Z [command]/usr/bin/git version
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8960405Z git version 2.56.0
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8976429Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8987968Z Temporarily overriding HOME='/home/runner/work/_temp/521cf00e-75cd-42c5-b272-87afee6cdf2b' before making global git config changes
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8988964Z Adding repository directory to the temporary git global config as a safe directory
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.8993339Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fulfillops/fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9033812Z Deleting the contents of '/home/runner/work/fulfillops/fulfillops'
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9037888Z ##[group]Initializing the repository
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9041299Z [command]/usr/bin/git init /home/runner/work/fulfillops/fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9151573Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9152083Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9152518Z hint: to use in all of your new repositories, which will suppress this warning,
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9152830Z hint: call:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9152987Z hint:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9153224Z hint: 	git config --global init.defaultBranch <name>
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9153503Z hint:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9153744Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9154208Z hint: 'development'. The just-created branch can be renamed via this command:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9154594Z hint:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9154761Z hint: 	git branch -m <name>
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9154947Z hint:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9155203Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9163988Z Initialized empty Git repository in /home/runner/work/fulfillops/fulfillops/.git/
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9177539Z [command]/usr/bin/git remote add origin https://github.com/Ferasmich/fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9216744Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9217233Z ##[group]Disabling automatic garbage collection
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9220383Z [command]/usr/bin/git config --local gc.auto 0
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9249822Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9250283Z ##[group]Setting up auth
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9255976Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:49.9287877Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0371943Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0410078Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0613226Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0650780Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0850929Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0892303Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0892813Z ##[group]Fetching the repository
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.0902400Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3371a8195781cc84a5ee3ec6e06e00576f46655a:refs/remotes/origin/main
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3299259Z From https://github.com/Ferasmich/fulfillops
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3299790Z  * [new ref]         3371a8195781cc84a5ee3ec6e06e00576f46655a -> origin/main
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3303923Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3304228Z ##[group]Determining the checkout info
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3306466Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3311666Z [command]/usr/bin/git sparse-checkout disable
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3362519Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3400951Z ##[group]Checking out the ref
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3404239Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3577830Z Switched to a new branch 'main'
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3581542Z branch 'main' set up to track 'origin/main'.
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3587559Z ##[endgroup]
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3628937Z [command]/usr/bin/git log -1 --format=%H
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3656836Z 3371a8195781cc84a5ee3ec6e06e00576f46655a
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3665542Z ##[group]Removing auth
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3669676Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3704767Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3907443Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3936579Z http.https://github.com/.extraheader
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3942654Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.3978336Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.4178469Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.4212042Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality-gate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:43:50.4428098Z ##[endgroup]
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-11-11T17:43:50.4641160Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4641484Z with:
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4641649Z   python-version: 3.12
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4641848Z   cache: pip
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4642067Z   cache-dependency-path: requirements/development.txt
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4642332Z   check-latest: false
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4644202Z   token: ***
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4644379Z   update-environment: true
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4644577Z   allow-prereleases: false
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4644764Z   freethreaded: false
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4644937Z env:
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4645086Z   APP_ENV: test
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4645267Z   DB_HOST: 127.0.0.1
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4645436Z   DB_PORT: 5433
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4645609Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4645820Z   POSTGRES_USER: fulfillops
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4646029Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4646492Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4646760Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4647036Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.4647251Z ##[endgroup]
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.5753518Z ##[group]Installed versions
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.5818353Z (node:2646) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.5818902Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.5819651Z Successfully set up CPython (3.12.16)
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.5820165Z ##[endgroup]
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.6075713Z [command]/opt/hostedtoolcache/Python/3.12.16/x64/bin/pip cache dir
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.8452836Z /home/runner/.cache/pip
+quality-gate	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:43:50.9438217Z pip cache is not found
+quality-gate	Install pinned development packages	﻿2026-11-11T17:43:50.9567421Z ##[group]Run python -m pip install -r requirements/development.txt
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9567894Z ^[[36;1mpython -m pip install -r requirements/development.txt^[[0m
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9591209Z shell: /usr/bin/bash -e {0}
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9591435Z env:
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9591592Z   APP_ENV: test
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9591762Z   DB_HOST: 127.0.0.1
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9591938Z   DB_PORT: 5433
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9592309Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9592526Z   POSTGRES_USER: fulfillops
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9592743Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9592974Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9593199Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9593434Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9593710Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9594038Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9594365Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9594868Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9595159Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9595453Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Install pinned development packages	2026-11-11T17:43:50.9595703Z ##[endgroup]
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.6417172Z Collecting annotated-doc==0.0.5 (from -r requirements/development.txt (line 1))
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.7227139Z   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.7482130Z Collecting annotated-types==0.8.0 (from -r requirements/development.txt (line 2))
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.7641964Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.7999836Z Collecting anyio==4.16.0 (from -r requirements/development.txt (line 3))
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.8171267Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.8453205Z Collecting certifi==2026.10.23 (from -r requirements/development.txt (line 4))
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.8605553Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.8876653Z Collecting click==8.5.1 (from -r requirements/development.txt (line 5))
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.9054438Z   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.9629658Z Collecting fastapi==0.162.2 (from -r requirements/development.txt (line 6))
+quality-gate	Install pinned development packages	2026-11-11T17:43:51.9785143Z   Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.0092778Z Collecting h11==0.16.0 (from -r requirements/development.txt (line 7))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.0247640Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.0501341Z Collecting httpcore==1.0.9 (from -r requirements/development.txt (line 8))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.0652572Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.1029221Z Collecting httpx==0.28.1 (from -r requirements/development.txt (line 9))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.1207098Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.1435913Z Collecting idna==3.20 (from -r requirements/development.txt (line 10))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.1586622Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.1797851Z Collecting iniconfig==2.3.1 (from -r requirements/development.txt (line 11))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.1948449Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.2229621Z Collecting opentelemetry-api==1.45.2 (from -r requirements/development.txt (line 12))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.2380410Z   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.2702722Z Collecting packaging==26.3 (from -r requirements/development.txt (line 13))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.2861825Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.3081685Z Collecting pluggy==1.7.0 (from -r requirements/development.txt (line 14))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.3249092Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.3474675Z Collecting prometheus_client==0.26.0 (from -r requirements/development.txt (line 15))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.3629750Z   Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.3874107Z Collecting psycopg==3.3.8 (from -r requirements/development.txt (line 16))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.4063597Z   Downloading psycopg-3.3.8-py3-none-any.whl.metadata (4.4 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.5442792Z Collecting psycopg-binary==3.3.8 (from -r requirements/development.txt (line 17))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.5608148Z   Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.6402188Z Collecting pydantic==2.14.3 (from -r requirements/development.txt (line 18))
+quality-gate	Install pinned development packages	2026-11-11T17:43:52.6578885Z   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.2137292Z Collecting pydantic_core==2.50.4 (from -r requirements/development.txt (line 19))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.2294333Z   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.2755136Z Collecting Pygments==2.21.0 (from -r requirements/development.txt (line 20))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.2910386Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.3207773Z Collecting pytest==9.2.0 (from -r requirements/development.txt (line 21))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.3362260Z   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.6082932Z Collecting ruff==0.17.4 (from -r requirements/development.txt (line 22))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.6279013Z   Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.6578189Z Collecting starlette==1.10.0 (from -r requirements/development.txt (line 23))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.6731259Z   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.6940558Z Collecting typing-inspection==0.4.5 (from -r requirements/development.txt (line 24))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.7119297Z   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.7354296Z Collecting typing_extensions==4.16.0 (from -r requirements/development.txt (line 25))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.7519767Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.7888031Z Collecting uvicorn==0.54.0 (from -r requirements/development.txt (line 26))
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.8097530Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.8474797Z Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.8652387Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.8825437Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.9062040Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.9259961Z Downloading click-8.5.1-py3-none-any.whl (126 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.9452065Z Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.9669102Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:53.9869392Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.0058197Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.0238772Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.0425200Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.0597113Z Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.0785826Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.0962591Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.1157714Z Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.1336654Z Downloading psycopg-3.3.8-py3-none-any.whl (216 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.1547634Z Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.2305119Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 70.4 MB/s  0:00:00
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.2468481Z Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.2832824Z Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.3011880Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 124.6 MB/s  0:00:00
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.3169455Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.3274050Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 116.9 MB/s  0:00:00
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.3429838Z Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.3622046Z Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.6 MB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.4626785Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.6/10.6 MB 104.6 MB/s  0:00:00
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.4783594Z Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.4961431Z Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.5138198Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.5306438Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+quality-gate	Install pinned development packages	2026-11-11T17:43:54.6475277Z Installing collected packages: typing_extensions, ruff, Pygments, psycopg-binary, prometheus_client, pluggy, packaging, iniconfig, idna, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pytest, pydantic_core, psycopg, opentelemetry-api, httpcore, anyio, starlette, pydantic, httpx, fastapi
+quality-gate	Install pinned development packages	2026-11-11T17:43:56.7027903Z 
+quality-gate	Install pinned development packages	2026-11-11T17:43:56.7049996Z Successfully installed Pygments-2.21.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 certifi-2026.10.23 click-8.5.1 fastapi-0.162.2 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 iniconfig-2.3.1 opentelemetry-api-1.45.2 packaging-26.3 pluggy-1.7.0 prometheus_client-0.26.0 psycopg-3.3.8 psycopg-binary-3.3.8 pydantic-2.14.3 pydantic_core-2.50.4 pytest-9.2.0 ruff-0.17.4 starlette-1.10.0 typing-inspection-0.4.5 typing_extensions-4.16.0 uvicorn-0.54.0
+quality-gate	Install pinned development packages	2026-11-11T17:43:56.7057532Z 
+quality-gate	Install pinned development packages	2026-11-11T17:43:56.7057890Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+quality-gate	Install pinned development packages	2026-11-11T17:43:56.7058412Z [notice] To update, run: pip install --upgrade pip
+quality-gate	Prepare fresh evidence in the disposable runner	﻿2026-11-11T17:43:56.7983523Z ##[group]Run python - <<'PYCODE'
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7983809Z ^[[36;1mpython - <<'PYCODE'^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7984027Z ^[[36;1mimport shutil^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7984227Z ^[[36;1mfrom pathlib import Path^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7984448Z ^[[36;1moutput = Path('evid/06-ci')^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7984665Z ^[[36;1mif output.exists():^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7984875Z ^[[36;1m    shutil.rmtree(output)^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7985090Z ^[[36;1moutput.mkdir(parents=True)^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7985380Z ^[[36;1mfor name in ('regression-failing.txt', 'regression-fixed.txt'):^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7985739Z ^[[36;1m    (Path('evid/04-tests') / name).unlink(missing_ok=True)^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.7986013Z ^[[36;1mPYCODE^[[0m
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8004446Z shell: /usr/bin/bash -e {0}
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8004661Z env:
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8004825Z   APP_ENV: test
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8004997Z   DB_HOST: 127.0.0.1
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8005162Z   DB_PORT: 5433
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8005335Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8005589Z   POSTGRES_USER: fulfillops
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8005797Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8006034Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8006416Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8006659Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8006933Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8007269Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8007607Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8007916Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8008286Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8008610Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Prepare fresh evidence in the disposable runner	2026-11-11T17:43:56.8008865Z ##[endgroup]
+quality-gate	Validate workflow	﻿2026-11-11T17:43:56.8311748Z ##[group]Run docker run --rm --network none -v "$PWD/.github/workflows:/work:ro" rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9 -shellcheck= -pyflakes= /work/ci.yml
+quality-gate	Validate workflow	2026-11-11T17:43:56.8313008Z ^[[36;1mdocker run --rm --network none -v "$PWD/.github/workflows:/work:ro" rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9 -shellcheck= -pyflakes= /work/ci.yml^[[0m
+quality-gate	Validate workflow	2026-11-11T17:43:56.8329762Z shell: /usr/bin/bash -e {0}
+quality-gate	Validate workflow	2026-11-11T17:43:56.8329965Z env:
+quality-gate	Validate workflow	2026-11-11T17:43:56.8330129Z   APP_ENV: test
+quality-gate	Validate workflow	2026-11-11T17:43:56.8330299Z   DB_HOST: 127.0.0.1
+quality-gate	Validate workflow	2026-11-11T17:43:56.8330481Z   DB_PORT: 5433
+quality-gate	Validate workflow	2026-11-11T17:43:56.8330657Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Validate workflow	2026-11-11T17:43:56.8330872Z   POSTGRES_USER: fulfillops
+quality-gate	Validate workflow	2026-11-11T17:43:56.8331085Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Validate workflow	2026-11-11T17:43:56.8331326Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Validate workflow	2026-11-11T17:43:56.8331549Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Validate workflow	2026-11-11T17:43:56.8331824Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Validate workflow	2026-11-11T17:43:56.8332098Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Validate workflow	2026-11-11T17:43:56.8332431Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Validate workflow	2026-11-11T17:43:56.8332765Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Validate workflow	2026-11-11T17:43:56.8333065Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Validate workflow	2026-11-11T17:43:56.8333356Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Validate workflow	2026-11-11T17:43:56.8333658Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Validate workflow	2026-11-11T17:43:56.8333914Z ##[endgroup]
+quality-gate	Validate workflow	2026-11-11T17:43:56.8484949Z Unable to find image 'rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9' locally
+quality-gate	Validate workflow	2026-11-11T17:43:57.0240022Z docker.io/rhysd/actionlint@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9: Pulling from rhysd/actionlint
+quality-gate	Validate workflow	2026-11-11T17:43:57.1068876Z 1f3e46996e29: Pulling fs layer
+quality-gate	Validate workflow	2026-11-11T17:43:57.1069325Z 4e6599d62119: Pulling fs layer
+quality-gate	Validate workflow	2026-11-11T17:43:57.1069593Z 46b6d0e9fe9d: Pulling fs layer
+quality-gate	Validate workflow	2026-11-11T17:43:57.1069857Z f23002ece875: Pulling fs layer
+quality-gate	Validate workflow	2026-11-11T17:43:57.1070060Z f23002ece875: Waiting
+quality-gate	Validate workflow	2026-11-11T17:43:57.1918033Z 4e6599d62119: Verifying Checksum
+quality-gate	Validate workflow	2026-11-11T17:43:57.1921491Z 4e6599d62119: Download complete
+quality-gate	Validate workflow	2026-11-11T17:43:57.1978906Z 1f3e46996e29: Verifying Checksum
+quality-gate	Validate workflow	2026-11-11T17:43:57.1979869Z 1f3e46996e29: Download complete
+quality-gate	Validate workflow	2026-11-11T17:43:57.2044424Z 46b6d0e9fe9d: Verifying Checksum
+quality-gate	Validate workflow	2026-11-11T17:43:57.2045016Z 46b6d0e9fe9d: Download complete
+quality-gate	Validate workflow	2026-11-11T17:43:57.2848366Z 1f3e46996e29: Pull complete
+quality-gate	Validate workflow	2026-11-11T17:43:57.3054709Z f23002ece875: Verifying Checksum
+quality-gate	Validate workflow	2026-11-11T17:43:57.3055707Z f23002ece875: Download complete
+quality-gate	Validate workflow	2026-11-11T17:43:58.0213374Z 4e6599d62119: Pull complete
+quality-gate	Validate workflow	2026-11-11T17:43:58.1547918Z 46b6d0e9fe9d: Pull complete
+quality-gate	Validate workflow	2026-11-11T17:43:58.8284759Z f23002ece875: Pull complete
+quality-gate	Validate workflow	2026-11-11T17:43:58.8314928Z Digest: sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9
+quality-gate	Validate workflow	2026-11-11T17:43:58.8321043Z Status: Downloaded newer image for rhysd/actionlint@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9
+quality-gate	Lint and formatting	﻿2026-11-11T17:43:58.9900716Z ##[group]Run ruff check api common db worker tests scripts
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9901079Z ^[[36;1mruff check api common db worker tests scripts^[[0m
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9901389Z ^[[36;1mruff format --check api common db worker tests scripts^[[0m
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9919418Z shell: /usr/bin/bash -e {0}
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9919627Z env:
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9919783Z   APP_ENV: test
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9919962Z   DB_HOST: 127.0.0.1
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9920137Z   DB_PORT: 5433
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9920319Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9920534Z   POSTGRES_USER: fulfillops
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9920744Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9920982Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9921210Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9921452Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9921724Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9922254Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9922628Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9922925Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9923218Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9923509Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Lint and formatting	2026-11-11T17:43:58.9923768Z ##[endgroup]
+quality-gate	Lint and formatting	2026-11-11T17:43:59.0050638Z All checks passed!
+quality-gate	Lint and formatting	2026-11-11T17:43:59.0140240Z 28 files already formatted
+quality-gate	Owned tests and worker/checker drills	﻿2026-11-11T17:43:59.0170933Z ##[group]Run python -m pytest -v --junitxml=evid/06-ci/tests.xml
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0171301Z ^[[36;1mpython -m pytest -v --junitxml=evid/06-ci/tests.xml^[[0m
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0187748Z shell: /usr/bin/bash -e {0}
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0187949Z env:
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0188109Z   APP_ENV: test
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0188276Z   DB_HOST: 127.0.0.1
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0188453Z   DB_PORT: 5433
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0188647Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0188869Z   POSTGRES_USER: fulfillops
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0189076Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0189311Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0189539Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0189781Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0190056Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0190392Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0190725Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0191054Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0191344Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0191634Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.0191889Z ##[endgroup]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5477711Z ============================= test session starts ==============================
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5478615Z platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0 -- /opt/hostedtoolcache/Python/3.12.16/x64/bin/python
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5479251Z cachedir: .pytest_cache
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5479610Z rootdir: /home/runner/work/fulfillops/fulfillops
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5480006Z configfile: pytest.ini
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5480286Z testpaths: tests
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:43:59.5480552Z plugins: anyio-4.16.0
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.0824494Z collecting ... collected 69 items
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.3032035Z 
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.3032872Z tests/integration/test_api.py::test_catalog_health_and_metrics PASSED    [  1%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.3994497Z tests/integration/test_api.py::test_receipt_replay_conflict_and_durable_job PASSED [  2%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.4395716Z tests/integration/test_api.py::test_invalid_quantity[0] PASSED           [  4%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.4784232Z tests/integration/test_api.py::test_invalid_quantity[-1] PASSED          [  5%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.5181084Z tests/integration/test_api.py::test_invalid_quantity[21] PASSED          [  7%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.5542723Z tests/integration/test_api.py::test_invalid_quantity[True] PASSED        [  8%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.6303994Z tests/integration/test_api.py::test_invalid_quantity[1.5] PASSED         [ 10%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.6664888Z tests/integration/test_api.py::test_invalid_quantity[1] PASSED           [ 11%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.7038690Z tests/integration/test_api.py::test_invalid_quantity[None] PASSED        [ 13%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.7310896Z tests/integration/test_api.py::test_invalid_request[payload0-INVALID_REQUEST] PASSED [ 14%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.7592855Z tests/integration/test_api.py::test_invalid_request[payload1-INVALID_REQUEST] PASSED [ 15%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.7959853Z tests/integration/test_api.py::test_invalid_request[payload2-INVALID_SKU] PASSED [ 17%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.8362254Z tests/integration/test_api.py::test_missing_key_invalid_json_and_unknown_resources PASSED [ 18%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.8634568Z tests/integration/test_api.py::test_body_limit_streamed_without_length PASSED [ 20%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.9274688Z tests/integration/test_api.py::test_aggregation_normalization_and_total PASSED [ 21%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:00.9985532Z tests/integration/test_api.py::test_insufficient_stock_rolls_back_whole_order PASSED [ 23%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:01.0910340Z tests/integration/test_api.py::test_migrations_and_seed_do_not_reset_stock PASSED [ 24%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:01.1165800Z tests/integration/test_api.py::test_seed_rejects_non_test_environment PASSED [ 26%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:01.1473317Z tests/integration/test_api.py::test_readiness_storage_failure_does_not_break_liveness PASSED [ 27%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.3900912Z tests/integration/test_api.py::test_real_api_restart_preserves_replay PASSED [ 28%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.4936974Z tests/integration/test_api.py::test_multi_product_total_and_completed_receipt PASSED [ 30%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.5218158Z tests/integration/test_api.py::test_invalid_idempotency_key[short] PASSED [ 31%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.5515752Z tests/integration/test_api.py::test_invalid_idempotency_key[key1] PASSED [ 33%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.5796563Z tests/integration/test_api.py::test_invalid_idempotency_key[tab\tkey-000] PASSED [ 34%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.6193163Z tests/integration/test_api.py::test_database_rejects_negative_stock PASSED [ 36%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:02.6625423Z tests/integration/test_api.py::test_modified_applied_migration_is_rejected PASSED [ 37%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:03.0125226Z tests/integration/test_worker.py::test_two_workers_complete_once PASSED  [ 39%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:03.9552791Z tests/integration/test_worker.py::test_worker_killed_after_claim_is_recovered PASSED [ 40%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:04.8327366Z tests/integration/test_worker.py::test_poison_job_stops_and_keeps_stock PASSED [ 42%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:05.0248088Z tests/integration/test_worker.py::test_expired_owner_cannot_complete_or_fail PASSED [ 43%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:05.2736706Z tests/integration/test_worker.py::test_crash_on_last_attempt_becomes_failed PASSED [ 44%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:05.6937285Z tests/integration/test_worker.py::test_backoff_delays_next_claim PASSED  [ 46%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:07.7747232Z tests/integration/test_worker.py::test_full_public_checker_with_two_workers PASSED [ 47%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:09.0824651Z tests/races/test_orders.py::test_same_key_across_two_api_processes PASSED [ 49%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5855072Z tests/races/test_orders.py::test_distinct_keys_cannot_oversell_across_two_api_processes PASSED [ 50%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5862091Z tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected PASSED [ 52%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5868842Z tests/unit/test_security_gate.py::test_fixed_high_critical_findings_block_promotion[HIGH] PASSED [ 53%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5874811Z tests/unit/test_security_gate.py::test_fixed_high_critical_findings_block_promotion[CRITICAL] PASSED [ 55%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5881549Z tests/unit/test_security_gate.py::test_informational_findings_remain_visible[LOW-2.0] PASSED [ 56%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5888090Z tests/unit/test_security_gate.py::test_informational_findings_remain_visible[MEDIUM-2.0] PASSED [ 57%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5894435Z tests/unit/test_security_gate.py::test_informational_findings_remain_visible[HIGH-] PASSED [ 59%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5900827Z tests/unit/test_security_gate.py::test_informational_findings_remain_visible[CRITICAL-] PASSED [ 60%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5906838Z tests/unit/test_security_gate.py::test_informational_findings_remain_visible[UNKNOWN-] PASSED [ 62%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5912431Z tests/unit/test_security_gate.py::test_missing_scan_fails_closed[value0] PASSED [ 63%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5918293Z tests/unit/test_security_gate.py::test_missing_scan_fails_closed[value1] PASSED [ 65%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5923409Z tests/unit/test_security_gate.py::test_empty_sbom_fails_closed PASSED    [ 66%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5929985Z tests/unit/test_security_gate.py::test_missing_library_scan_fails_closed PASSED [ 68%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5938931Z tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[production-fulfillops_test-127.0.0.1] PASSED [ 69%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5946835Z tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[test-fulfillops-127.0.0.1] PASSED [ 71%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5954693Z tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[test-fulfillops_test-database.example.com] PASSED [ 72%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5961758Z tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[127.0.0.1] PASSED [ 73%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5968944Z tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[localhost] PASSED [ 75%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5976909Z tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[db] PASSED [ 76%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5982865Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[0] PASSED [ 78%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5988790Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[-1] PASSED [ 79%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.5994297Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[21] PASSED [ 81%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6073228Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[False] PASSED [ 82%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6079781Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[1.5] PASSED [ 84%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6085486Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[2] PASSED [ 85%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6093314Z tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[None] PASSED [ 86%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6098825Z tests/unit/test_validation.py::test_quantity_boundaries_are_accepted[1] PASSED [ 88%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6106846Z tests/unit/test_validation.py::test_quantity_boundaries_are_accepted[20] PASSED [ 89%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6112386Z tests/unit/test_validation.py::test_equivalent_item_lines_normalize_identically PASSED [ 91%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6117876Z tests/unit/test_validation.py::test_aggregate_can_exceed_per_line_limit PASSED [ 92%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6123558Z tests/unit/test_validation.py::test_customer_id_length[0] PASSED         [ 94%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6129383Z tests/unit/test_validation.py::test_customer_id_length[65] PASSED        [ 95%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6134784Z tests/unit/test_validation.py::test_idempotency_key_boundaries[8] PASSED [ 97%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.6140567Z tests/unit/test_validation.py::test_idempotency_key_boundaries[128] PASSED [ 98%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7547542Z tests/unit/test_validation.py::test_unknown_extra_fields_are_rejected PASSED [100%]
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7548087Z 
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7548280Z =============================== warnings summary ===============================
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7548973Z ../../../../../opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/fastapi/testclient.py:1
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7550298Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7551448Z     from starlette.testclient import TestClient as TestClient  # noqa
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7551799Z 
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7552049Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7552691Z - generated xml file: /home/runner/work/fulfillops/fulfillops/evid/06-ci/tests.xml -
+quality-gate	Owned tests and worker/checker drills	2026-11-11T17:44:10.7553274Z ======================== 69 passed, 1 warning in 11.18s ========================
+quality-gate	Reproduce deliberate regression and repair	﻿2026-11-11T17:44:10.8313664Z ##[group]Run python scripts/regression_demo.py
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8313999Z ^[[36;1mpython scripts/regression_demo.py^[[0m
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8332140Z shell: /usr/bin/bash -e {0}
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8332366Z env:
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8332532Z   APP_ENV: test
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8332717Z   DB_HOST: 127.0.0.1
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8333048Z   DB_PORT: 5433
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8333232Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8333449Z   POSTGRES_USER: fulfillops
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8333660Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8333896Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8334121Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8334361Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8334640Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8334984Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8335323Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8335678Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8335969Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8336494Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:10.8336763Z ##[endgroup]
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:11.9555903Z failing: exit 1
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:11.9556376Z fixed: exit 0
+quality-gate	Reproduce deliberate regression and repair	2026-11-11T17:44:11.9556717Z Expected failure followed by passing fix. Original source was never modified.
+quality-gate	Build image	﻿2026-11-11T17:44:11.9635402Z ##[group]Run docker build --tag "fulfillops:${GITHUB_SHA}" .
+quality-gate	Build image	2026-11-11T17:44:11.9635760Z ^[[36;1mdocker build --tag "fulfillops:${GITHUB_SHA}" .^[[0m
+quality-gate	Build image	2026-11-11T17:44:11.9653265Z shell: /usr/bin/bash -e {0}
+quality-gate	Build image	2026-11-11T17:44:11.9653467Z env:
+quality-gate	Build image	2026-11-11T17:44:11.9653628Z   APP_ENV: test
+quality-gate	Build image	2026-11-11T17:44:11.9653800Z   DB_HOST: 127.0.0.1
+quality-gate	Build image	2026-11-11T17:44:11.9653978Z   DB_PORT: 5433
+quality-gate	Build image	2026-11-11T17:44:11.9654154Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Build image	2026-11-11T17:44:11.9654366Z   POSTGRES_USER: fulfillops
+quality-gate	Build image	2026-11-11T17:44:11.9654577Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Build image	2026-11-11T17:44:11.9654813Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Build image	2026-11-11T17:44:11.9655038Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Build image	2026-11-11T17:44:11.9655275Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Build image	2026-11-11T17:44:11.9655567Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Build image	2026-11-11T17:44:11.9655905Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Build image	2026-11-11T17:44:11.9656330Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Build image	2026-11-11T17:44:11.9656669Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Build image	2026-11-11T17:44:11.9656967Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Build image	2026-11-11T17:44:11.9657259Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Build image	2026-11-11T17:44:11.9657520Z ##[endgroup]
+quality-gate	Build image	2026-11-11T17:44:12.4195991Z #0 building with "default" instance using docker driver
+quality-gate	Build image	2026-11-11T17:44:12.4196469Z 
+quality-gate	Build image	2026-11-11T17:44:12.4196600Z #1 [internal] load build definition from Dockerfile
+quality-gate	Build image	2026-11-11T17:44:12.4196894Z #1 transferring dockerfile: 1.01kB done
+quality-gate	Build image	2026-11-11T17:44:12.4197109Z #1 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:12.4197207Z 
+quality-gate	Build image	2026-11-11T17:44:12.4197333Z #2 [auth] library/python:pull token for registry-1.docker.io
+quality-gate	Build image	2026-11-11T17:44:12.4197631Z #2 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:12.4197723Z 
+quality-gate	Build image	2026-11-11T17:44:12.4198100Z #3 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+quality-gate	Build image	2026-11-11T17:44:12.6118872Z #3 DONE 0.4s
+quality-gate	Build image	2026-11-11T17:44:12.7282452Z 
+quality-gate	Build image	2026-11-11T17:44:12.7283018Z #4 [internal] load .dockerignore
+quality-gate	Build image	2026-11-11T17:44:12.7283328Z #4 transferring context: 207B done
+quality-gate	Build image	2026-11-11T17:44:12.7283546Z #4 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:12.7283648Z 
+quality-gate	Build image	2026-11-11T17:44:12.7283729Z #5 [internal] load build context
+quality-gate	Build image	2026-11-11T17:44:12.7284031Z #5 transferring context: 28.26kB done
+quality-gate	Build image	2026-11-11T17:44:12.7284255Z #5 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:12.7284342Z 
+quality-gate	Build image	2026-11-11T17:44:12.7284699Z #6 [builder 1/4] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+quality-gate	Build image	2026-11-11T17:44:12.7285783Z #6 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df done
+quality-gate	Build image	2026-11-11T17:44:12.7286923Z #6 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 18.87MB / 28.25MB 0.1s
+quality-gate	Build image	2026-11-11T17:44:12.7287433Z #6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 1.05MB / 3.34MB 0.1s
+quality-gate	Build image	2026-11-11T17:44:12.7287954Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 1.05MB / 13.68MB 0.1s
+quality-gate	Build image	2026-11-11T17:44:12.7288429Z #6 sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 6.55kB / 6.55kB done
+quality-gate	Build image	2026-11-11T17:44:12.7288923Z #6 sha256:0f086103b026048cc50cb5da25ec435c023c5241a83fc44daea593377abc61c4 1.75kB / 1.75kB done
+quality-gate	Build image	2026-11-11T17:44:12.7289414Z #6 sha256:313cf8f190a1abab00472c1f0c950c10486c22114bcd8aef2a8198fb587a6d18 5.68kB / 5.68kB done
+quality-gate	Build image	2026-11-11T17:44:12.8282335Z #6 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 28.25MB / 28.25MB 0.2s
+quality-gate	Build image	2026-11-11T17:44:12.8282967Z #6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 3.34MB / 3.34MB 0.1s done
+quality-gate	Build image	2026-11-11T17:44:12.8283552Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 13.68MB / 13.68MB 0.2s
+quality-gate	Build image	2026-11-11T17:44:12.8284040Z #6 sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 249B / 249B 0.2s
+quality-gate	Build image	2026-11-11T17:44:13.0667501Z #6 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 28.25MB / 28.25MB 0.3s done
+quality-gate	Build image	2026-11-11T17:44:13.0668302Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 13.68MB / 13.68MB 0.3s done
+quality-gate	Build image	2026-11-11T17:44:13.0668924Z #6 sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 249B / 249B 0.3s done
+quality-gate	Build image	2026-11-11T17:44:13.0669661Z #6 extracting sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 0.1s
+quality-gate	Build image	2026-11-11T17:44:13.7500827Z #6 extracting sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 0.8s done
+quality-gate	Build image	2026-11-11T17:44:13.7501677Z #6 extracting sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e
+quality-gate	Build image	2026-11-11T17:44:14.0037241Z #6 extracting sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 0.1s done
+quality-gate	Build image	2026-11-11T17:44:14.4662376Z #6 extracting sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7
+quality-gate	Build image	2026-11-11T17:44:15.0332751Z #6 extracting sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 0.4s done
+quality-gate	Build image	2026-11-11T17:44:15.1710071Z #6 extracting sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092
+quality-gate	Build image	2026-11-11T17:44:15.3593875Z #6 extracting sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 done
+quality-gate	Build image	2026-11-11T17:44:15.3594590Z #6 DONE 2.6s
+quality-gate	Build image	2026-11-11T17:44:15.3594784Z 
+quality-gate	Build image	2026-11-11T17:44:15.3594935Z #7 [builder 2/4] WORKDIR /build
+quality-gate	Build image	2026-11-11T17:44:15.3595291Z #7 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:15.3595440Z 
+quality-gate	Build image	2026-11-11T17:44:15.3595556Z #8 [runtime 2/9] WORKDIR /app
+quality-gate	Build image	2026-11-11T17:44:15.3595839Z #8 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:15.3596033Z 
+quality-gate	Build image	2026-11-11T17:44:15.3596479Z #9 [builder 3/4] COPY requirements/runtime.txt ./requirements.txt
+quality-gate	Build image	2026-11-11T17:44:15.3596924Z #9 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:15.3597048Z 
+quality-gate	Build image	2026-11-11T17:44:15.3597471Z #10 [builder 4/4] RUN python -m pip wheel --no-cache-dir --only-binary=:all: --wheel-dir=/wheels -r requirements.txt
+quality-gate	Build image	2026-11-11T17:44:15.3753010Z #10 ...
+quality-gate	Build image	2026-11-11T17:44:15.3754007Z 
+quality-gate	Build image	2026-11-11T17:44:15.3754698Z #11 [runtime 3/9] RUN groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+quality-gate	Build image	2026-11-11T17:44:15.3755645Z #11 DONE 0.2s
+quality-gate	Build image	2026-11-11T17:44:15.5346470Z 
+quality-gate	Build image	2026-11-11T17:44:15.5347188Z #12 [runtime 4/9] COPY requirements/runtime.txt /tmp/requirements.txt
+quality-gate	Build image	2026-11-11T17:44:15.5347717Z #12 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:15.5347874Z 
+quality-gate	Build image	2026-11-11T17:44:15.5348341Z #10 [builder 4/4] RUN python -m pip wheel --no-cache-dir --only-binary=:all: --wheel-dir=/wheels -r requirements.txt
+quality-gate	Build image	2026-11-11T17:44:16.4803695Z #10 1.271 Collecting annotated-doc==0.0.5 (from -r requirements.txt (line 1))
+quality-gate	Build image	2026-11-11T17:44:16.6019487Z #10 1.345   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+quality-gate	Build image	2026-11-11T17:44:16.6020050Z #10 1.363 Collecting annotated-types==0.8.0 (from -r requirements.txt (line 2))
+quality-gate	Build image	2026-11-11T17:44:16.6020950Z #10 1.393   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+quality-gate	Build image	2026-11-11T17:44:16.7481168Z #10 1.423 Collecting anyio==4.16.0 (from -r requirements.txt (line 3))
+quality-gate	Build image	2026-11-11T17:44:16.7481675Z #10 1.439   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+quality-gate	Build image	2026-11-11T17:44:16.7482053Z #10 1.464 Collecting click==8.5.1 (from -r requirements.txt (line 4))
+quality-gate	Build image	2026-11-11T17:44:16.7482392Z #10 1.481   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+quality-gate	Build image	2026-11-11T17:44:16.7482739Z #10 1.539 Collecting fastapi==0.162.2 (from -r requirements.txt (line 5))
+quality-gate	Build image	2026-11-11T17:44:16.8715543Z #10 1.556   Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+quality-gate	Build image	2026-11-11T17:44:16.8716019Z #10 1.584 Collecting h11==0.16.0 (from -r requirements.txt (line 6))
+quality-gate	Build image	2026-11-11T17:44:16.8716569Z #10 1.600   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+quality-gate	Build image	2026-11-11T17:44:16.8716938Z #10 1.621 Collecting idna==3.20 (from -r requirements.txt (line 7))
+quality-gate	Build image	2026-11-11T17:44:16.8717509Z #10 1.638   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+quality-gate	Build image	2026-11-11T17:44:16.8718001Z #10 1.663 Collecting opentelemetry-api==1.45.2 (from -r requirements.txt (line 8))
+quality-gate	Build image	2026-11-11T17:44:17.0962340Z #10 1.678   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+quality-gate	Build image	2026-11-11T17:44:17.0963150Z #10 1.697 Collecting prometheus_client==0.26.0 (from -r requirements.txt (line 9))
+quality-gate	Build image	2026-11-11T17:44:17.0964025Z #10 1.713   Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+quality-gate	Build image	2026-11-11T17:44:17.0964771Z #10 1.733 Collecting psycopg==3.3.8 (from -r requirements.txt (line 10))
+quality-gate	Build image	2026-11-11T17:44:17.0965343Z #10 1.749   Downloading psycopg-3.3.8-py3-none-any.whl.metadata (4.4 kB)
+quality-gate	Build image	2026-11-11T17:44:17.0965927Z #10 1.887 Collecting psycopg-binary==3.3.8 (from -r requirements.txt (line 11))
+quality-gate	Build image	2026-11-11T17:44:17.2007860Z #10 1.903   Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+quality-gate	Build image	2026-11-11T17:44:17.2008486Z #10 1.976 Collecting pydantic==2.14.3 (from -r requirements.txt (line 12))
+quality-gate	Build image	2026-11-11T17:44:17.2008896Z #10 1.992   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+quality-gate	Build image	2026-11-11T17:44:17.6928938Z #10 2.484 Collecting pydantic_core==2.50.4 (from -r requirements.txt (line 13))
+quality-gate	Build image	2026-11-11T17:44:17.8109562Z #10 2.500   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+quality-gate	Build image	2026-11-11T17:44:17.8110761Z #10 2.525 Collecting starlette==1.10.0 (from -r requirements.txt (line 14))
+quality-gate	Build image	2026-11-11T17:44:17.8111558Z #10 2.541   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+quality-gate	Build image	2026-11-11T17:44:17.8112397Z #10 2.567 Collecting typing-inspection==0.4.5 (from -r requirements.txt (line 15))
+quality-gate	Build image	2026-11-11T17:44:17.8113240Z #10 2.582   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+quality-gate	Build image	2026-11-11T17:44:17.8114084Z #10 2.602 Collecting typing_extensions==4.16.0 (from -r requirements.txt (line 16))
+quality-gate	Build image	2026-11-11T17:44:17.9175929Z #10 2.618   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+quality-gate	Build image	2026-11-11T17:44:17.9176699Z #10 2.643 Collecting uvicorn==0.54.0 (from -r requirements.txt (line 17))
+quality-gate	Build image	2026-11-11T17:44:17.9177131Z #10 2.658   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+quality-gate	Build image	2026-11-11T17:44:17.9177512Z #10 2.709 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+quality-gate	Build image	2026-11-11T17:44:18.0254030Z #10 2.729 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+quality-gate	Build image	2026-11-11T17:44:18.0254502Z #10 2.745 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+quality-gate	Build image	2026-11-11T17:44:18.0254816Z #10 2.765 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+quality-gate	Build image	2026-11-11T17:44:18.0255133Z #10 2.783 Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+quality-gate	Build image	2026-11-11T17:44:18.0255439Z #10 2.801 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+quality-gate	Build image	2026-11-11T17:44:18.0255746Z #10 2.817 Downloading idna-3.20-py3-none-any.whl (69 kB)
+quality-gate	Build image	2026-11-11T17:44:18.1477142Z #10 2.834 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+quality-gate	Build image	2026-11-11T17:44:18.1478198Z #10 2.852 Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+quality-gate	Build image	2026-11-11T17:44:18.1479004Z #10 2.869 Downloading psycopg-3.3.8-py3-none-any.whl (216 kB)
+quality-gate	Build image	2026-11-11T17:44:18.1479586Z #10 2.888 Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+quality-gate	Build image	2026-11-11T17:44:18.2577649Z #10 2.939    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 113.7 MB/s eta 0:00:00
+quality-gate	Build image	2026-11-11T17:44:18.2578343Z #10 2.961 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+quality-gate	Build image	2026-11-11T17:44:18.2579099Z #10 2.991 Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+quality-gate	Build image	2026-11-11T17:44:18.2579963Z #10 2.997    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 483.2 MB/s eta 0:00:00
+quality-gate	Build image	2026-11-11T17:44:18.2580520Z #10 3.014 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+quality-gate	Build image	2026-11-11T17:44:18.2581067Z #10 3.030 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+quality-gate	Build image	2026-11-11T17:44:18.2581733Z #10 3.049 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+quality-gate	Build image	2026-11-11T17:44:18.4501703Z #10 3.065 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+quality-gate	Build image	2026-11-11T17:44:18.4502766Z #10 3.084 Saved /wheels/annotated_doc-0.0.5-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4503364Z #10 3.084 Saved /wheels/annotated_types-0.8.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4503921Z #10 3.084 Saved /wheels/anyio-4.16.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4504456Z #10 3.085 Saved /wheels/click-8.5.1-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4504970Z #10 3.085 Saved /wheels/fastapi-0.162.2-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4505464Z #10 3.085 Saved /wheels/h11-0.16.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4505939Z #10 3.086 Saved /wheels/idna-3.20-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4506612Z #10 3.086 Saved /wheels/opentelemetry_api-1.45.2-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4507196Z #10 3.086 Saved /wheels/prometheus_client-0.26.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4507772Z #10 3.087 Saved /wheels/psycopg-3.3.8-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4508511Z #10 3.088 Saved /wheels/psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+quality-gate	Build image	2026-11-11T17:44:18.4509266Z #10 3.089 Saved /wheels/pydantic-2.14.3-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4509982Z #10 3.090 Saved /wheels/pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+quality-gate	Build image	2026-11-11T17:44:18.4510703Z #10 3.090 Saved /wheels/starlette-1.10.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4511257Z #10 3.090 Saved /wheels/typing_inspection-0.4.5-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4511858Z #10 3.091 Saved /wheels/typing_extensions-4.16.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4512405Z #10 3.091 Saved /wheels/uvicorn-0.54.0-py3-none-any.whl
+quality-gate	Build image	2026-11-11T17:44:18.4573436Z #10 3.249 
+quality-gate	Build image	2026-11-11T17:44:18.4574177Z #10 3.249 [notice] A new release of pip is available: 25.0.1 -> 26.3
+quality-gate	Build image	2026-11-11T17:44:18.4574715Z #10 3.249 [notice] To update, run: pip install --upgrade pip
+quality-gate	Build image	2026-11-11T17:44:18.7082496Z #10 DONE 3.5s
+quality-gate	Build image	2026-11-11T17:44:18.8168412Z 
+quality-gate	Build image	2026-11-11T17:44:18.8169645Z #13 [runtime 5/9] RUN --mount=type=bind,from=builder,source=/wheels,target=/wheels     python -m pip install --no-cache-dir --no-index --find-links=/wheels -r /tmp/requirements.txt     && rm /tmp/requirements.txt
+quality-gate	Build image	2026-11-11T17:44:19.9291132Z #13 1.112 Looking in links: /wheels
+quality-gate	Build image	2026-11-11T17:44:20.1686836Z #13 1.117 Processing /wheels/annotated_doc-0.0.5-py3-none-any.whl (from -r /tmp/requirements.txt (line 1))
+quality-gate	Build image	2026-11-11T17:44:20.1688013Z #13 1.121 Processing /wheels/annotated_types-0.8.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 2))
+quality-gate	Build image	2026-11-11T17:44:20.1689206Z #13 1.123 Processing /wheels/anyio-4.16.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 3))
+quality-gate	Build image	2026-11-11T17:44:20.1690364Z #13 1.125 Processing /wheels/click-8.5.1-py3-none-any.whl (from -r /tmp/requirements.txt (line 4))
+quality-gate	Build image	2026-11-11T17:44:20.1691457Z #13 1.126 Processing /wheels/fastapi-0.162.2-py3-none-any.whl (from -r /tmp/requirements.txt (line 5))
+quality-gate	Build image	2026-11-11T17:44:20.1692926Z #13 1.133 Processing /wheels/h11-0.16.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 6))
+quality-gate	Build image	2026-11-11T17:44:20.1693788Z #13 1.134 Processing /wheels/idna-3.20-py3-none-any.whl (from -r /tmp/requirements.txt (line 7))
+quality-gate	Build image	2026-11-11T17:44:20.1694762Z #13 1.137 Processing /wheels/opentelemetry_api-1.45.2-py3-none-any.whl (from -r /tmp/requirements.txt (line 8))
+quality-gate	Build image	2026-11-11T17:44:20.1695776Z #13 1.138 Processing /wheels/prometheus_client-0.26.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 9))
+quality-gate	Build image	2026-11-11T17:44:20.1696881Z #13 1.140 Processing /wheels/psycopg-3.3.8-py3-none-any.whl (from -r /tmp/requirements.txt (line 10))
+quality-gate	Build image	2026-11-11T17:44:20.1698033Z #13 1.145 Processing /wheels/psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r /tmp/requirements.txt (line 11))
+quality-gate	Build image	2026-11-11T17:44:20.1699160Z #13 1.151 Processing /wheels/pydantic-2.14.3-py3-none-any.whl (from -r /tmp/requirements.txt (line 12))
+quality-gate	Build image	2026-11-11T17:44:20.1700303Z #13 1.156 Processing /wheels/pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r /tmp/requirements.txt (line 13))
+quality-gate	Build image	2026-11-11T17:44:20.1701432Z #13 1.160 Processing /wheels/starlette-1.10.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 14))
+quality-gate	Build image	2026-11-11T17:44:20.1702670Z #13 1.162 Processing /wheels/typing_inspection-0.4.5-py3-none-any.whl (from -r /tmp/requirements.txt (line 15))
+quality-gate	Build image	2026-11-11T17:44:20.1703673Z #13 1.164 Processing /wheels/typing_extensions-4.16.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 16))
+quality-gate	Build image	2026-11-11T17:44:20.1704629Z #13 1.165 Processing /wheels/uvicorn-0.54.0-py3-none-any.whl (from -r /tmp/requirements.txt (line 17))
+quality-gate	Build image	2026-11-11T17:44:20.1706196Z #13 1.202 Installing collected packages: typing_extensions, psycopg-binary, prometheus_client, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic_core, psycopg, opentelemetry-api, anyio, starlette, pydantic, fastapi
+quality-gate	Build image	2026-11-11T17:44:20.9443897Z #13 2.128 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 click-8.5.1 fastapi-0.162.2 h11-0.16.0 idna-3.20 opentelemetry-api-1.45.2 prometheus_client-0.26.0 psycopg-3.3.8 psycopg-binary-3.3.8 pydantic-2.14.3 pydantic_core-2.50.4 starlette-1.10.0 typing-inspection-0.4.5 typing_extensions-4.16.0 uvicorn-0.54.0
+quality-gate	Build image	2026-11-11T17:44:21.0954495Z #13 2.128 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+quality-gate	Build image	2026-11-11T17:44:21.2048662Z #13 DONE 2.4s
+quality-gate	Build image	2026-11-11T17:44:21.3852937Z 
+quality-gate	Build image	2026-11-11T17:44:21.3854271Z #14 [runtime 6/9] COPY api ./api
+quality-gate	Build image	2026-11-11T17:44:21.3854658Z #14 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:21.3854800Z 
+quality-gate	Build image	2026-11-11T17:44:21.3854937Z #15 [runtime 7/9] COPY common ./common
+quality-gate	Build image	2026-11-11T17:44:21.3855339Z #15 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:21.3855487Z 
+quality-gate	Build image	2026-11-11T17:44:21.3855598Z #16 [runtime 8/9] COPY db ./db
+quality-gate	Build image	2026-11-11T17:44:21.3855881Z #16 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:21.3856015Z 
+quality-gate	Build image	2026-11-11T17:44:21.3856129Z #17 [runtime 9/9] COPY worker ./worker
+quality-gate	Build image	2026-11-11T17:44:21.3856569Z #17 DONE 0.0s
+quality-gate	Build image	2026-11-11T17:44:21.3856712Z 
+quality-gate	Build image	2026-11-11T17:44:21.3856825Z #18 exporting to image
+quality-gate	Build image	2026-11-11T17:44:21.3857153Z #18 exporting layers
+quality-gate	Build image	2026-11-11T17:44:22.0173630Z #18 exporting layers 0.8s done
+quality-gate	Build image	2026-11-11T17:44:22.0311532Z #18 writing image sha256:892224c78945c49747981441cf1cae28f6ad325fcc43373f8a496ac6e1ca6d10 done
+quality-gate	Build image	2026-11-11T17:44:22.0312376Z #18 naming to docker.io/library/fulfillops:3371a8195781cc84a5ee3ec6e06e00576f46655a done
+quality-gate	Build image	2026-11-11T17:44:22.0312886Z #18 DONE 0.8s
+quality-gate	Black-box check of built image	﻿2026-11-11T17:44:22.0415895Z ##[group]Run python -m scripts.ci_stack
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0416171Z ^[[36;1mpython -m scripts.ci_stack^[[0m
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0433773Z shell: /usr/bin/bash -e {0}
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0433977Z env:
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0434309Z   APP_ENV: test
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0434472Z   DB_HOST: 127.0.0.1
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0434722Z   DB_PORT: 5433
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0434926Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0435147Z   POSTGRES_USER: fulfillops
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0435351Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0435581Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0435808Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0436042Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0436513Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0436854Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0437188Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0437539Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0437833Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0438120Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0438448Z   FULFILLOPS_IMAGE: fulfillops:3371a8195781cc84a5ee3ec6e06e00576f46655a
+quality-gate	Black-box check of built image	2026-11-11T17:44:22.0438726Z ##[endgroup]
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	﻿2026-11-11T17:44:37.9519789Z ##[group]Run python -m scripts.scan_image --image "fulfillops:${GITHUB_SHA}" --output evid/06-ci
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9520639Z ^[[36;1mpython -m scripts.scan_image --image "fulfillops:${GITHUB_SHA}" --output evid/06-ci^[[0m
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9545383Z shell: /usr/bin/bash -e {0}
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9545612Z env:
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9545774Z   APP_ENV: test
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9545957Z   DB_HOST: 127.0.0.1
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9546137Z   DB_PORT: 5433
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9546534Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9546749Z   POSTGRES_USER: fulfillops
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9546961Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9547197Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9547421Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9547672Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9547954Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9548293Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9548674Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9548968Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9549250Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9549545Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:37.9549802Z ##[endgroup]
+quality-gate	SBOM, OS/library vulnerabilities and enforced security policy	2026-11-11T17:44:56.1529651Z SBOM, scan and gate report saved to /home/runner/work/fulfillops/fulfillops/evid/06-ci
+quality-gate	Save accepted image for exact promotion	﻿2026-11-11T17:44:56.1626701Z ##[group]Run mkdir -p "$RUNNER_TEMP/accepted-image"
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1627237Z ^[[36;1mmkdir -p "$RUNNER_TEMP/accepted-image"^[[0m
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1627803Z ^[[36;1mdocker save "fulfillops:${GITHUB_SHA}" -o "$RUNNER_TEMP/accepted-image/image.tar"^[[0m
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1628462Z ^[[36;1mcp evid/06-ci/image-metadata.json "$RUNNER_TEMP/accepted-image/"^[[0m
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1653157Z shell: /usr/bin/bash -e {0}
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1653491Z env:
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1653733Z   APP_ENV: test
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1653977Z   DB_HOST: 127.0.0.1
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1654235Z   DB_PORT: 5433
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1654508Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1654839Z   POSTGRES_USER: fulfillops
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1655166Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1655531Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1655888Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1656440Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1656866Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1657449Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1657968Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1658711Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1659187Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1659678Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Save accepted image for exact promotion	2026-11-11T17:44:56.1660120Z ##[endgroup]
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	﻿2026-11-11T17:44:57.0015227Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0015561Z with:
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0015800Z   name: accepted-image-3371a8195781cc84a5ee3ec6e06e00576f46655a-1
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0016127Z   path: /home/runner/work/_temp/accepted-image/
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0016608Z   retention-days: 7
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0016791Z   compression-level: 1
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0016979Z   if-no-files-found: error
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0017169Z   overwrite: false
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0017348Z   include-hidden-files: false
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0017536Z env:
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0017690Z   APP_ENV: test
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0017857Z   DB_HOST: 127.0.0.1
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0018038Z   DB_PORT: 5433
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0018212Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0018430Z   POSTGRES_USER: fulfillops
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0018648Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0018875Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0019099Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0019368Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0019637Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0019964Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0020289Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0020585Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0020877Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0021173Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.0021436Z ##[endgroup]
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.1371470Z (node:5351) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.1372198Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.1414214Z With the provided path, there will be 2 files uploaded
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.1418955Z Artifact name is valid!
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.1420326Z Root directory input is valid!
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.3359226Z Beginning upload of artifact content to blob storage
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.6206752Z (node:5351) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:57.8460083Z Uploaded bytes 8388608
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:58.0694786Z Uploaded bytes 16777216
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:58.3402823Z Uploaded bytes 25165824
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:58.7570824Z Uploaded bytes 33554432
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:58.9757361Z Uploaded bytes 41943040
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.1454769Z Uploaded bytes 50331648
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.3653477Z Uploaded bytes 58720256
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.5644707Z Uploaded bytes 62967616
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.5835609Z Finished uploading artifact content to blob storage!
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.5838620Z SHA256 digest of uploaded artifact zip is 20f6188b69b250a3c13c9100e843f6aa0c6c7acc428325bf0996637ef249d808
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.5840489Z Finalizing artifact upload
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.9339864Z Artifact accepted-image-3371a8195781cc84a5ee3ec6e06e00576f46655a-1.zip successfully finalized. Artifact ID 13877447681
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.9340776Z Artifact accepted-image-3371a8195781cc84a5ee3ec6e06e00576f46655a-1 has been successfully uploaded! Final size is 62967616 bytes. Artifact ID is 13877447681
+quality-gate	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-11-11T17:44:59.9348818Z Artifact download URL: https://github.com/Ferasmich/fulfillops/actions/runs/43070903822/artifacts/13877447681
+quality-gate	Upload test, SBOM and scan evidence even on failure	﻿2026-11-11T17:44:59.9524380Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9524862Z with:
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9525046Z   name: quality-evidence-43070903822-1
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9525413Z   path: evid/06-ci/
+quality-gate	Upload test, SBOM and scan evidence even on failure	evid/04-tests/regression-failing.txt
+quality-gate	Upload test, SBOM and scan evidence even on failure	evid/04-tests/regression-fixed.txt
+quality-gate	Upload test, SBOM and scan evidence even on failure	
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9525760Z   retention-days: 30
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9525948Z   if-no-files-found: warn
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9526144Z   compression-level: 6
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9526587Z   overwrite: false
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9526853Z   include-hidden-files: false
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9527128Z env:
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9527341Z   APP_ENV: test
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9527522Z   DB_HOST: 127.0.0.1
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9527690Z   DB_PORT: 5433
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9527868Z   POSTGRES_DB: fulfillops_test_ci
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9528079Z   POSTGRES_USER: fulfillops
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9528298Z   POSTGRES_PASSWORD: ci-owner-disposable
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9528533Z   API_DB_PASSWORD: ci-api-disposable
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9528797Z   WORKER_DB_PASSWORD: ci-worker-disposable
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9529041Z   FULFILLOPS_EVIDENCE_DIR: evid/06-ci/worker
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9529317Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9529657Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9529990Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9530287Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9530581Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9530882Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:44:59.9531139Z ##[endgroup]
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.0916002Z (node:5382) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.0916871Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.1002726Z Multiple search paths detected. Calculating the least common ancestor of all paths
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.1004995Z The least common ancestor is /home/runner/work/fulfillops/fulfillops/evid. This will be the root directory of the artifact
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.1005750Z With the provided path, there will be 19 files uploaded
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.1010350Z Artifact name is valid!
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.1010665Z Root directory input is valid!
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.2937275Z Beginning upload of artifact content to blob storage
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.3421032Z (node:5382) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.4157797Z Uploaded bytes 225469
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.4421070Z Finished uploading artifact content to blob storage!
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.4422019Z SHA256 digest of uploaded artifact zip is 16c6e212237696a4c00ad2ef1a08656fabf306071ff2d816586bf83e040b1662
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.4423837Z Finalizing artifact upload
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.8261857Z Artifact quality-evidence-43070903822-1.zip successfully finalized. Artifact ID 13877063655
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.8262646Z Artifact quality-evidence-43070903822-1 has been successfully uploaded! Final size is 225469 bytes. Artifact ID is 13877063655
+quality-gate	Upload test, SBOM and scan evidence even on failure	2026-11-11T17:45:00.8267545Z Artifact download URL: https://github.com/Ferasmich/fulfillops/actions/runs/43070903822/artifacts/13877063655
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-11-11T17:45:00.8438850Z Post job cleanup.
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:45:00.9460668Z (node:5394) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:45:00.9461412Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:45:00.9620962Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/fulfillops/fulfillops --files-from manifest.txt --use-compress-program zstdmt
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:45:01.1041280Z (node:5394) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:45:01.6753282Z Sent 25298215 of 25298215 (100.0%), 41.7 MBs/sec
+quality-gate	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-11-11T17:45:01.8165570Z Cache saved with the key: setup-python-Linux-x64-24.04-Ubuntu-python-3.12.16-pip-1803e55b463aa28f31eccdb7faf4e4f2f76dba10c202a47fe0045d54bc0afe92
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-11-11T17:45:01.8316495Z Post job cleanup.
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9061654Z [command]/usr/bin/git version
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9100451Z git version 2.56.0
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9135751Z Temporarily overriding HOME='/home/runner/work/_temp/6bdb7ad6-5d49-4768-b4fe-d44fcbe9a966' before making global git config changes
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9137355Z Adding repository directory to the temporary git global config as a safe directory
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9140418Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fulfillops/fulfillops
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9187722Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9224406Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9454619Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9518227Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9752559Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality-gate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-11-11T17:45:01.9797356Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality-gate	Stop containers	﻿2026-11-11T17:45:02.0132725Z Print service container logs: 2d21f3ceb958457d8a568013ef6d6c38_postgres16sha256f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657_7d2a94
+quality-gate	Stop containers	2026-11-11T17:45:02.0136892Z ##[command]/usr/bin/docker logs --details 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Stop containers	2026-11-11T17:45:02.0262488Z  The files belonging to this database system will be owned by user "postgres".
+quality-gate	Stop containers	2026-11-11T17:45:02.0263237Z  This user must also own the server process.
+quality-gate	Stop containers	2026-11-11T17:45:02.0263562Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0263811Z  The database cluster will be initialized with locale "en_US.utf8".
+quality-gate	Stop containers	2026-11-11T17:45:02.0264907Z  initdb: warning: enabling "trust" authentication for local connections
+quality-gate	Stop containers	2026-11-11T17:45:02.0265482Z  initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+quality-gate	Stop containers	2026-11-11T17:45:02.0266456Z  2026-11-11 17:43:44.915 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+quality-gate	Stop containers	2026-11-11T17:45:02.0267106Z  2026-11-11 17:43:44.915 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+quality-gate	Stop containers	2026-11-11T17:45:02.0267501Z  2026-11-11 17:43:44.915 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+quality-gate	Stop containers	2026-11-11T17:45:02.0267906Z  2026-11-11 17:43:44.992 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+quality-gate	Stop containers	2026-11-11T17:45:02.0268344Z  2026-11-11 17:43:44.994 UTC [64] LOG:  database system was shut down at 2026-11-11 17:43:44 UTC
+quality-gate	Stop containers	2026-11-11T17:45:02.0268752Z  2026-11-11 17:43:44.998 UTC [1] LOG:  database system is ready to accept connections
+quality-gate	Stop containers	2026-11-11T17:45:02.0269240Z  2026-11-11 17:44:02.609 UTC [186] ERROR:  new row for relation "products" violates check constraint "products_available_check"
+quality-gate	Stop containers	2026-11-11T17:45:02.0269762Z  2026-11-11 17:44:02.609 UTC [186] DETAIL:  Failing row contains (KIT-100, 1299, -1).
+quality-gate	Stop containers	2026-11-11T17:45:02.0270189Z  2026-11-11 17:44:02.609 UTC [186] STATEMENT:  UPDATE products SET available=-1 WHERE sku='KIT-100'
+quality-gate	Stop containers	2026-11-11T17:45:02.0270610Z  2026-11-11 17:44:10.621 UTC [62] LOG:  checkpoint starting: immediate force wait
+quality-gate	Stop containers	2026-11-11T17:45:02.0271682Z  2026-11-11 17:44:10.696 UTC [62] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 1 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.076 s; sync files=5, longest=0.001 s, average=0.001 s; distance=5197 kB, estimate=5197 kB; lsn=0/1E328C0, redo lsn=0/1E32888
+quality-gate	Stop containers	2026-11-11T17:45:02.0272497Z  The default database encoding has accordingly been set to "UTF8".
+quality-gate	Stop containers	2026-11-11T17:45:02.0272862Z  The default text search configuration will be set to "english".
+quality-gate	Stop containers	2026-11-11T17:45:02.0273141Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0273318Z  Data page checksums are disabled.
+quality-gate	Stop containers	2026-11-11T17:45:02.0273532Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0273773Z  fixing permissions on existing directory /var/lib/postgresql/data ... ok
+quality-gate	Stop containers	2026-11-11T17:45:02.0274094Z  creating subdirectories ... ok
+quality-gate	Stop containers	2026-11-11T17:45:02.0274361Z  selecting dynamic shared memory implementation ... posix
+quality-gate	Stop containers	2026-11-11T17:45:02.0274651Z  selecting default max_connections ... 100
+quality-gate	Stop containers	2026-11-11T17:45:02.0274899Z  selecting default shared_buffers ... 128MB
+quality-gate	Stop containers	2026-11-11T17:45:02.0275141Z  selecting default time zone ... Etc/UTC
+quality-gate	Stop containers	2026-11-11T17:45:02.0275381Z  creating configuration files ... ok
+quality-gate	Stop containers	2026-11-11T17:45:02.0275610Z  running bootstrap script ... ok
+quality-gate	Stop containers	2026-11-11T17:45:02.0275864Z  performing post-bootstrap initialization ... ok
+quality-gate	Stop containers	2026-11-11T17:45:02.0276125Z  syncing data to disk ... ok
+quality-gate	Stop containers	2026-11-11T17:45:02.0276470Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0276624Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0276819Z  Success. You can now start the database server using:
+quality-gate	Stop containers	2026-11-11T17:45:02.0277079Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0277272Z      pg_ctl -D /var/lib/postgresql/data -l logfile start
+quality-gate	Stop containers	2026-11-11T17:45:02.0277521Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0278027Z  waiting for server to start....2026-11-11 17:43:44.456 UTC [48] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+quality-gate	Stop containers	2026-11-11T17:45:02.0278688Z  2026-11-11 17:43:44.456 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+quality-gate	Stop containers	2026-11-11T17:45:02.0279313Z  2026-11-11 17:43:44.458 UTC [51] LOG:  database system was shut down at 2026-11-11 17:43:43 UTC
+quality-gate	Stop containers	2026-11-11T17:45:02.0279712Z  2026-11-11 17:43:44.462 UTC [48] LOG:  database system is ready to accept connections
+quality-gate	Stop containers	2026-11-11T17:45:02.0280007Z   done
+quality-gate	Stop containers	2026-11-11T17:45:02.0280175Z  server started
+quality-gate	Stop containers	2026-11-11T17:45:02.0280350Z  CREATE DATABASE
+quality-gate	Stop containers	2026-11-11T17:45:02.0280526Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0280671Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0280940Z  /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+quality-gate	Stop containers	2026-11-11T17:45:02.0281253Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0281537Z  waiting for server to shut down...2026-11-11 17:43:44.697 UTC [48] LOG:  received fast shutdown request
+quality-gate	Stop containers	2026-11-11T17:45:02.0281945Z  .2026-11-11 17:43:44.698 UTC [48] LOG:  aborting any active transactions
+quality-gate	Stop containers	2026-11-11T17:45:02.0282398Z  2026-11-11 17:43:44.699 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+quality-gate	Stop containers	2026-11-11T17:45:02.0282821Z  2026-11-11 17:43:44.700 UTC [49] LOG:  shutting down
+quality-gate	Stop containers	2026-11-11T17:45:02.0283138Z  2026-11-11 17:43:44.700 UTC [49] LOG:  checkpoint starting: shutdown immediate
+quality-gate	Stop containers	2026-11-11T17:45:02.0283955Z  2026-11-11 17:43:44.795 UTC [49] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.064 s, sync=0.024 s, total=0.096 s; sync files=301, longest=0.013 s, average=0.001 s; distance=4273 kB, estimate=4273 kB; lsn=0/191F0F8, redo lsn=0/191F0F8
+quality-gate	Stop containers	2026-11-11T17:45:02.0284741Z  2026-11-11 17:43:44.802 UTC [48] LOG:  database system is shut down
+quality-gate	Stop containers	2026-11-11T17:45:02.0285012Z   done
+quality-gate	Stop containers	2026-11-11T17:45:02.0285179Z  server stopped
+quality-gate	Stop containers	2026-11-11T17:45:02.0285361Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0285568Z  PostgreSQL init process complete; ready for start up.
+quality-gate	Stop containers	2026-11-11T17:45:02.0285826Z  
+quality-gate	Stop containers	2026-11-11T17:45:02.0303180Z Stop and remove container: 2d21f3ceb958457d8a568013ef6d6c38_postgres16sha256f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657_7d2a94
+quality-gate	Stop containers	2026-11-11T17:45:02.0307756Z ##[command]/usr/bin/docker rm --force 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Stop containers	2026-11-11T17:45:02.7661560Z 58602e45d68f701ff9eb52748ad50451ca2056e3d829390356ef4e463e1c072b
+quality-gate	Stop containers	2026-11-11T17:45:02.7690509Z Remove container network: github_network_3bce4cf1aed840e5b085452bd6af93a7
+quality-gate	Stop containers	2026-11-11T17:45:02.7694052Z ##[command]/usr/bin/docker network rm github_network_3bce4cf1aed840e5b085452bd6af93a7
+quality-gate	Stop containers	2026-11-11T17:45:02.8467080Z github_network_3bce4cf1aed840e5b085452bd6af93a7
+quality-gate	Complete job	﻿2026-11-11T17:45:02.8535533Z Cleaning up orphan processes
+quality-gate	Complete job	2026-11-11T17:45:02.8861878Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

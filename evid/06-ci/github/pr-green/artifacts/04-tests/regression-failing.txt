@@ -1,0 +1,35 @@
+Deliberate regression demo in a disposable copy; working source and database unchanged.
+Bug: isinstance(True, int) accepts a boolean. Fix: use the strict integer type check.
+$ python -m pytest tests/unit/test_quantity_regression.py -v
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0 -- /opt/hostedtoolcache/Python/3.12.16/x64/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/fulfillops-regression-2bt_ouly
+configfile: pytest.ini
+plugins: anyio-4.16.0
+collecting ... collected 2 items
+
+tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected[True] FAILED [ 50%]
+tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected[False] PASSED [100%]
+
+=================================== FAILURES ===================================
+___________________ test_boolean_quantity_is_rejected[True] ____________________
+
+quantity = True
+
+    @pytest.mark.parametrize("quantity", [True, False])
+    def test_boolean_quantity_is_rejected(quantity):
+        request = {
+            "customer_id": "CUST-042",
+            "items": [{"sku": "KIT-100", "quantity": quantity}],
+        }
+>       with pytest.raises(Problem) as result:
+             ^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE Problem
+
+tests/unit/test_quantity_regression.py:12: Failed
+=========================== short test summary info ============================
+FAILED tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected[True] - Failed: DID NOT RAISE Problem
+========================= 1 failed, 1 passed in 0.38s ==========================
+
+Exit code: 1

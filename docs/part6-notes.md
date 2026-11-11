@@ -1,6 +1,6 @@
 # Part 6 — CI and supply-chain checks
 
-Status: implemented and checked locally. Live GitHub runs and publication are still pending approval to commit/push. This part is not fully complete yet.
+Status: live quality workflow and red-to-green PR proof completed. See `docs/ci-live-results.md` and `evid/06-ci/github/`. Registry publication remains disabled; PR #1 is open and unmerged.
 
 ## Workflow
 
@@ -19,15 +19,13 @@ GitHub Actions are pinned to commit SHAs. Scanner/validator images are pinned by
 - Real OS/Python scan: zero blockers under the documented policy, 351 informational findings including 96 High/two Critical without reported fixes.
 - A labelled synthetic fixable High finding returned exit 1, proving the CLI blocking path.
 
-These are local results. The SBOM is not yet a CI-produced artifact, there is no real red/green run URL and no registry digest has been published. Local image metadata records no source commit because the project has not been committed yet. Earlier Part 4 regression proof is separate from a red-to-green pipeline.
+These local results were followed by real GitHub runs: main passed 69 tests and the corrected PR passed 70. CI-produced SBOM/scan and accepted-image artifacts are saved with source commits and run URLs in `docs/ci-live-results.md`. No registry digest has been published. Earlier local image metadata remains a historical snapshot.
 
-## Live steps after approval
+## GitHub result and remaining release steps
 
-1. Make an initial commit and push to main; check the real workflow and save its run URL/artifacts.
-2. Create a demonstration feature branch and PR with the deliberate boolean-quantity bug. Save the failed run and show that no accepted-image artifact was produced.
-3. Repair that branch and push the fix. Save the corrected green run and PR URL. Keep main free of the demonstration bug.
-4. Configure the required quality check and release review as available; verify the actual settings.
-5. Once the owner approves image publication, dispatch the workflow on main with publish enabled. Save the accepted image's SHA tag and registry digest. No cluster deployment is included yet.
+The initial implementation and scanner fix are pushed to main. PR #1 records the intentional failure and corrected green run. Its test expansion is open for review. The baseline green accepted image and CI quality artifacts were downloaded before expiry.
+
+Branch protection/release-review settings have not been changed. Configure them before relying on protected merges. Registry publication needs separate owner approval and a manual dispatch on main with publish enabled. No cluster deployment is included yet.
 
 ## Questions to prepare for
 

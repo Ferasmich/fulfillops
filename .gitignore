@@ -16,3 +16,9 @@ node_modules/
 
 # Original reference pack stays local; assessment/ has the text and checkers.
 /FulfillOps_9_5_STUDENTS_COMPLETE/
+
+# Keep downloaded accepted images locally; do not commit large archives.
+evid/**/*.tar
+
+# Temporary local scanner diagnosis; the actual CI failure/fix evidence is committed.
+evid/06-ci/scanner-permission-fix/

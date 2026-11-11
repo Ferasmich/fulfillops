@@ -1,0 +1,2 @@
+{"time": "2026-11-11T17:49:18.197562+00:00", "event": "worker_started", "order_id": null}
+{"time": "2026-11-11T17:49:18.212072+00:00", "event": "claimed", "order_id": "26a6f443-960c-4676-b8e5-2303e2c541d7", "attempt": 1}

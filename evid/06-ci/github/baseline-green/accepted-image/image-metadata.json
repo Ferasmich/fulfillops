@@ -1,0 +1,6 @@
+{
+  "tag": "fulfillops:3371a8195781cc84a5ee3ec6e06e00576f46655a",
+  "image_id": "sha256:892224c78945c49747981441cf1cae28f6ad325fcc43373f8a496ac6e1ca6d10",
+  "source_commit": "3371a8195781cc84a5ee3ec6e06e00576f46655a",
+  "scanner": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb"
+}

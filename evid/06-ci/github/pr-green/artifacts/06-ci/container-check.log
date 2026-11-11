@@ -1,0 +1,100 @@
+$ docker compose -p fulfillops-ci-f2ce69c4 up -d --no-build --wait --wait-timeout 90
+ Network fulfillops-ci-f2ce69c4_default  Creating
+ Network fulfillops-ci-f2ce69c4_default  Created
+ Volume "fulfillops-ci-f2ce69c4_postgres_data"  Creating
+ Volume "fulfillops-ci-f2ce69c4_postgres_data"  Created
+ Container fulfillops-ci-f2ce69c4-db-1  Creating
+ Container fulfillops-ci-f2ce69c4-db-1  Created
+ Container fulfillops-ci-f2ce69c4-init-1  Creating
+ Container fulfillops-ci-f2ce69c4-init-1  Created
+ Container fulfillops-ci-f2ce69c4-api-1  Creating
+ Container fulfillops-ci-f2ce69c4-worker-1  Creating
+ Container fulfillops-ci-f2ce69c4-worker-2  Creating
+ Container fulfillops-ci-f2ce69c4-api-1  Created
+ Container fulfillops-ci-f2ce69c4-worker-1  Created
+ Container fulfillops-ci-f2ce69c4-worker-2  Created
+ Container fulfillops-ci-f2ce69c4-db-1  Starting
+ Container fulfillops-ci-f2ce69c4-db-1  Started
+ Container fulfillops-ci-f2ce69c4-db-1  Waiting
+ Container fulfillops-ci-f2ce69c4-db-1  Healthy
+ Container fulfillops-ci-f2ce69c4-init-1  Starting
+ Container fulfillops-ci-f2ce69c4-init-1  Started
+ Container fulfillops-ci-f2ce69c4-init-1  Waiting
+ Container fulfillops-ci-f2ce69c4-init-1  Waiting
+ Container fulfillops-ci-f2ce69c4-init-1  Exited
+ Container fulfillops-ci-f2ce69c4-init-1  Exited
+ Container fulfillops-ci-f2ce69c4-api-1  Starting
+ Container fulfillops-ci-f2ce69c4-worker-2  Starting
+ Container fulfillops-ci-f2ce69c4-worker-2  Started
+ Container fulfillops-ci-f2ce69c4-worker-1  Starting
+ Container fulfillops-ci-f2ce69c4-api-1  Started
+ Container fulfillops-ci-f2ce69c4-worker-1  Started
+ Container fulfillops-ci-f2ce69c4-db-1  Waiting
+ Container fulfillops-ci-f2ce69c4-init-1  Waiting
+ Container fulfillops-ci-f2ce69c4-api-1  Waiting
+ Container fulfillops-ci-f2ce69c4-worker-2  Waiting
+ Container fulfillops-ci-f2ce69c4-worker-1  Waiting
+ Container fulfillops-ci-f2ce69c4-db-1  Healthy
+ Container fulfillops-ci-f2ce69c4-init-1  Exited
+ Container fulfillops-ci-f2ce69c4-api-1  Healthy
+ Container fulfillops-ci-f2ce69c4-worker-2  Healthy
+ Container fulfillops-ci-f2ce69c4-worker-1  Healthy
+
+Exit code: 0
+$ docker compose -p fulfillops-ci-f2ce69c4 ps --all
+NAME                              IMAGE                                                                                 COMMAND                  SERVICE   CREATED          STATUS                     PORTS
+fulfillops-ci-f2ce69c4-api-1      fulfillops:1f056268f03f27d6817a8707dabdb9c7ccfd6de5                                   "python -m uvicorn a…"   api       14 seconds ago   Up 6 seconds (healthy)     127.0.0.1:51297->8080/tcp
+fulfillops-ci-f2ce69c4-db-1       postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657   "docker-entrypoint.s…"   db        14 seconds ago   Up 13 seconds (healthy)    127.0.0.1:49803->5432/tcp
+fulfillops-ci-f2ce69c4-init-1     fulfillops:1f056268f03f27d6817a8707dabdb9c7ccfd6de5                                   "python -m db.bootst…"   init      14 seconds ago   Exited (0) 6 seconds ago   
+fulfillops-ci-f2ce69c4-worker-1   fulfillops:1f056268f03f27d6817a8707dabdb9c7ccfd6de5                                   "python -m worker.ma…"   worker    14 seconds ago   Up 6 seconds (healthy)     8080/tcp
+fulfillops-ci-f2ce69c4-worker-2   fulfillops:1f056268f03f27d6817a8707dabdb9c7ccfd6de5                                   "python -m worker.ma…"   worker    14 seconds ago   Up 6 seconds (healthy)     8080/tcp
+
+Exit code: 0
+$ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python assessment/fulfillops_public_checker.py --base-url http://127.0.0.1:51297 --concurrency --stress
+WARNING: test orders consume stock. Run on an isolated TEST deployment; never production.
+PASS Liveness endpoint
+PASS Readiness endpoint
+PASS Catalog and fixed prices
+PASS Unknown order returns 404
+PASS Missing Idempotency-Key returns 400
+PASS Invalid item quantity returns 422
+PASS Inventory reading
+PASS Create order and idempotent retry
+PASS Conflicting idempotency payload rejected
+PASS Asynchronous worker eventually completes
+PASS Inventory reduced exactly once
+PASS Prometheus metrics exposed
+PASS Concurrent inventory reservations are atomic
+PASS Eight concurrent identical-key requests reserve once
+PASS Duplicate SKU lines aggregate and bill correctly
+
+RESULT: 15 passed / 0 failed / 0 skipped
+
+Exit code: 0
+$ docker compose -p fulfillops-ci-f2ce69c4 down --volumes --remove-orphans
+ Container fulfillops-ci-f2ce69c4-api-1  Stopping
+ Container fulfillops-ci-f2ce69c4-worker-2  Stopping
+ Container fulfillops-ci-f2ce69c4-worker-1  Stopping
+ Container fulfillops-ci-f2ce69c4-api-1  Stopped
+ Container fulfillops-ci-f2ce69c4-api-1  Removing
+ Container fulfillops-ci-f2ce69c4-api-1  Removed
+ Container fulfillops-ci-f2ce69c4-worker-2  Stopped
+ Container fulfillops-ci-f2ce69c4-worker-2  Removing
+ Container fulfillops-ci-f2ce69c4-worker-2  Removed
+ Container fulfillops-ci-f2ce69c4-worker-1  Stopped
+ Container fulfillops-ci-f2ce69c4-worker-1  Removing
+ Container fulfillops-ci-f2ce69c4-worker-1  Removed
+ Container fulfillops-ci-f2ce69c4-init-1  Stopping
+ Container fulfillops-ci-f2ce69c4-init-1  Stopped
+ Container fulfillops-ci-f2ce69c4-init-1  Removing
+ Container fulfillops-ci-f2ce69c4-init-1  Removed
+ Container fulfillops-ci-f2ce69c4-db-1  Stopping
+ Container fulfillops-ci-f2ce69c4-db-1  Stopped
+ Container fulfillops-ci-f2ce69c4-db-1  Removing
+ Container fulfillops-ci-f2ce69c4-db-1  Removed
+ Volume fulfillops-ci-f2ce69c4_postgres_data  Removing
+ Network fulfillops-ci-f2ce69c4_default  Removing
+ Network fulfillops-ci-f2ce69c4_default  Removed
+ Volume fulfillops-ci-f2ce69c4_postgres_data  Removed
+
+Exit code: 0

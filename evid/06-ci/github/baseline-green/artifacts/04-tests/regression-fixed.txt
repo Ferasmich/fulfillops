@@ -1,0 +1,16 @@
+Deliberate regression demo in a disposable copy; working source and database unchanged.
+Bug: isinstance(True, int) accepts a boolean. Fix: use the strict integer type check.
+$ python -m pytest tests/unit/test_quantity_regression.py -v
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0 -- /opt/hostedtoolcache/Python/3.12.16/x64/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/fulfillops-regression-l8y1cu0b
+configfile: pytest.ini
+plugins: anyio-4.16.0
+collecting ... collected 1 item
+
+tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected PASSED [100%]
+
+============================== 1 passed in 0.26s ===============================
+
+Exit code: 0

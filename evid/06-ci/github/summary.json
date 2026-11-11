@@ -1,0 +1,103 @@
+{
+  "pull_request": "https://github.com/Ferasmich/fulfillops/pull/1",
+  "pr_merged": false,
+  "registry_published": false,
+  "runs": {
+    "baseline-failed": {
+      "databaseId": 43070297512,
+      "headSha": "e393d8541be5f8cd524867c44387e90c566b8a40",
+      "event": "push",
+      "conclusion": "failure",
+      "url": "https://github.com/Ferasmich/fulfillops/actions/runs/43070297512",
+      "tests": 69,
+      "failures": 0,
+      "promotion": [
+        "skipped"
+      ]
+    },
+    "baseline-green": {
+      "databaseId": 43070903822,
+      "headSha": "3371a8195781cc84a5ee3ec6e06e00576f46655a",
+      "event": "push",
+      "conclusion": "success",
+      "url": "https://github.com/Ferasmich/fulfillops/actions/runs/43070903822",
+      "tests": 69,
+      "failures": 0,
+      "promotion": [
+        "skipped"
+      ]
+    },
+    "pr-red": {
+      "databaseId": 43071282696,
+      "headSha": "367652b39f79f1ddca2609d5363b0dbd98f62748",
+      "event": "pull_request",
+      "conclusion": "failure",
+      "url": "https://github.com/Ferasmich/fulfillops/actions/runs/43071282696",
+      "tests": 69,
+      "failures": 2,
+      "promotion": [
+        "skipped"
+      ]
+    },
+    "pr-green": {
+      "databaseId": 43071728762,
+      "headSha": "5e648ee329b0fe7ab3d82cfd1b93d3e834181127",
+      "event": "pull_request",
+      "conclusion": "success",
+      "url": "https://github.com/Ferasmich/fulfillops/actions/runs/43071728762",
+      "tests": 70,
+      "failures": 0,
+      "promotion": [
+        "skipped"
+      ]
+    }
+  },
+  "accepted_main_image": {
+    "tag": "fulfillops:3371a8195781cc84a5ee3ec6e06e00576f46655a",
+    "image_id": "sha256:892224c78945c49747981441cf1cae28f6ad325fcc43373f8a496ac6e1ca6d10",
+    "source_commit": "3371a8195781cc84a5ee3ec6e06e00576f46655a",
+    "scanner": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb"
+  },
+  "accepted_main_artifacts": [
+    {
+      "id": 13877447681,
+      "node_id": "MDg6QXJ0aWZhY3QxMzg3NzQ0NzY4MQ==",
+      "name": "accepted-image-3371a8195781cc84a5ee3ec6e06e00576f46655a-1",
+      "size_in_bytes": 62967616,
+      "url": "https://api.github.com/repos/Ferasmich/fulfillops/actions/artifacts/13877447681",
+      "archive_download_url": "https://api.github.com/repos/Ferasmich/fulfillops/actions/artifacts/13877447681/zip",
+      "expired": false,
+      "digest": "sha256:20f6188b69b250a3c13c9100e843f6aa0c6c7acc428325bf0996637ef249d808",
+      "created_at": "2026-11-11T17:44:59Z",
+      "updated_at": "2026-11-11T17:44:59Z",
+      "expires_at": "2026-11-18T17:44:57Z",
+      "workflow_run": {
+        "id": 43070903822,
+        "repository_id": 1452599100,
+        "head_repository_id": 1452599100,
+        "head_branch": "main",
+        "head_sha": "3371a8195781cc84a5ee3ec6e06e00576f46655a"
+      }
+    },
+    {
+      "id": 13877063655,
+      "node_id": "MDg6QXJ0aWZhY3QxMzg3NzA2MzY1NQ==",
+      "name": "quality-evidence-43070903822-1",
+      "size_in_bytes": 225469,
+      "url": "https://api.github.com/repos/Ferasmich/fulfillops/actions/artifacts/13877063655",
+      "archive_download_url": "https://api.github.com/repos/Ferasmich/fulfillops/actions/artifacts/13877063655/zip",
+      "expired": false,
+      "digest": "sha256:16c6e212237696a4c00ad2ef1a08656fabf306071ff2d816586bf83e040b1662",
+      "created_at": "2026-11-11T17:45:00Z",
+      "updated_at": "2026-11-11T17:45:00Z",
+      "expires_at": "2026-12-11T17:45:00Z",
+      "workflow_run": {
+        "id": 43070903822,
+        "repository_id": 1452599100,
+        "head_repository_id": 1452599100,
+        "head_branch": "main",
+        "head_sha": "3371a8195781cc84a5ee3ec6e06e00576f46655a"
+      }
+    }
+  ]
+}

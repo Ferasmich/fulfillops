@@ -1,0 +1,43 @@
+$ docker save --output /tmp/fulfillops-scan-vtxva4bx/image.tar fulfillops:3371a8195781cc84a5ee3ec6e06e00576f46655a
+Exit code: 0
+$ docker run --rm --user 1001:1001 --cap-drop=ALL --security-opt=no-new-privileges --read-only --tmpfs /tmp -v /tmp/fulfillops-scan-vtxva4bx:/input:ro -v /home/runner/work/fulfillops/fulfillops/evid/06-ci:/output -v /home/runner/.cache/fulfillops-trivy:/cache aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb image --cache-dir /cache --timeout 8m --input /input/image.tar --format cyclonedx --output /output/image.cdx.json
+Unable to find image 'aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb' locally
+docker.io/aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb: Pulling from aquasec/trivy
+7b229517ed22: Pulling fs layer
+9f087194f4fe: Pulling fs layer
+d7953b8bb0ca: Pulling fs layer
+ac09fd37397a: Pulling fs layer
+ac09fd37397a: Waiting
+7b229517ed22: Verifying Checksum
+7b229517ed22: Download complete
+9f087194f4fe: Verifying Checksum
+9f087194f4fe: Download complete
+ac09fd37397a: Verifying Checksum
+ac09fd37397a: Download complete
+7b229517ed22: Pull complete
+d7953b8bb0ca: Verifying Checksum
+d7953b8bb0ca: Download complete
+9f087194f4fe: Pull complete
+d7953b8bb0ca: Pull complete
+ac09fd37397a: Pull complete
+Digest: sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb
+Status: Downloaded newer image for aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb
+2026-11-11T17:44:42Z	INFO	"--format cyclonedx" disables security scanning. Specify "--scanners vuln" explicitly if you want to include vulnerabilities in the "cyclonedx" report.
+2026-11-11T17:44:42Z	INFO	[python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+2026-11-11T17:44:42Z	INFO	Detected OS	family="debian" version="12.15"
+2026-11-11T17:44:42Z	INFO	Number of language-specific files	num=1
+Exit code: 0
+$ docker run --rm --user 1001:1001 --cap-drop=ALL --security-opt=no-new-privileges --read-only --tmpfs /tmp -v /tmp/fulfillops-scan-vtxva4bx:/input:ro -v /home/runner/work/fulfillops/fulfillops/evid/06-ci:/output -v /home/runner/.cache/fulfillops-trivy:/cache aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb image --cache-dir /cache --timeout 8m --input /input/image.tar --scanners vuln --format json --output /output/vulnerabilities.json
+2026-11-11T17:44:43Z	INFO	[vulndb] Need to update DB
+2026-11-11T17:44:43Z	INFO	[vulndb] Downloading vulnerability DB...
+2026-11-11T17:44:43Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+32.00 MiB / 133.03 MiB [-------------->_____________________________________________] 24.05% ? p/s ?80.85 MiB / 133.03 MiB [------------------------------------>_______________________] 60.78% ? p/s ?125.99 MiB / 133.03 MiB [------------------------------------------------------->___] 94.71% ? p/s ?133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 168.40 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 168.40 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 168.40 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 157.54 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 157.54 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 157.54 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 147.37 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 147.37 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 147.37 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 137.86 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 137.86 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 137.86 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 128.97 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 128.97 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [------------------------------------------->] 100.00% 128.97 MiB p/s ETA 0s133.03 MiB / 133.03 MiB [-----------------------------------------------] 100.00% 38.73 MiB p/s 3.6s2026-11-11T17:44:47Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"
+2026-11-11T17:44:47Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-11T17:44:48Z	INFO	Detected OS	family="debian" version="12.15"
+2026-11-11T17:44:48Z	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=105
+2026-11-11T17:44:48Z	INFO	Number of language-specific files	num=1
+2026-11-11T17:44:48Z	INFO	[python-pkg] Detecting vulnerabilities...
+2026-11-11T17:44:48Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+Exit code: 0
+Security gate: PASS blocking: 0 informational: 351
+Gate exit code: 0
