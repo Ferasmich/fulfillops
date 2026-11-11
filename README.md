@@ -1,5 +1,7 @@
 # FulfillOps
 
+Solo project by **Feras MICHAEL**.
+
 An order API with PostgreSQL inventory reservations and persistent idempotency. The API and separate worker work locally. Accepted orders are reserved immediately and completed asynchronously.
 
 ## Run the complete stack with Docker
@@ -173,3 +175,7 @@ Solo submission is allowed, as confirmed by the project owner. I am responsible 
 The design uses PostgreSQL transactions and a durable work table to keep one source of truth and avoid coordinating a separate broker. I would next add authentication/order authorization, a database backup/restore drill, a production secret manager and deployment-manifest smoke checks. The local single-node setup and database completion receipt do not prove production high availability or exactly-once external shipping/payment.
 
 Final source/setup tests and fresh-data checker results are in [Part 9](evid/09-final/README.md). Use the [final audit](docs/final-audit.md) for the completed requirements and remaining submission actions. Stage-specific notes describe the state at that stage; they are not the current completion checklist.
+
+## Solo presentation
+
+Presenter: **Feras MICHAEL**. A 12-slide Canva deck has been created. [Speaking script, demonstration order and defense questions](docs/presentation-runbook.md) allocate 13:30 within the 15-minute maximum; rehearse with a stopwatch. Final accuracy edits in Canva are awaiting owner approval.

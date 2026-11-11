@@ -12,7 +12,7 @@ The final clean-checkout run passed on 11 November 2026. Source snapshot: `0f8a7
 - [Application CI artifact references](application-ci-artifacts.json): candidate run 43084811974 was successful. New artifact download attempts returned HTTP 502; the earlier downloaded CI SBOM/scan evidence is retained in Part 6.
 - [Latest CI state at audit](latest-ci-status.json), [job list](pending-ci-jobs.json): evidence commit 0f8a7a9 remained queued with no jobs. Do not present this snapshot as a passed final workflow.
 
-[Final requirement audit](../../docs/final-audit.md) separates completed technical proof from remaining presentation/submission actions. See [solo presentation runbook](../../docs/presentation-runbook.md) once prepared.
+[Final requirement audit](../../docs/final-audit.md) separates completed technical proof from remaining presentation/submission actions. [Solo presentation script and timing](../../docs/presentation-runbook.md) is ready: 12 slides, planned 13:30 inside the 15-minute limit. The Canva deck is created for Feras MICHAEL; final wording corrections are drafted and awaiting owner approval.
 
 ## Reproduce
 

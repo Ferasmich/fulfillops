@@ -1,6 +1,6 @@
 # FulfillOps - solo project report
 
-Feras Mich | EPITA DevOps | 11 November 2026 | Repository: github.com/Ferasmich/fulfillops
+Feras MICHAEL | EPITA DevOps | 11 November 2026 | Repository: github.com/Ferasmich/fulfillops
 
 ## Project goal
 
