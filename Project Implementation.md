@@ -8,7 +8,7 @@ Build the order-processing platform as a solo project. Start with the API and da
 
 This is a solo execution plan. The supplied assignment specifies teams of 2–3; the project owner confirmed that solo submission is allowed. The technical scope below retains the assignment's requirements. Two API replicas and two worker instances are still required: these are running processes, not people.
 
-**Current status:** Part 8 verified: 74 tests passed; 250 catalog requests succeeded with p95 54.54 ms; healthy 30-second rollout, rejected bad readiness configuration, Git revert recovery and all 21 stored orders/receipts preserved. Worker-crash metrics/logs and postmortem are saved in `evid/08-reliability/` and `docs/`. Part 9 clean-checkout checks and the eight-page report are complete. The 12-slide Canva presentation and timed solo notes are created; final wording approval, rehearsal, grading screenshot and final CI queue outcome remain; see docs/final-audit.md. Registry publication is disabled; PR #1 remains unmerged.
+**Current status:** Part 8 verified: 74 tests passed; 250 catalog requests succeeded with p95 54.54 ms; healthy 30-second rollout, rejected bad readiness configuration, Git revert recovery and all 21 stored orders/receipts preserved. Worker-crash metrics/logs and postmortem are saved in `evid/08-reliability/` and `docs/`. Part 9 clean-checkout checks and the eight-page report are complete. The 12-slide Canva presentation and timed solo notes are created; approved accuracy edits are saved; rehearsal, grading screenshot and final CI queue outcome remain; see docs/final-audit.md. Registry publication is disabled; PR #1 remains unmerged.
 
 **Source pack:** `FulfillOps_9_5_STUDENTS_COMPLETE/` (inside the current project root).
 

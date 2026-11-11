@@ -17,7 +17,7 @@ Audit date: 11 November 2026. Solo submission is allowed, as confirmed by the pr
 | Fresh install and final checker | evid/09-final/clean-checkout.txt, tests.txt, public-checker.txt | Passed from clean tracked source and a new Python environment/private stack |
 | Required report | evid/09-final/FulfillOps-report.pdf | Eight pages; rendered and inspected |
 | Contribution/assistance and public instructor access | README, docs/assistance-log.md; GitHub visibility public | Solo responsibility stated; accurate scoped disclosure; no private invite needed |
-| Final presentation/demo | 12-slide Canva deck for Feras MICHAEL; docs/presentation-runbook.md | Created; 13:30 planned solo script, final wording edits awaiting owner approval, rehearsal remains |
+| Final presentation/demo | 12-slide Canva deck for Feras MICHAEL; docs/presentation-runbook.md | Created; 13:30 planned solo script, approved accuracy edits saved, rehearsal remains |
 
 ## What still needs an actual outcome
 

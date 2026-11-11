@@ -178,4 +178,4 @@ Final source/setup tests and fresh-data checker results are in [Part 9](evid/09-
 
 ## Solo presentation
 
-Presenter: **Feras MICHAEL**. A 12-slide Canva deck has been created. [Speaking script, demonstration order and defense questions](docs/presentation-runbook.md) allocate 13:30 within the 15-minute maximum; rehearse with a stopwatch. Final accuracy edits in Canva are awaiting owner approval.
+Presenter: **Feras MICHAEL**. A 12-slide Canva deck has been created. [Speaking script, demonstration order and defense questions](docs/presentation-runbook.md) allocate 13:30 within the 15-minute maximum; rehearse with a stopwatch. The approved accuracy corrections are saved in Canva.
