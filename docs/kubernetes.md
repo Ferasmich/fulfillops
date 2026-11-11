@@ -10,8 +10,8 @@ From a clean project checkout, with Docker running and development dependencies 
 
 ```bash
 kind create cluster --name fulfillops --config infra/kind/cluster.yaml --wait 120s
-git archive 93a817a45f01d3dd3706207c8dffa706800ff0ef | docker build --tag fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef -
-kind load docker-image fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef --name fulfillops
+git archive d9a144cca067221ef8f02e3d652548cc85dcf0e4 | docker build --tag fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4 -
+kind load docker-image fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4 --name fulfillops
 python -m scripts.k8s_secrets
 kubectl --context kind-fulfillops create namespace argocd
 kubectl --context kind-fulfillops apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/94037c4d4e1af4bd0651d37a179fbd9e347e668c/manifests/install.yaml
@@ -76,7 +76,7 @@ python -m scripts.verify_gitops --repeat
 
 Repeat mode skips the checker/races and reuses the saved proof order for drift/storage checks. It does not reset data. The original checker/race files stay available.
 
-A Service port-forward selects a pod; it is not proof of traffic balancing during a rollout. The race script forwards to each API pod explicitly. The continuous rollout measurement is separate Part 8 work.
+A Service port-forward selects a pod; it is not proof of traffic balancing during a rollout. The race script forwards to each API pod explicitly. Part 8 uses a stable temporary proxy to measure actual Service routing across pod replacements; see docs/reliability.md.
 
 ## Stop and cleanup
 

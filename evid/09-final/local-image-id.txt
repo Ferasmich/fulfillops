@@ -1,0 +1,4 @@
+$ docker image inspect fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017 --format {{.Id}}
+sha256:774d06f2796c69125e4c0a0bde05703c4fcfae4f9bb2961334b14e605f9c2b02
+
+Exit code: 0

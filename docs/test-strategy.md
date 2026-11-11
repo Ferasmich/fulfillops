@@ -48,10 +48,10 @@ The script copies the necessary application code and one regression test into a 
 
 It then restores the correct strict type check in the copy and reruns the same test, which passes. The script verifies the expected exit codes and saves both outputs. It never edits the running application's source or accesses the database.
 
-This is a deliberate local regression exercise, not an observed production defect or a red-to-green CI pipeline. The separate CI demonstration remains to be done in Part 6.
+This is a deliberate local regression exercise, not an observed production defect or a red-to-green CI pipeline. The separate live CI demonstration is saved in Part 6; see docs/ci-live-results.md.
 
 ## Results and limits
 
 Part 4 saved run: 52 passed. Part 5 added six test-target guard cases; the latest full run in `evid/05-containers/` has 58 passed, plus the container checker reporting 15 passed / 0 failed / 0 skipped. Ruff passed. JUnit XML is saved for machine-readable reporting; the CI upload will be added with GitHub Actions. There is one upstream TestClient/HTTPX deprecation warning in the output. These checks do not cover container hardening, Kubernetes, GitOps or production performance.
 
-Part 6 adds 11 security-policy unit cases. Latest local full suite: 69 passed, recorded in `evid/06-ci/local-tests.txt`; live CI execution remains pending.
+Part 6 adds 11 security-policy unit cases. Part 6 had 69 passing tests. The current final clean-checkout suite has 74 passing tests in `evid/09-final/tests.txt`; application CI passed at d9a144c.

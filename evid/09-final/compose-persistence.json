@@ -1,0 +1,205 @@
+{
+  "before": {
+    "orders": [
+      {
+        "id": "09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "0a07bb7d-49ed-441d-b138-fe84f20bc967",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "0ab93351-6913-4ea1-a642-d51f71d11cc3",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "0acada07-1aa4-415e-8f91-4991e4cedfd9",
+        "status": "completed",
+        "total_cents": 996
+      },
+      {
+        "id": "0d83247a-d768-4fd8-afb9-ff9dda8dddc3",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "18434a7f-fc15-4b22-ac2b-e55c73a5f46a",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "23932dc6-944c-4ca3-93a7-62d7d654078e",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "2d2548cb-3e18-40fd-971d-cc398b7b38c3",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "3c8e28da-3ec8-47b5-8f39-dd35c7016da2",
+        "status": "completed",
+        "total_cents": 1299
+      },
+      {
+        "id": "56964cdb-4918-4bbe-8670-79c2e22b8758",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "6650d966-282f-447b-8fd2-333c96c1580b",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "69f363df-24e5-4049-b3d9-5305863a6a30",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "75cddb3b-519a-460b-b45e-a41d66556252",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "c5ebf0d7-543a-455e-ac44-9b2db45b8b33",
+        "status": "completed",
+        "total_cents": 249
+      },
+      {
+        "id": "ee8045fd-80db-4234-b41b-f8416ecf8eff",
+        "status": "completed",
+        "total_cents": 599
+      }
+    ],
+    "receipts": [
+      "09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b",
+      "0a07bb7d-49ed-441d-b138-fe84f20bc967",
+      "0ab93351-6913-4ea1-a642-d51f71d11cc3",
+      "0acada07-1aa4-415e-8f91-4991e4cedfd9",
+      "0d83247a-d768-4fd8-afb9-ff9dda8dddc3",
+      "18434a7f-fc15-4b22-ac2b-e55c73a5f46a",
+      "23932dc6-944c-4ca3-93a7-62d7d654078e",
+      "2d2548cb-3e18-40fd-971d-cc398b7b38c3",
+      "3c8e28da-3ec8-47b5-8f39-dd35c7016da2",
+      "56964cdb-4918-4bbe-8670-79c2e22b8758",
+      "6650d966-282f-447b-8fd2-333c96c1580b",
+      "69f363df-24e5-4049-b3d9-5305863a6a30",
+      "75cddb3b-519a-460b-b45e-a41d66556252",
+      "c5ebf0d7-543a-455e-ac44-9b2db45b8b33",
+      "ee8045fd-80db-4234-b41b-f8416ecf8eff"
+    ],
+    "stock": {
+      "KIT-100": 6,
+      "PART-200": 0,
+      "PACK-300": 0
+    }
+  },
+  "after": {
+    "orders": [
+      {
+        "id": "09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "0a07bb7d-49ed-441d-b138-fe84f20bc967",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "0ab93351-6913-4ea1-a642-d51f71d11cc3",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "0acada07-1aa4-415e-8f91-4991e4cedfd9",
+        "status": "completed",
+        "total_cents": 996
+      },
+      {
+        "id": "0d83247a-d768-4fd8-afb9-ff9dda8dddc3",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "18434a7f-fc15-4b22-ac2b-e55c73a5f46a",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "23932dc6-944c-4ca3-93a7-62d7d654078e",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "2d2548cb-3e18-40fd-971d-cc398b7b38c3",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "3c8e28da-3ec8-47b5-8f39-dd35c7016da2",
+        "status": "completed",
+        "total_cents": 1299
+      },
+      {
+        "id": "56964cdb-4918-4bbe-8670-79c2e22b8758",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "6650d966-282f-447b-8fd2-333c96c1580b",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "69f363df-24e5-4049-b3d9-5305863a6a30",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "75cddb3b-519a-460b-b45e-a41d66556252",
+        "status": "completed",
+        "total_cents": 599
+      },
+      {
+        "id": "c5ebf0d7-543a-455e-ac44-9b2db45b8b33",
+        "status": "completed",
+        "total_cents": 249
+      },
+      {
+        "id": "ee8045fd-80db-4234-b41b-f8416ecf8eff",
+        "status": "completed",
+        "total_cents": 599
+      }
+    ],
+    "receipts": [
+      "09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b",
+      "0a07bb7d-49ed-441d-b138-fe84f20bc967",
+      "0ab93351-6913-4ea1-a642-d51f71d11cc3",
+      "0acada07-1aa4-415e-8f91-4991e4cedfd9",
+      "0d83247a-d768-4fd8-afb9-ff9dda8dddc3",
+      "18434a7f-fc15-4b22-ac2b-e55c73a5f46a",
+      "23932dc6-944c-4ca3-93a7-62d7d654078e",
+      "2d2548cb-3e18-40fd-971d-cc398b7b38c3",
+      "3c8e28da-3ec8-47b5-8f39-dd35c7016da2",
+      "56964cdb-4918-4bbe-8670-79c2e22b8758",
+      "6650d966-282f-447b-8fd2-333c96c1580b",
+      "69f363df-24e5-4049-b3d9-5305863a6a30",
+      "75cddb3b-519a-460b-b45e-a41d66556252",
+      "c5ebf0d7-543a-455e-ac44-9b2db45b8b33",
+      "ee8045fd-80db-4234-b41b-f8416ecf8eff"
+    ],
+    "stock": {
+      "KIT-100": 6,
+      "PART-200": 0,
+      "PACK-300": 0
+    }
+  },
+  "identical": true
+}

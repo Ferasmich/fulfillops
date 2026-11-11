@@ -1,6 +1,6 @@
 # Architecture
 
-Status: API/worker, containers, CI and local Kubernetes/GitOps are verified through Part 7. Continuous rollout/fault and SLO evidence remain Part 8 work. Scope: required order API, durable asynchronous worker, atomic inventory, two API replicas and two workers. PostgreSQL is the single authoritative store. No frontend or external payment/shipping integration is required.
+Status: API/worker, containers, CI, Kubernetes/GitOps and Part 8 rollout/fault/SLO evidence are verified. Scope: required order API, durable asynchronous worker, atomic inventory, two API replicas and two workers. PostgreSQL is the single authoritative store. No frontend or external payment/shipping integration is required.
 
 ```mermaid
 flowchart TD
@@ -58,4 +58,4 @@ flowchart TD
 | Retries stop | Persisted attempts and maximum; terminal crash recovery | Poison and repeated-crash exhaustion |
 | Failed jobs retain reservation | Failure transition never edits products | Failed order and inventory SQL |
 
-API and worker proofs are recorded in `evid/02-api/` and `evid/03-worker/`. Local deployment and drift/storage proofs are in `evid/07-gitops/`; Part 8 rollout/SLO proofs remain planned.
+API and worker proofs are recorded in `evid/02-api/` and `evid/03-worker/`. Local deployment and drift/storage proofs are in `evid/07-gitops/`; Part 8 rollout/SLO proofs are in `evid/08-reliability/`.

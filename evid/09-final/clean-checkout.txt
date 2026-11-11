@@ -1,0 +1,655 @@
+Clean tracked source checkout: 0f8a7a9d18e4e94950e8bd3b6a9e562b89145017
+Fresh temporary path: /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj
+No local .env, virtual environment or database volume copied. Credentials generated for this private disposable stack; not recorded.
+$ /opt/homebrew/opt/python@3.12/bin/python3.12 -m venv /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python -m pip install -r requirements/development.txt
+Collecting annotated-doc==0.0.5 (from -r requirements/development.txt (line 1))
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting annotated-types==0.8.0 (from -r requirements/development.txt (line 2))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting anyio==4.16.0 (from -r requirements/development.txt (line 3))
+  Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting certifi==2026.10.23 (from -r requirements/development.txt (line 4))
+  Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting click==8.5.1 (from -r requirements/development.txt (line 5))
+  Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting fastapi==0.162.2 (from -r requirements/development.txt (line 6))
+  Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+Collecting h11==0.16.0 (from -r requirements/development.txt (line 7))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httpcore==1.0.9 (from -r requirements/development.txt (line 8))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting httpx==0.28.1 (from -r requirements/development.txt (line 9))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting idna==3.20 (from -r requirements/development.txt (line 10))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting iniconfig==2.3.1 (from -r requirements/development.txt (line 11))
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting opentelemetry-api==1.45.2 (from -r requirements/development.txt (line 12))
+  Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+Collecting packaging==26.3 (from -r requirements/development.txt (line 13))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pluggy==1.7.0 (from -r requirements/development.txt (line 14))
+  Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting prometheus_client==0.26.0 (from -r requirements/development.txt (line 15))
+  Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting psycopg==3.3.8 (from -r requirements/development.txt (line 16))
+  Downloading psycopg-3.3.8-py3-none-any.whl.metadata (4.4 kB)
+Collecting psycopg-binary==3.3.8 (from -r requirements/development.txt (line 17))
+  Downloading psycopg_binary-3.3.8-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.7 kB)
+Collecting pydantic==2.14.3 (from -r requirements/development.txt (line 18))
+  Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 141.5/141.5 kB 1.7 MB/s eta 0:00:00
+Collecting pydantic_core==2.50.4 (from -r requirements/development.txt (line 19))
+  Downloading pydantic_core-2.50.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (6.6 kB)
+Collecting Pygments==2.21.0 (from -r requirements/development.txt (line 20))
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting pytest==9.2.0 (from -r requirements/development.txt (line 21))
+  Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting ruff==0.17.4 (from -r requirements/development.txt (line 22))
+  Downloading ruff-0.17.4-py3-none-macosx_11_0_arm64.whl.metadata (20 kB)
+Collecting starlette==1.10.0 (from -r requirements/development.txt (line 23))
+  Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting typing-inspection==0.4.5 (from -r requirements/development.txt (line 24))
+  Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+Collecting typing_extensions==4.16.0 (from -r requirements/development.txt (line 25))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting uvicorn==0.54.0 (from -r requirements/development.txt (line 26))
+  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 1.5 MB/s eta 0:00:00
+Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.1/135.1 kB 2.6 MB/s eta 0:00:00
+Downloading click-8.5.1-py3-none-any.whl (126 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 2.0 MB/s eta 0:00:00
+Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.7/151.7 kB 2.9 MB/s eta 0:00:00
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 546.2 kB/s eta 0:00:00
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 2.1 MB/s eta 0:00:00
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 1.4 MB/s eta 0:00:00
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 2.4 MB/s eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 841.0 kB/s eta 0:00:00
+Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.5/64.5 kB 409.2 kB/s eta 0:00:00
+Downloading psycopg-3.3.8-py3-none-any.whl (216 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.2/216.2 kB 1.2 MB/s eta 0:00:00
+Downloading psycopg_binary-3.3.8-cp312-cp312-macosx_11_0_arm64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 2.6 MB/s eta 0:00:00
+Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 494.1/494.1 kB 7.2 MB/s eta 0:00:00
+Downloading pydantic_core-2.50.4-cp312-cp312-macosx_11_0_arm64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 6.1 MB/s eta 0:00:00
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 2.3 MB/s eta 0:00:00
+Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 411.8/411.8 kB 1.5 MB/s eta 0:00:00
+Downloading ruff-0.17.4-py3-none-macosx_11_0_arm64.whl (9.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 4.5 MB/s eta 0:00:00
+Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 1.5 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 3.4 MB/s eta 0:00:00
+Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.4/87.4 kB 5.3 MB/s eta 0:00:00
+Installing collected packages: typing_extensions, ruff, Pygments, psycopg-binary, prometheus_client, pluggy, packaging, iniconfig, idna, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pytest, pydantic_core, psycopg, opentelemetry-api, httpcore, anyio, starlette, pydantic, httpx, fastapi
+Successfully installed Pygments-2.21.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 certifi-2026.10.23 click-8.5.1 fastapi-0.162.2 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 iniconfig-2.3.1 opentelemetry-api-1.45.2 packaging-26.3 pluggy-1.7.0 prometheus_client-0.26.0 psycopg-3.3.8 psycopg-binary-3.3.8 pydantic-2.14.3 pydantic_core-2.50.4 pytest-9.2.0 ruff-0.17.4 starlette-1.10.0 typing-inspection-0.4.5 typing_extensions-4.16.0 uvicorn-0.54.0
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: /private/var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python -m pip install --upgrade pip
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python -m pip check
+No broken requirements found.
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/ruff check api common db worker tests scripts
+All checks passed!
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/ruff format --check api common db worker tests scripts
+34 files already formatted
+
+Exit code: 0
+$ docker build --tag fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017 .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.03kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#2 DONE 1.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 207B done
+#4 DONE 0.0s
+
+#5 [builder 1/4] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 28.68kB done
+#6 DONE 0.0s
+
+#7 [runtime 3/9] RUN groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+#7 CACHED
+
+#8 [builder 3/4] COPY requirements/runtime.txt ./requirements.txt
+#8 CACHED
+
+#9 [runtime 7/9] COPY common ./common
+#9 CACHED
+
+#10 [runtime 4/9] COPY requirements/runtime.txt /tmp/requirements.txt
+#10 CACHED
+
+#11 [runtime 5/9] RUN --mount=type=bind,from=builder,source=/wheels,target=/wheels     python -m pip install --no-cache-dir --no-index --find-links=/wheels -r /tmp/requirements.txt     && rm /tmp/requirements.txt
+#11 CACHED
+
+#12 [runtime 8/9] COPY db ./db
+#12 CACHED
+
+#13 [builder 4/4] RUN python -m pip wheel --no-cache-dir --only-binary=:all: --wheel-dir=/wheels -r requirements.txt
+#13 CACHED
+
+#14 [runtime 6/9] COPY api ./api
+#14 CACHED
+
+#15 [runtime 2/9] WORKDIR /app
+#15 CACHED
+
+#16 [builder 2/4] WORKDIR /build
+#16 CACHED
+
+#17 [runtime 9/9] COPY worker ./worker
+#17 CACHED
+
+#18 exporting to image
+#18 exporting layers done
+#18 writing image sha256:774d06f2796c69125e4c0a0bde05703c4fcfae4f9bb2961334b14e605f9c2b02 done
+#18 naming to docker.io/library/fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017 done
+#18 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/qgw88pp07opk88immrhh0116s
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f up -d --no-build --wait --wait-timeout 90
+ Network fulfillops-final-c3d6cf1f_default Creating 
+ Volume fulfillops-final-c3d6cf1f_postgres_data Creating 
+ Volume fulfillops-final-c3d6cf1f_postgres_data Creating 
+ Network fulfillops-final-c3d6cf1f_default Creating 
+ Volume fulfillops-final-c3d6cf1f_postgres_data Created 
+ Volume fulfillops-final-c3d6cf1f_postgres_data Created 
+ Network fulfillops-final-c3d6cf1f_default Created 
+ Network fulfillops-final-c3d6cf1f_default Created 
+ Container fulfillops-final-c3d6cf1f-db-1 Creating 
+ Container fulfillops-final-c3d6cf1f-db-1 Created 
+ Container fulfillops-final-c3d6cf1f-init-1 Creating 
+ Container fulfillops-final-c3d6cf1f-init-1 Created 
+ Container fulfillops-final-c3d6cf1f-api-1 Creating 
+ Container fulfillops-final-c3d6cf1f-worker-2 Creating 
+ Container fulfillops-final-c3d6cf1f-worker-1 Creating 
+ Container fulfillops-final-c3d6cf1f-worker-1 Created 
+ Container fulfillops-final-c3d6cf1f-worker-2 Created 
+ Container fulfillops-final-c3d6cf1f-api-1 Created 
+ Container fulfillops-final-c3d6cf1f-db-1 Starting 
+ Container fulfillops-final-c3d6cf1f-db-1 Started 
+ Container fulfillops-final-c3d6cf1f-db-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-db-1 Healthy 
+ Container fulfillops-final-c3d6cf1f-init-1 Starting 
+ Container fulfillops-final-c3d6cf1f-init-1 Started 
+ Container fulfillops-final-c3d6cf1f-init-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Exited 
+ Container fulfillops-final-c3d6cf1f-api-1 Starting 
+ Container fulfillops-final-c3d6cf1f-init-1 Exited 
+ Container fulfillops-final-c3d6cf1f-worker-2 Starting 
+ Container fulfillops-final-c3d6cf1f-api-1 Started 
+ Container fulfillops-final-c3d6cf1f-worker-2 Started 
+ Container fulfillops-final-c3d6cf1f-worker-1 Starting 
+ Container fulfillops-final-c3d6cf1f-worker-1 Started 
+ Container fulfillops-final-c3d6cf1f-api-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-worker-2 Waiting 
+ Container fulfillops-final-c3d6cf1f-worker-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-db-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-db-1 Healthy 
+ Container fulfillops-final-c3d6cf1f-init-1 Exited 
+ Container fulfillops-final-c3d6cf1f-api-1 Healthy 
+ Container fulfillops-final-c3d6cf1f-worker-2 Healthy 
+ Container fulfillops-final-c3d6cf1f-worker-1 Healthy 
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f ps --all
+NAME                                 IMAGE                                                                                 COMMAND                  SERVICE   CREATED          STATUS                     PORTS
+fulfillops-final-c3d6cf1f-api-1      fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017                                   "python -m uvicorn a…"   api       12 seconds ago   Up 5 seconds (healthy)     127.0.0.1:54421->8080/tcp
+fulfillops-final-c3d6cf1f-db-1       postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657   "docker-entrypoint.s…"   db        12 seconds ago   Up 12 seconds (healthy)    127.0.0.1:54422->5432/tcp
+fulfillops-final-c3d6cf1f-init-1     fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017                                   "python -m db.bootst…"   init      12 seconds ago   Exited (0) 6 seconds ago   
+fulfillops-final-c3d6cf1f-worker-1   fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017                                   "python -m worker.ma…"   worker    12 seconds ago   Up 5 seconds (healthy)     8080/tcp
+fulfillops-final-c3d6cf1f-worker-2   fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017                                   "python -m worker.ma…"   worker    12 seconds ago   Up 5 seconds (healthy)     8080/tcp
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python -m pytest -v -s --junitxml=/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/09-final/tests.xml
+============================= test session starts ==============================
+platform darwin -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /private/var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /private/var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collecting ... collected 74 items
+
+tests/integration/test_api.py::test_catalog_health_and_metrics Applied: 001_products.sql
+Applied: 002_orders.sql
+Applied: 003_jobs.sql
+Migrations committed
+Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.591959+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.0009}
+{"time": "2026-11-11T20:33:43.601541+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.007755}
+{"time": "2026-11-11T20:33:43.611107+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/catalog", "status": 200, "duration_seconds": 0.007912}
+{"time": "2026-11-11T20:33:43.621649+00:00", "event": "http_request", "method": "GET", "route": "/metrics", "status": 200, "duration_seconds": 0.008771}
+PASSED
+tests/integration/test_api.py::test_receipt_replay_conflict_and_durable_job Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.666549+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.010597}
+{"time": "2026-11-11T20:33:43.675925+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.007786}
+{"time": "2026-11-11T20:33:43.684846+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007494}
+{"time": "2026-11-11T20:33:43.693768+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/orders/{order_id}", "status": 200, "duration_seconds": 0.007336}
+{"time": "2026-11-11T20:33:43.703787+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 409, "duration_seconds": 0.008493}
+Replay: one order, one job, KIT-100 stock 7 -> 6; changed payload rejected
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[0] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.740525+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000454}
+{"time": "2026-11-11T20:33:43.749106+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.00729}
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[-1] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.779220+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000404}
+{"time": "2026-11-11T20:33:43.787304+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.006855}
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[21] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.818365+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000428}
+{"time": "2026-11-11T20:33:43.827786+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007846}
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[True] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.865556+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000362}
+{"time": "2026-11-11T20:33:43.873934+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007026}
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[1.5] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.908108+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000592}
+{"time": "2026-11-11T20:33:43.924359+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.013935}
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[1] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.958074+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000418}
+{"time": "2026-11-11T20:33:43.966718+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007231}
+PASSED
+tests/integration/test_api.py::test_invalid_quantity[None] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:43.995089+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000415}
+{"time": "2026-11-11T20:33:44.003512+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007154}
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload0-INVALID_REQUEST] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.032822+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000413}
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload1-INVALID_REQUEST] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.064784+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000698}
+PASSED
+tests/integration/test_api.py::test_invalid_request[payload2-INVALID_SKU] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.092222+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 422, "duration_seconds": 0.000382}
+PASSED
+tests/integration/test_api.py::test_missing_key_invalid_json_and_unknown_resources Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.121006+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000584}
+{"time": "2026-11-11T20:33:44.122844+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000299}
+{"time": "2026-11-11T20:33:44.124453+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/orders/{order_id}", "status": 404, "duration_seconds": 0.000475}
+{"time": "2026-11-11T20:33:44.132754+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 404, "duration_seconds": 0.007149}
+PASSED
+tests/integration/test_api.py::test_body_limit_streamed_without_length Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.164511+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 413, "duration_seconds": 0.00041}
+PASSED
+tests/integration/test_api.py::test_aggregation_normalization_and_total Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.206102+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.010275}
+{"time": "2026-11-11T20:33:44.214553+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.006899}
+{"time": "2026-11-11T20:33:44.223569+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/orders/{order_id}", "status": 200, "duration_seconds": 0.007363}
+{"time": "2026-11-11T20:33:44.233949+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.008743}
+PASSED
+tests/integration/test_api.py::test_insufficient_stock_rolls_back_whole_order Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.271487+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 409, "duration_seconds": 0.007615}
+{"time": "2026-11-11T20:33:44.279971+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.00699}
+{"time": "2026-11-11T20:33:44.288520+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007023}
+{"time": "2026-11-11T20:33:44.310111+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.011169}
+Insufficient multi-item order: no partial allocation or orphan order/key/job
+PASSED
+tests/integration/test_api.py::test_migrations_and_seed_do_not_reset_stock Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.355493+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.013964}
+Already applied: 001_products.sql
+Already applied: 002_orders.sql
+Already applied: 003_jobs.sql
+Migrations committed
+Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.384906+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.010512}
+PASSED
+tests/integration/test_api.py::test_seed_rejects_non_test_environment Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_api.py::test_readiness_storage_failure_does_not_break_liveness Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:44.454129+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 503, "duration_seconds": 0.000909}
+{"time": "2026-11-11T20:33:44.455912+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.000483}
+PASSED
+tests/integration/test_api.py::test_real_api_restart_preserves_replay Test catalog seeded; existing stock was not changed
+API restart 22427 -> 22428: stable order 7998525f-f6f8-4dab-a07c-587690f3c3e0; stock stays 6
+PASSED
+tests/integration/test_api.py::test_multi_product_total_and_completed_receipt Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:45.590127+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.011279}
+{"time": "2026-11-11T20:33:45.599033+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/orders/{order_id}", "status": 200, "duration_seconds": 0.007233}
+{"time": "2026-11-11T20:33:45.615494+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.007636}
+{"time": "2026-11-11T20:33:45.624246+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007132}
+{"time": "2026-11-11T20:33:45.633071+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.007068}
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[short] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:45.667639+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000438}
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[key1] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:45.701686+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000731}
+PASSED
+tests/integration/test_api.py::test_invalid_idempotency_key[tab\tkey-000] Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:45.731966+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 400, "duration_seconds": 0.000657}
+PASSED
+tests/integration/test_api.py::test_database_rejects_negative_stock Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:45.775826+00:00", "event": "http_request", "method": "GET", "route": "/api/v1/inventory/{sku}", "status": 200, "duration_seconds": 0.00723}
+PASSED
+tests/integration/test_api.py::test_modified_applied_migration_is_rejected Test catalog seeded; existing stock was not changed
+PASSED
+tests/integration/test_worker.py::test_two_workers_complete_once Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:45.875904+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.01217}
+Two workers 22429/22430; order 54fe9745-6304-4f26-a935-ed82c2b01c39; result {'status': 'completed', 'state': 'completed', 'attempts': 1, 'receipts': 1, 'stock': 6}
+PASSED
+tests/integration/test_worker.py::test_worker_killed_after_claim_is_recovered Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:46.241970+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.015924}
+{"time": "2026-11-11T20:33:46.258376+00:00", "event": "http_request", "method": "GET", "route": "/metrics", "status": 200, "duration_seconds": 0.013381}
+{"time": "2026-11-11T20:33:46.284118+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.000913}
+{"time": "2026-11-11T20:33:46.304328+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.016838}
+{"time": "2026-11-11T20:33:46.539626+00:00", "event": "http_request", "method": "GET", "route": "/metrics", "status": 200, "duration_seconds": 0.026547}
+{"time": "2026-11-11T20:33:46.568198+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.001346}
+{"time": "2026-11-11T20:33:46.593243+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.021558}
+Killed worker 22431 after durable claim; survivor 22432; order e65be2b8-4732-42cd-92a2-329aebeea292
+{"time": "2026-11-11T20:33:47.141739+00:00", "event": "http_request", "method": "GET", "route": "/metrics", "status": 200, "duration_seconds": 0.008723}
+{"time": "2026-11-11T20:33:47.151370+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.000453}
+{"time": "2026-11-11T20:33:47.161070+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.008116}
+Recovery: {'status': 'completed', 'state': 'completed', 'attempts': 2, 'receipts': 1, 'stock': 6} attempt history: [{'attempt_number': 1, 'outcome': 'lease_expired'}, {'attempt_number': 2, 'outcome': 'completed'}]
+PASSED
+tests/integration/test_worker.py::test_poison_job_stops_and_keeps_stock Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:47.241311+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.010222}
+{"time": "2026-11-11T20:33:48.018211+00:00", "event": "http_request", "method": "GET", "route": "/metrics", "status": 200, "duration_seconds": 0.011777}
+Poison job 1bb0a83d-c216-4c64-b606-0dd2827c907d; workers 22433/22434; result {'status': 'failed', 'state': 'failed', 'attempts': 3, 'receipts': 0, 'stock': 6}; attempts [{'attempt_number': 1, 'outcome': 'retry'}, {'attempt_number': 2, 'outcome': 'retry'}, {'attempt_number': 3, 'outcome': 'failed'}]; stable after further polling
+PASSED
+tests/integration/test_worker.py::test_expired_owner_cannot_complete_or_fail Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:48.209936+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.011879}
+Stale claim fenced; current owner completed once: {'status': 'completed', 'state': 'completed', 'attempts': 2, 'receipts': 1, 'stock': 6}
+PASSED
+tests/integration/test_worker.py::test_crash_on_last_attempt_becomes_failed Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:48.381356+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.010661}
+Expired final claim persisted as failed without another attempt or restock
+PASSED
+tests/integration/test_worker.py::test_backoff_delays_next_claim Test catalog seeded; existing stock was not changed
+{"time": "2026-11-11T20:33:48.532151+00:00", "event": "http_request", "method": "POST", "route": "/api/v1/orders", "status": 202, "duration_seconds": 0.012291}
+Retry persisted with approximately two-second backoff
+PASSED
+tests/integration/test_worker.py::test_full_public_checker_with_two_workers Test catalog seeded; existing stock was not changed
+Full checker: API 22437; workers 22435/22436
+WARNING: test orders consume stock. Run on an isolated TEST deployment; never production.
+PASS Liveness endpoint
+PASS Readiness endpoint
+PASS Catalog and fixed prices
+PASS Unknown order returns 404
+PASS Missing Idempotency-Key returns 400
+PASS Invalid item quantity returns 422
+PASS Inventory reading
+PASS Create order and idempotent retry
+PASS Conflicting idempotency payload rejected
+PASS Asynchronous worker eventually completes
+PASS Inventory reduced exactly once
+PASS Prometheus metrics exposed
+PASS Concurrent inventory reservations are atomic
+PASS Eight concurrent identical-key requests reserve once
+PASS Duplicate SKU lines aggregate and bill correctly
+
+RESULT: 15 passed / 0 failed / 0 skipped
+
+PASSED
+tests/races/test_orders.py::test_same_key_across_two_api_processes Test catalog seeded; existing stock was not changed
+Same-key race: API PIDs 22456/22457; four calls per API; eight 202 responses; IDs {'38d45714-9671-4786-b6a3-d81429ea1078'}; SQL snapshot {'stock': 6, 'orders': 1, 'jobs': 1, 'keys': 1}
+PASSED
+tests/races/test_orders.py::test_distinct_keys_cannot_oversell_across_two_api_processes Test catalog seeded; existing stock was not changed
+Distinct-key race: API PIDs 22458/22461; six calls per API; seven accepted, five OUT_OF_STOCK; SQL snapshot {'stock': 0, 'orders': 7, 'jobs': 7, 'keys': 7}
+PASSED
+tests/unit/test_observability.py::test_nearest_rank_p95[values0-1] PASSED
+tests/unit/test_observability.py::test_nearest_rank_p95[values1-19] PASSED
+tests/unit/test_observability.py::test_nearest_rank_p95[values2-95] PASSED
+tests/unit/test_observability.py::test_empty_samples_are_rejected PASSED
+tests/unit/test_observability.py::test_request_log_uses_route_template_and_no_private_values PASSED
+tests/unit/test_quantity_regression.py::test_boolean_quantity_is_rejected PASSED
+tests/unit/test_security_gate.py::test_fixed_high_critical_findings_block_promotion[HIGH] PASSED
+tests/unit/test_security_gate.py::test_fixed_high_critical_findings_block_promotion[CRITICAL] PASSED
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[LOW-2.0] PASSED
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[MEDIUM-2.0] PASSED
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[HIGH-] PASSED
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[CRITICAL-] PASSED
+tests/unit/test_security_gate.py::test_informational_findings_remain_visible[UNKNOWN-] PASSED
+tests/unit/test_security_gate.py::test_missing_scan_fails_closed[value0] PASSED
+tests/unit/test_security_gate.py::test_missing_scan_fails_closed[value1] PASSED
+tests/unit/test_security_gate.py::test_empty_sbom_fails_closed PASSED
+tests/unit/test_security_gate.py::test_missing_library_scan_fails_closed PASSED
+tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[production-fulfillops_test-127.0.0.1] PASSED
+tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[test-fulfillops-127.0.0.1] PASSED
+tests/unit/test_test_target.py::test_seed_reset_target_rejects_unsafe_configuration[test-fulfillops_test-database.example.com] PASSED
+tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[127.0.0.1] PASSED
+tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[localhost] PASSED
+tests/unit/test_test_target.py::test_seed_reset_target_accepts_explicit_lab_configuration[db] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[0] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[-1] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[21] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[False] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[1.5] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[2] PASSED
+tests/unit/test_validation.py::test_quantity_must_be_a_positive_bounded_integer[None] PASSED
+tests/unit/test_validation.py::test_quantity_boundaries_are_accepted[1] PASSED
+tests/unit/test_validation.py::test_quantity_boundaries_are_accepted[20] PASSED
+tests/unit/test_validation.py::test_equivalent_item_lines_normalize_identically PASSED
+tests/unit/test_validation.py::test_aggregate_can_exceed_per_line_limit PASSED
+tests/unit/test_validation.py::test_customer_id_length[0] PASSED
+tests/unit/test_validation.py::test_customer_id_length[65] PASSED
+tests/unit/test_validation.py::test_idempotency_key_boundaries[8] PASSED
+tests/unit/test_validation.py::test_idempotency_key_boundaries[128] PASSED
+tests/unit/test_validation.py::test_unknown_extra_fields_are_rejected PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /private/var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/09-final/tests.xml -
+======================== 74 passed, 1 warning in 9.95s =========================
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python assessment/fulfillops_public_checker.py --base-url http://127.0.0.1:54421 --concurrency --stress
+WARNING: test orders consume stock. Run on an isolated TEST deployment; never production.
+PASS Liveness endpoint
+PASS Readiness endpoint
+PASS Catalog and fixed prices
+PASS Unknown order returns 404
+PASS Missing Idempotency-Key returns 400
+PASS Invalid item quantity returns 422
+PASS Inventory reading
+PASS Create order and idempotent retry
+PASS Conflicting idempotency payload rejected
+PASS Asynchronous worker eventually completes
+PASS Inventory reduced exactly once
+PASS Prometheus metrics exposed
+PASS Concurrent inventory reservations are atomic
+PASS Eight concurrent identical-key requests reserve once
+PASS Duplicate SKU lines aggregate and bill correctly
+
+RESULT: 15 passed / 0 failed / 0 skipped
+
+Exit code: 0
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python scripts/regression_demo.py
+failing: exit 1
+fixed: exit 0
+Expected failure followed by passing fix. Original source was never modified.
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f exec -T db psql -U fulfillops -d fulfillops_test_final -t -A -c SELECT json_build_object('orders',(SELECT json_agg(o ORDER BY id) FROM (SELECT id,status,total_cents FROM orders) o),'receipts',(SELECT json_agg(order_id ORDER BY order_id) FROM completion_receipts),'stock',(SELECT json_object_agg(sku,available) FROM products))
+{"orders" : [{"id":"09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b","status":"completed","total_cents":599}, 
+ {"id":"0a07bb7d-49ed-441d-b138-fe84f20bc967","status":"completed","total_cents":599}, 
+ {"id":"0ab93351-6913-4ea1-a642-d51f71d11cc3","status":"completed","total_cents":599}, 
+ {"id":"0acada07-1aa4-415e-8f91-4991e4cedfd9","status":"completed","total_cents":996}, 
+ {"id":"0d83247a-d768-4fd8-afb9-ff9dda8dddc3","status":"completed","total_cents":599}, 
+ {"id":"18434a7f-fc15-4b22-ac2b-e55c73a5f46a","status":"completed","total_cents":599}, 
+ {"id":"23932dc6-944c-4ca3-93a7-62d7d654078e","status":"completed","total_cents":599}, 
+ {"id":"2d2548cb-3e18-40fd-971d-cc398b7b38c3","status":"completed","total_cents":599}, 
+ {"id":"3c8e28da-3ec8-47b5-8f39-dd35c7016da2","status":"completed","total_cents":1299}, 
+ {"id":"56964cdb-4918-4bbe-8670-79c2e22b8758","status":"completed","total_cents":599}, 
+ {"id":"6650d966-282f-447b-8fd2-333c96c1580b","status":"completed","total_cents":599}, 
+ {"id":"69f363df-24e5-4049-b3d9-5305863a6a30","status":"completed","total_cents":599}, 
+ {"id":"75cddb3b-519a-460b-b45e-a41d66556252","status":"completed","total_cents":599}, 
+ {"id":"c5ebf0d7-543a-455e-ac44-9b2db45b8b33","status":"completed","total_cents":249}, 
+ {"id":"ee8045fd-80db-4234-b41b-f8416ecf8eff","status":"completed","total_cents":599}], "receipts" : ["09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b", "0a07bb7d-49ed-441d-b138-fe84f20bc967", "0ab93351-6913-4ea1-a642-d51f71d11cc3", "0acada07-1aa4-415e-8f91-4991e4cedfd9", "0d83247a-d768-4fd8-afb9-ff9dda8dddc3", "18434a7f-fc15-4b22-ac2b-e55c73a5f46a", "23932dc6-944c-4ca3-93a7-62d7d654078e", "2d2548cb-3e18-40fd-971d-cc398b7b38c3", "3c8e28da-3ec8-47b5-8f39-dd35c7016da2", "56964cdb-4918-4bbe-8670-79c2e22b8758", "6650d966-282f-447b-8fd2-333c96c1580b", "69f363df-24e5-4049-b3d9-5305863a6a30", "75cddb3b-519a-460b-b45e-a41d66556252", "c5ebf0d7-543a-455e-ac44-9b2db45b8b33", "ee8045fd-80db-4234-b41b-f8416ecf8eff"], "stock" : { "KIT-100" : 6, "PART-200" : 0, "PACK-300" : 0 }}
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f down
+ Container fulfillops-final-c3d6cf1f-worker-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-api-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-worker-2 Stopping 
+ Container fulfillops-final-c3d6cf1f-api-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-api-1 Removing 
+ Container fulfillops-final-c3d6cf1f-api-1 Removed 
+ Container fulfillops-final-c3d6cf1f-worker-2 Stopped 
+ Container fulfillops-final-c3d6cf1f-worker-2 Removing 
+ Container fulfillops-final-c3d6cf1f-worker-2 Removed 
+ Container fulfillops-final-c3d6cf1f-worker-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-worker-1 Removing 
+ Container fulfillops-final-c3d6cf1f-worker-1 Removed 
+ Container fulfillops-final-c3d6cf1f-init-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-init-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-init-1 Removing 
+ Container fulfillops-final-c3d6cf1f-init-1 Removed 
+ Container fulfillops-final-c3d6cf1f-db-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-db-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-db-1 Removing 
+ Container fulfillops-final-c3d6cf1f-db-1 Removed 
+ Network fulfillops-final-c3d6cf1f_default Removing 
+ Network fulfillops-final-c3d6cf1f_default Removed 
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f up -d --no-build --wait --wait-timeout 90
+ Network fulfillops-final-c3d6cf1f_default Creating 
+ Network fulfillops-final-c3d6cf1f_default Creating 
+ Network fulfillops-final-c3d6cf1f_default Created 
+ Network fulfillops-final-c3d6cf1f_default Created 
+ Container fulfillops-final-c3d6cf1f-db-1 Creating 
+ Container fulfillops-final-c3d6cf1f-db-1 Created 
+ Container fulfillops-final-c3d6cf1f-init-1 Creating 
+ Container fulfillops-final-c3d6cf1f-init-1 Created 
+ Container fulfillops-final-c3d6cf1f-api-1 Creating 
+ Container fulfillops-final-c3d6cf1f-worker-2 Creating 
+ Container fulfillops-final-c3d6cf1f-worker-1 Creating 
+ Container fulfillops-final-c3d6cf1f-api-1 Created 
+ Container fulfillops-final-c3d6cf1f-worker-2 Created 
+ Container fulfillops-final-c3d6cf1f-worker-1 Created 
+ Container fulfillops-final-c3d6cf1f-db-1 Starting 
+ Container fulfillops-final-c3d6cf1f-db-1 Started 
+ Container fulfillops-final-c3d6cf1f-db-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-db-1 Healthy 
+ Container fulfillops-final-c3d6cf1f-init-1 Starting 
+ Container fulfillops-final-c3d6cf1f-init-1 Started 
+ Container fulfillops-final-c3d6cf1f-init-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Exited 
+ Container fulfillops-final-c3d6cf1f-worker-2 Starting 
+ Container fulfillops-final-c3d6cf1f-init-1 Exited 
+ Container fulfillops-final-c3d6cf1f-api-1 Starting 
+ Container fulfillops-final-c3d6cf1f-worker-2 Started 
+ Container fulfillops-final-c3d6cf1f-worker-1 Starting 
+ Container fulfillops-final-c3d6cf1f-worker-1 Started 
+ Container fulfillops-final-c3d6cf1f-api-1 Started 
+ Container fulfillops-final-c3d6cf1f-db-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-api-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-worker-2 Waiting 
+ Container fulfillops-final-c3d6cf1f-worker-1 Waiting 
+ Container fulfillops-final-c3d6cf1f-init-1 Exited 
+ Container fulfillops-final-c3d6cf1f-db-1 Healthy 
+ Container fulfillops-final-c3d6cf1f-api-1 Healthy 
+ Container fulfillops-final-c3d6cf1f-worker-2 Healthy 
+ Container fulfillops-final-c3d6cf1f-worker-1 Healthy 
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f exec -T db psql -U fulfillops -d fulfillops_test_final -t -A -c SELECT json_build_object('orders',(SELECT json_agg(o ORDER BY id) FROM (SELECT id,status,total_cents FROM orders) o),'receipts',(SELECT json_agg(order_id ORDER BY order_id) FROM completion_receipts),'stock',(SELECT json_object_agg(sku,available) FROM products))
+{"orders" : [{"id":"09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b","status":"completed","total_cents":599}, 
+ {"id":"0a07bb7d-49ed-441d-b138-fe84f20bc967","status":"completed","total_cents":599}, 
+ {"id":"0ab93351-6913-4ea1-a642-d51f71d11cc3","status":"completed","total_cents":599}, 
+ {"id":"0acada07-1aa4-415e-8f91-4991e4cedfd9","status":"completed","total_cents":996}, 
+ {"id":"0d83247a-d768-4fd8-afb9-ff9dda8dddc3","status":"completed","total_cents":599}, 
+ {"id":"18434a7f-fc15-4b22-ac2b-e55c73a5f46a","status":"completed","total_cents":599}, 
+ {"id":"23932dc6-944c-4ca3-93a7-62d7d654078e","status":"completed","total_cents":599}, 
+ {"id":"2d2548cb-3e18-40fd-971d-cc398b7b38c3","status":"completed","total_cents":599}, 
+ {"id":"3c8e28da-3ec8-47b5-8f39-dd35c7016da2","status":"completed","total_cents":1299}, 
+ {"id":"56964cdb-4918-4bbe-8670-79c2e22b8758","status":"completed","total_cents":599}, 
+ {"id":"6650d966-282f-447b-8fd2-333c96c1580b","status":"completed","total_cents":599}, 
+ {"id":"69f363df-24e5-4049-b3d9-5305863a6a30","status":"completed","total_cents":599}, 
+ {"id":"75cddb3b-519a-460b-b45e-a41d66556252","status":"completed","total_cents":599}, 
+ {"id":"c5ebf0d7-543a-455e-ac44-9b2db45b8b33","status":"completed","total_cents":249}, 
+ {"id":"ee8045fd-80db-4234-b41b-f8416ecf8eff","status":"completed","total_cents":599}], "receipts" : ["09ecf005-e3ba-4bb3-aaa4-ad9116d3af9b", "0a07bb7d-49ed-441d-b138-fe84f20bc967", "0ab93351-6913-4ea1-a642-d51f71d11cc3", "0acada07-1aa4-415e-8f91-4991e4cedfd9", "0d83247a-d768-4fd8-afb9-ff9dda8dddc3", "18434a7f-fc15-4b22-ac2b-e55c73a5f46a", "23932dc6-944c-4ca3-93a7-62d7d654078e", "2d2548cb-3e18-40fd-971d-cc398b7b38c3", "3c8e28da-3ec8-47b5-8f39-dd35c7016da2", "56964cdb-4918-4bbe-8670-79c2e22b8758", "6650d966-282f-447b-8fd2-333c96c1580b", "69f363df-24e5-4049-b3d9-5305863a6a30", "75cddb3b-519a-460b-b45e-a41d66556252", "c5ebf0d7-543a-455e-ac44-9b2db45b8b33", "ee8045fd-80db-4234-b41b-f8416ecf8eff"], "stock" : { "KIT-100" : 6, "PART-200" : 0, "PACK-300" : 0 }}
+
+Exit code: 0
+$ docker image inspect fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017 --format {{json .Config.User}}
+"10001:10001"
+
+Exit code: 0
+$ docker image inspect fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017 --format {{.Id}}
+sha256:774d06f2796c69125e4c0a0bde05703c4fcfae4f9bb2961334b14e605f9c2b02
+
+Exit code: 0
+$ docker compose -p fulfillops-final-c3d6cf1f down --volumes --remove-orphans
+ Container fulfillops-final-c3d6cf1f-api-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-worker-2 Stopping 
+ Container fulfillops-final-c3d6cf1f-worker-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-api-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-api-1 Removing 
+ Container fulfillops-final-c3d6cf1f-api-1 Removed 
+ Container fulfillops-final-c3d6cf1f-worker-2 Stopped 
+ Container fulfillops-final-c3d6cf1f-worker-2 Removing 
+ Container fulfillops-final-c3d6cf1f-worker-2 Removed 
+ Container fulfillops-final-c3d6cf1f-worker-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-worker-1 Removing 
+ Container fulfillops-final-c3d6cf1f-worker-1 Removed 
+ Container fulfillops-final-c3d6cf1f-init-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-init-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-init-1 Removing 
+ Container fulfillops-final-c3d6cf1f-init-1 Removed 
+ Container fulfillops-final-c3d6cf1f-db-1 Stopping 
+ Container fulfillops-final-c3d6cf1f-db-1 Stopped 
+ Container fulfillops-final-c3d6cf1f-db-1 Removing 
+ Container fulfillops-final-c3d6cf1f-db-1 Removed 
+ Network fulfillops-final-c3d6cf1f_default Removing 
+ Volume fulfillops-final-c3d6cf1f_postgres_data Removing 
+ Volume fulfillops-final-c3d6cf1f_postgres_data Removed 
+ Network fulfillops-final-c3d6cf1f_default Removed 
+
+Exit code: 0

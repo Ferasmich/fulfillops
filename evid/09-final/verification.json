@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "source_commit": "0f8a7a9d18e4e94950e8bd3b6a9e562b89145017",
+  "clean_checkout": "/var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj",
+  "tests": 74,
+  "public_checker": {
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0
+  },
+  "persistent_orders": 15,
+  "image": "fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017",
+  "registry_publication": false
+}

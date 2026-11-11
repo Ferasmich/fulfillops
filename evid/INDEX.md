@@ -1,6 +1,6 @@
 # Evidence checklist
 
-This lists the evidence needed for the assignment. Add a file or link when it is ready. Parts 2–8 results are ready; final submission preparation remains.
+This lists the evidence needed for the assignment. Add a file or link when it is ready. Parts 2–8 and final clean-checkout checks are ready. See the final audit for presentation/submission actions.
 
 | Part | Evidence | Status / location |
 |---|---|---|
@@ -16,6 +16,6 @@ This lists the evidence needed for the assignment. Add a file or link when it is
 | Reliability | Two fault drills, healthy 30-second rollout CSV, unhealthy rollout stopped and restored through Git | [Actual fault, rollout and latency results](08-reliability/README.md) |
 | Observability | Required metrics, 200+ HTTP samples, p95 calculation, SLO targets and limitations | [Actual fault, rollout and latency results](08-reliability/README.md) |
 | Incident | Timeline, cause, recovery and prevention | [Postmortem and evidence links](../docs/incident-postmortem.md) |
-| Submission | Repository access, <=8-page report, <=15-minute demo, contribution note, assistance log, install/teardown commands | Pending — `09-final/`, README and docs |
+| Submission | Repository access, <=8-page report, <=15-minute demo, contribution note, assistance log, install/teardown commands | [Final checks, eight-page report and audit](09-final/README.md); presentation/rehearsal and final CI queue outcome remain |
 
 [Earlier setup records](setup-index.md) are kept for reference, not as required submission evidence.

@@ -6,9 +6,9 @@
 
 Build the order-processing platform as a solo project. Start with the API and database, add the worker, then complete the tests, CI and deployment. Save the results needed for the report and demo as each part is finished.
 
-This is a solo execution plan. The supplied assignment specifies teams of 2–3; solo submission and any assessment adjustments must be agreed with the instructor. The technical scope below retains the assignment's requirements. Two API replicas and two worker instances are still required: these are running processes, not people.
+This is a solo execution plan. The supplied assignment specifies teams of 2–3; the project owner confirmed that solo submission is allowed. The technical scope below retains the assignment's requirements. Two API replicas and two worker instances are still required: these are running processes, not people.
 
-**Current status:** Part 8 verified: 74 tests passed; 250 catalog requests succeeded with p95 54.54 ms; healthy 30-second rollout, rejected bad readiness configuration, Git revert recovery and all 21 stored orders/receipts preserved. Worker-crash metrics/logs and postmortem are saved in `evid/08-reliability/` and `docs/`. Part 9 final audit/report/demo remains. Registry publication is disabled; PR #1 remains unmerged.
+**Current status:** Part 8 verified: 74 tests passed; 250 catalog requests succeeded with p95 54.54 ms; healthy 30-second rollout, rejected bad readiness configuration, Git revert recovery and all 21 stored orders/receipts preserved. Worker-crash metrics/logs and postmortem are saved in `evid/08-reliability/` and `docs/`. Part 9 clean-checkout checks and the eight-page report are complete. Presentation, grading screenshot and final CI queue outcome remain; see docs/final-audit.md. Registry publication is disabled; PR #1 remains unmerged.
 
 **Source pack:** `FulfillOps_9_5_STUDENTS_COMPLETE/` (inside the current project root).
 

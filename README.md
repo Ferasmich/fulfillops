@@ -4,7 +4,7 @@ An order API with PostgreSQL inventory reservations and persistent idempotency. 
 
 ## Run the complete stack with Docker
 
-Keep `.env` local. It needs `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `API_DB_PASSWORD` and `WORKER_DB_PASSWORD`; see `.env.example`. Separate runtime passwords were generated locally where missing. Stop manually running API/workers before using their container versions.
+For a fresh checkout, copy `.env.example` to `.env` and replace all three password placeholders with separate local values. Keep `.env` local. It needs `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `API_DB_PASSWORD` and `WORKER_DB_PASSWORD`; see `.env.example`. Separate runtime passwords were generated locally where missing. Stop manually running API/workers before using their container versions.
 
 ```bash
 docker compose up -d --build
@@ -164,4 +164,12 @@ Use `http://127.0.0.1:8081/health/ready`. This is a separate database from Compo
 - [Part 8 report notes and defense questions](docs/part8-notes.md)
 - [Assistance log](docs/assistance-log.md)
 
-The original source pack is kept locally in `FulfillOps_9_5_STUDENTS_COMPLETE/` and excluded from Git; unchanged text/checker copies are in `assessment/`. The assignment specifies teams of 2–3; solo assessment approval remains unverified. The project is pushed to [GitHub](https://github.com/Ferasmich/fulfillops). [PR #1](https://github.com/Ferasmich/fulfillops/pull/1) is open with green checks; no registry publication or PR merge was performed.
+The original source pack is kept locally in `FulfillOps_9_5_STUDENTS_COMPLETE/` and excluded from Git; unchanged text/checker copies are in `assessment/`. This is an allowed solo submission, as confirmed by the project owner. The project is pushed to [GitHub](https://github.com/Ferasmich/fulfillops). [PR #1](https://github.com/Ferasmich/fulfillops/pull/1) is open with green checks; no registry publication or PR merge was performed.
+
+## Solo contribution and limitations
+
+Solo submission is allowed, as confirmed by the project owner. I am responsible for explaining the architecture, code, tests and operational choices across the whole project. My recorded hands-on work includes the local Python/database setup and manual API/worker checks; I directed the implementation and requested verification of each stage. The scoped tool assistance is recorded in [the course-required assistance log](docs/assistance-log.md).
+
+The design uses PostgreSQL transactions and a durable work table to keep one source of truth and avoid coordinating a separate broker. I would next add authentication/order authorization, a database backup/restore drill, a production secret manager and deployment-manifest smoke checks. The local single-node setup and database completion receipt do not prove production high availability or exactly-once external shipping/payment.
+
+Final source/setup tests and fresh-data checker results are in [Part 9](evid/09-final/README.md). Use the [final audit](docs/final-audit.md) for the completed requirements and remaining submission actions. Stage-specific notes describe the state at that stage; they are not the current completion checklist.

@@ -1,0 +1,6 @@
+$ /var/folders/l6/kwgjhx4s3sd_n9h9v25k124c0000gn/T/fulfillops-final-pyx0xuaj/.venv/bin/python scripts/regression_demo.py
+failing: exit 1
+fixed: exit 0
+Expected failure followed by passing fix. Original source was never modified.
+
+Exit code: 0

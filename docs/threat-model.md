@@ -1,6 +1,6 @@
 # Threat model
 
-Design review only. Trust boundaries: HTTP client → API; API/worker → database; CI → registry; Git/Argo CD → cluster; operator → test-reset tooling. Assets: stock, durable orders, credentials, artifacts and evidence.
+Threat model and mitigation review. The evidence checklist links the implemented runtime/tests; production controls are identified below. Trust boundaries: HTTP client → API; API/worker → database; CI → registry; Git/Argo CD → cluster; operator → test-reset tooling. Assets: stock, durable orders, credentials, artifacts and evidence.
 
 | Threat | Mitigation to implement | Planned verification |
 |---|---|---|
@@ -9,7 +9,7 @@ Design review only. Trust boundaries: HTTP client → API; API/worker → databa
 | Duplicate reservations from replay across replicas | Unique durable key, canonical comparison, acceptance transaction | Eight same-key calls across both APIs |
 | Duplicate completion after lease expiry | Claim-token fencing and one transactional receipt | Stale worker resumes after reclaim |
 | Oversized/malformed request exhausts resources | Streaming body cap, strict types, bounded DB waits | No/false Content-Length, invalid JSON, booleans |
-| Secret leakage in Git/logs/evidence | Ignore local env, secret references, safe error categories, inspect saved outputs | Tracked-file/log review and CI secret scan |
+| Secret leakage in Git/logs/evidence | Ignore local env, secret references, safe error categories, inspect saved outputs | Tracked-file/log review; automated secret scanning remains future work |
 | Credential compromise permits destructive DDL | Separate migration/API/worker roles and scoped permissions | Negative grant tests |
 | Reset destroys a live dataset | Test-only tooling, environment/name/host guard, no reset HTTP route | Reject non-test and ambiguous targets |
 | Dependency/image tampering | Locked dependencies, reviewed pins, SBOM/scans, digest promotion | CI artifacts and blocked critical finding |

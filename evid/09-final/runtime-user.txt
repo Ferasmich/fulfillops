@@ -1,0 +1,4 @@
+$ docker image inspect fulfillops:0f8a7a9d18e4e94950e8bd3b6a9e562b89145017 --format {{json .Config.User}}
+"10001:10001"
+
+Exit code: 0

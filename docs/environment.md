@@ -22,4 +22,4 @@ Initial Docker socket access and Git initialization failed under execution restr
 
 No application dependencies installed, database started or Kubernetes cluster created. Client versions do not prove cluster compatibility; select/test the kind node image and pin Kubernetes/Argo CD versions during the deployment stage. Image download and container execution were demonstrated only with Docker's disposable test image.
 
-Part 2 prerequisite: resolve and lock Python packages, create/apply migrations, implement test-only seeds and start an isolated PostgreSQL environment. Solo assessment approval remains unverified.
+Part 2 prerequisite: resolve and lock Python packages, create/apply migrations, implement test-only seeds and start an isolated PostgreSQL environment. The project owner confirmed that solo submission is allowed.
