@@ -1,0 +1,203 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "annotations": {
+      "argocd.argoproj.io/sync-wave": "1",
+      "argocd.argoproj.io/tracking-id": "fulfillops:apps/Deployment:fulfillops/fulfillops-api",
+      "deployment.kubernetes.io/revision": "4",
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{\"argocd.argoproj.io/sync-wave\":\"1\",\"argocd.argoproj.io/tracking-id\":\"fulfillops:apps/Deployment:fulfillops/fulfillops-api\"},\"name\":\"fulfillops-api\",\"namespace\":\"fulfillops\"},\"spec\":{\"minReadySeconds\":3,\"progressDeadlineSeconds\":90,\"replicas\":2,\"revisionHistoryLimit\":5,\"selector\":{\"matchLabels\":{\"app\":\"fulfillops-api\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":1,\"maxUnavailable\":0},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"annotations\":{\"fulfillops.io/release\":\"part8-good-20261111T201834Z\"},\"labels\":{\"app\":\"fulfillops-api\"}},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"env\":[{\"name\":\"POSTGRES_USER\",\"value\":\"fulfillops_api\"},{\"name\":\"POSTGRES_PASSWORD\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"api-password\",\"name\":\"fulfillops-db-credentials\"}}}],\"envFrom\":[{\"configMapRef\":{\"name\":\"fulfillops-config\"}}],\"image\":\"fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4\",\"imagePullPolicy\":\"Never\",\"lifecycle\":{\"preStop\":{\"exec\":{\"command\":[\"python\",\"-c\",\"import time; time.sleep(3)\"]}}},\"livenessProbe\":{\"httpGet\":{\"path\":\"/health/live\",\"port\":8080},\"periodSeconds\":5},\"name\":\"api\",\"ports\":[{\"containerPort\":8080}],\"readinessProbe\":{\"httpGet\":{\"path\":\"/health/ready\",\"port\":8080},\"periodSeconds\":2,\"timeoutSeconds\":4},\"resources\":{\"limits\":{\"cpu\":\"500m\",\"memory\":\"192Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"64Mi\"}},\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"readOnlyRootFilesystem\":true},\"startupProbe\":{\"failureThreshold\":30,\"httpGet\":{\"path\":\"/health/live\",\"port\":8080},\"periodSeconds\":2},\"volumeMounts\":[{\"mountPath\":\"/tmp\",\"name\":\"tmp\"}]}],\"securityContext\":{\"fsGroup\":10001,\"runAsGroup\":10001,\"runAsNonRoot\":true,\"runAsUser\":10001,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}},\"terminationGracePeriodSeconds\":20,\"volumes\":[{\"emptyDir\":{\"medium\":\"Memory\",\"sizeLimit\":\"16Mi\"},\"name\":\"tmp\"}]}}}}\n"
+    },
+    "creationTimestamp": "2026-11-11T18:12:21Z",
+    "generation": 6,
+    "name": "fulfillops-api",
+    "namespace": "fulfillops",
+    "resourceVersion": "9008",
+    "uid": "123816ca-5818-4043-8e3a-b01f55a83799"
+  },
+  "spec": {
+    "minReadySeconds": 3,
+    "progressDeadlineSeconds": 90,
+    "replicas": 2,
+    "revisionHistoryLimit": 5,
+    "selector": {
+      "matchLabels": {
+        "app": "fulfillops-api"
+      }
+    },
+    "strategy": {
+      "rollingUpdate": {
+        "maxSurge": 1,
+        "maxUnavailable": 0
+      },
+      "type": "RollingUpdate"
+    },
+    "template": {
+      "metadata": {
+        "annotations": {
+          "fulfillops.io/release": "part8-good-20261111T201834Z"
+        },
+        "labels": {
+          "app": "fulfillops-api"
+        }
+      },
+      "spec": {
+        "automountServiceAccountToken": false,
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POSTGRES_USER",
+                "value": "fulfillops_api"
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "api-password",
+                    "name": "fulfillops-db-credentials"
+                  }
+                }
+              }
+            ],
+            "envFrom": [
+              {
+                "configMapRef": {
+                  "name": "fulfillops-config"
+                }
+              }
+            ],
+            "image": "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4",
+            "imagePullPolicy": "Never",
+            "lifecycle": {
+              "preStop": {
+                "exec": {
+                  "command": [
+                    "python",
+                    "-c",
+                    "import time; time.sleep(3)"
+                  ]
+                }
+              }
+            },
+            "livenessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health/live",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health/ready",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 2,
+              "successThreshold": 1,
+              "timeoutSeconds": 4
+            },
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "securityContext": {
+              "allowPrivilegeEscalation": false,
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              },
+              "readOnlyRootFilesystem": true
+            },
+            "startupProbe": {
+              "failureThreshold": 30,
+              "httpGet": {
+                "path": "/health/live",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 2,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/tmp",
+                "name": "tmp"
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {
+          "fsGroup": 10001,
+          "runAsGroup": 10001,
+          "runAsNonRoot": true,
+          "runAsUser": 10001,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "terminationGracePeriodSeconds": 20,
+        "volumes": [
+          {
+            "emptyDir": {
+              "medium": "Memory",
+              "sizeLimit": "16Mi"
+            },
+            "name": "tmp"
+          }
+        ]
+      }
+    }
+  },
+  "status": {
+    "availableReplicas": 2,
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-11-11T18:17:37Z",
+        "lastUpdateTime": "2026-11-11T18:17:37Z",
+        "message": "Deployment has minimum availability.",
+        "reason": "MinimumReplicasAvailable",
+        "status": "True",
+        "type": "Available"
+      },
+      {
+        "lastTransitionTime": "2026-11-11T20:21:33Z",
+        "lastUpdateTime": "2026-11-11T20:21:33Z",
+        "message": "ReplicaSet \"fulfillops-api-668776b665\" has successfully progressed.",
+        "reason": "NewReplicaSetAvailable",
+        "status": "True",
+        "type": "Progressing"
+      }
+    ],
+    "observedGeneration": 6,
+    "readyReplicas": 2,
+    "replicas": 2,
+    "terminatingReplicas": 1,
+    "updatedReplicas": 2
+  }
+}

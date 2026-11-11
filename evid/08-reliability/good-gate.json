@@ -1,0 +1,35 @@
+{
+  "time": "2026-11-11T20:19:07.371113+00:00",
+  "passed": true,
+  "expected_revision": "fa36a65f370e08672ce475e496196f315b869392",
+  "observed_revision": "fa36a65f370e08672ce475e496196f315b869392",
+  "expected_release": "part8-good-20261111T201834Z",
+  "observed_release": "part8-good-20261111T201834Z",
+  "sync": "Synced",
+  "health": "Healthy",
+  "replicas": {
+    "replicas": 2,
+    "updatedReplicas": 2,
+    "readyReplicas": 2,
+    "availableReplicas": 2
+  },
+  "conditions": [
+    {
+      "lastTransitionTime": "2026-11-11T18:17:37Z",
+      "lastUpdateTime": "2026-11-11T18:17:37Z",
+      "message": "Deployment has minimum availability.",
+      "reason": "MinimumReplicasAvailable",
+      "status": "True",
+      "type": "Available"
+    },
+    {
+      "lastTransitionTime": "2026-11-11T18:12:21Z",
+      "lastUpdateTime": "2026-11-11T20:19:04Z",
+      "message": "ReplicaSet \"fulfillops-api-668776b665\" has successfully progressed.",
+      "reason": "NewReplicaSetAvailable",
+      "status": "True",
+      "type": "Progressing"
+    }
+  ],
+  "reason": "healthy"
+}

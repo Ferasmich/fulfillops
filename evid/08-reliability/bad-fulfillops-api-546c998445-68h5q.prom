@@ -1,0 +1,55 @@
+# HELP fulfillops_http_requests_total HTTP requests
+# TYPE fulfillops_http_requests_total counter
+fulfillops_http_requests_total{method="GET",route="/health/live",status="200"} 19.0
+fulfillops_http_requests_total{method="GET",route="unmatched",status="404"} 46.0
+# HELP fulfillops_http_requests_created HTTP requests
+# TYPE fulfillops_http_requests_created gauge
+fulfillops_http_requests_created{method="GET",route="/health/live",status="200"} 1.7944283846552036e+09
+fulfillops_http_requests_created{method="GET",route="unmatched",status="404"} 1.7944283849417424e+09
+# HELP fulfillops_http_request_duration_seconds HTTP latency
+# TYPE fulfillops_http_request_duration_seconds histogram
+fulfillops_http_request_duration_seconds_bucket{le="0.005",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.025",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.075",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="0.75",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="1.0",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="2.5",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="5.0",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="7.5",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="10.0",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_count{method="GET",route="/health/live"} 19.0
+fulfillops_http_request_duration_seconds_sum{method="GET",route="/health/live"} 0.017691835999357863
+fulfillops_http_request_duration_seconds_bucket{le="0.005",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.01",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.025",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.05",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.075",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.1",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.25",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.5",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="0.75",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="1.0",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="2.5",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="5.0",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="7.5",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="10.0",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_count{method="GET",route="unmatched"} 46.0
+fulfillops_http_request_duration_seconds_sum{method="GET",route="unmatched"} 0.012749714003803092
+# HELP fulfillops_http_request_duration_seconds_created HTTP latency
+# TYPE fulfillops_http_request_duration_seconds_created gauge
+fulfillops_http_request_duration_seconds_created{method="GET",route="/health/live"} 1.7944283846552453e+09
+fulfillops_http_request_duration_seconds_created{method="GET",route="unmatched"} 1.794428384941761e+09
+# TYPE fulfillops_orders_created_total counter
+fulfillops_orders_created_total 21
+# TYPE fulfillops_orders_failed_total counter
+fulfillops_orders_failed_total 0
+# TYPE fulfillops_worker_retries_total counter
+fulfillops_worker_retries_total 0
+

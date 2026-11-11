@@ -1,0 +1,22 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+{"time": "2026-11-11T20:18:56.698573+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.002505}
+{"time": "2026-11-11T20:18:56.855311+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.017303}
+{"time": "2026-11-11T20:18:58.844184+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.006298}
+{"time": "2026-11-11T20:18:59.079614+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.007508}
+{"time": "2026-11-11T20:18:59.332350+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.00796}
+{"time": "2026-11-11T20:18:59.678049+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.000525}
+{"time": "2026-11-11T20:19:00.088528+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.006462}
+{"time": "2026-11-11T20:19:00.342000+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.005927}
+{"time": "2026-11-11T20:19:00.845581+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.007563}
+{"time": "2026-11-11T20:19:02.359887+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.00705}
+{"time": "2026-11-11T20:19:02.843221+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.007835}
+{"time": "2026-11-11T20:19:02.876943+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.009052}
+{"time": "2026-11-11T20:19:03.626190+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.00591}
+{"time": "2026-11-11T20:19:04.674726+00:00", "event": "http_request", "method": "GET", "route": "/health/live", "status": 200, "duration_seconds": 0.000449}
+{"time": "2026-11-11T20:19:04.841016+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.00659}
+{"time": "2026-11-11T20:19:04.891170+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.005785}
+{"time": "2026-11-11T20:19:06.855970+00:00", "event": "http_request", "method": "GET", "route": "/health/ready", "status": 200, "duration_seconds": 0.018881}
+{"time": "2026-11-11T20:19:08.466816+00:00", "event": "http_request", "method": "GET", "route": "/metrics", "status": 200, "duration_seconds": 0.007979}

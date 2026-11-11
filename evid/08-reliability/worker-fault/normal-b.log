@@ -1,0 +1,4 @@
+{"time": "2026-11-11T19:07:35.635465+00:00", "event": "worker_started", "order_id": null}
+{"time": "2026-11-11T19:07:35.652667+00:00", "event": "claimed", "order_id": "3077ccbb-315b-48fb-8c34-938a2c13de3a", "attempt": 1}
+{"time": "2026-11-11T19:07:35.713531+00:00", "event": "completed", "order_id": "3077ccbb-315b-48fb-8c34-938a2c13de3a"}
+{"time": "2026-11-11T19:07:35.740889+00:00", "event": "worker_stopped", "order_id": null}

@@ -1,0 +1,95 @@
+# HELP fulfillops_http_requests_total HTTP requests
+# TYPE fulfillops_http_requests_total counter
+fulfillops_http_requests_total{method="GET",route="/health/live",status="200"} 33.0
+fulfillops_http_requests_total{method="GET",route="/health/ready",status="200"} 332.0
+fulfillops_http_requests_total{method="GET",route="/metrics",status="200"} 3.0
+fulfillops_http_requests_total{method="GET",route="/api/v1/catalog",status="200"} 138.0
+# HELP fulfillops_http_requests_created HTTP requests
+# TYPE fulfillops_http_requests_created gauge
+fulfillops_http_requests_created{method="GET",route="/health/live",status="200"} 1.7944283366984978e+09
+fulfillops_http_requests_created{method="GET",route="/health/ready",status="200"} 1.7944283368552716e+09
+fulfillops_http_requests_created{method="GET",route="/metrics",status="200"} 1.7944283484667625e+09
+fulfillops_http_requests_created{method="GET",route="/api/v1/catalog",status="200"} 1.794428348723658e+09
+# HELP fulfillops_http_request_duration_seconds HTTP latency
+# TYPE fulfillops_http_request_duration_seconds histogram
+fulfillops_http_request_duration_seconds_bucket{le="0.005",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.025",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.075",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="0.75",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="1.0",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="2.5",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="5.0",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="7.5",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="10.0",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_count{method="GET",route="/health/live"} 33.0
+fulfillops_http_request_duration_seconds_sum{method="GET",route="/health/live"} 0.023364376998870284
+fulfillops_http_request_duration_seconds_bucket{le="0.005",method="GET",route="/health/ready"} 0.0
+fulfillops_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/health/ready"} 241.0
+fulfillops_http_request_duration_seconds_bucket{le="0.025",method="GET",route="/health/ready"} 330.0
+fulfillops_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="0.075",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="0.75",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="1.0",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="2.5",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="5.0",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="7.5",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="10.0",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_count{method="GET",route="/health/ready"} 332.0
+fulfillops_http_request_duration_seconds_sum{method="GET",route="/health/ready"} 2.9969808679943526
+fulfillops_http_request_duration_seconds_bucket{le="0.005",method="GET",route="/metrics"} 0.0
+fulfillops_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/metrics"} 1.0
+fulfillops_http_request_duration_seconds_bucket{le="0.025",method="GET",route="/metrics"} 1.0
+fulfillops_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/metrics"} 1.0
+fulfillops_http_request_duration_seconds_bucket{le="0.075",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="0.75",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="1.0",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="2.5",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="5.0",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="7.5",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="10.0",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_count{method="GET",route="/metrics"} 3.0
+fulfillops_http_request_duration_seconds_sum{method="GET",route="/metrics"} 0.11358149999978195
+fulfillops_http_request_duration_seconds_bucket{le="0.005",method="GET",route="/api/v1/catalog"} 0.0
+fulfillops_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/api/v1/catalog"} 136.0
+fulfillops_http_request_duration_seconds_bucket{le="0.025",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="0.075",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="0.75",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="1.0",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="2.5",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="5.0",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="7.5",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="10.0",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_count{method="GET",route="/api/v1/catalog"} 138.0
+fulfillops_http_request_duration_seconds_sum{method="GET",route="/api/v1/catalog"} 0.9837895440105058
+# HELP fulfillops_http_request_duration_seconds_created HTTP latency
+# TYPE fulfillops_http_request_duration_seconds_created gauge
+fulfillops_http_request_duration_seconds_created{method="GET",route="/health/live"} 1.7944283366985228e+09
+fulfillops_http_request_duration_seconds_created{method="GET",route="/health/ready"} 1.7944283368552856e+09
+fulfillops_http_request_duration_seconds_created{method="GET",route="/metrics"} 1.7944283484667854e+09
+fulfillops_http_request_duration_seconds_created{method="GET",route="/api/v1/catalog"} 1.7944283487236834e+09
+# TYPE fulfillops_orders_created_total counter
+fulfillops_orders_created_total 21
+# TYPE fulfillops_orders_failed_total counter
+fulfillops_orders_failed_total 0
+# TYPE fulfillops_worker_retries_total counter
+fulfillops_worker_retries_total 0
+

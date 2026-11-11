@@ -1,0 +1,15 @@
+{
+  "route": "GET /api/v1/catalog",
+  "samples": 250,
+  "successes": 250,
+  "failures": 0,
+  "observed_success_percent": 100.0,
+  "p95_seconds": 0.05454045800070162,
+  "p95_method": "nearest rank: sorted durations[ceil(0.95*n)-1]",
+  "targets": {
+    "success_percent": 99.5,
+    "p95_seconds": 0.3
+  },
+  "environment": "Sequential local requests through kubectl tunnel, stable probe proxy and Kubernetes API Service; not a production SLO window",
+  "targets_met_in_this_window": true
+}

@@ -1,0 +1,63 @@
+{
+  "candidate": "d9a144cca067221ef8f02e3d652548cc85dcf0e4",
+  "candidate_ci": [
+    {
+      "conclusion": "success",
+      "event": "push",
+      "url": "https://github.com/Ferasmich/fulfillops/actions/runs/43084811974"
+    }
+  ],
+  "events": [
+    {
+      "time": "2026-11-11T20:18:33.666503+00:00",
+      "event": "baseline",
+      "orders": 21,
+      "source_revision": "d9a144cca067221ef8f02e3d652548cc85dcf0e4"
+    },
+    {
+      "time": "2026-11-11T20:18:35.980950+00:00",
+      "event": "good_release_push",
+      "revision": "fa36a65f370e08672ce475e496196f315b869392",
+      "release": "part8-good-20261111T201834Z"
+    },
+    {
+      "time": "2026-11-11T20:19:08.536772+00:00",
+      "event": "healthy_rollout_passed",
+      "revision": "fa36a65f370e08672ce475e496196f315b869392"
+    },
+    {
+      "time": "2026-11-11T20:19:23.845402+00:00",
+      "event": "bad_release_push",
+      "revision": "a603b17982c319f23cc8604d1a37e940811823db",
+      "release": "part8-bad-20261111T201834Z"
+    },
+    {
+      "time": "2026-11-11T20:21:15.149904+00:00",
+      "event": "unhealthy_release_blocked",
+      "revision": "a603b17982c319f23cc8604d1a37e940811823db",
+      "bad_pods": [
+        "fulfillops-api-546c998445-68h5q"
+      ],
+      "ready_endpoints": [
+        "fulfillops-api-668776b665-2p8jm",
+        "fulfillops-api-668776b665-9mv9l"
+      ]
+    },
+    {
+      "time": "2026-11-11T20:21:17.673151+00:00",
+      "event": "git_revert_pushed",
+      "revision": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9",
+      "reverted": "a603b17982c319f23cc8604d1a37e940811823db"
+    },
+    {
+      "time": "2026-11-11T20:21:36.269305+00:00",
+      "event": "recovered",
+      "revision": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9",
+      "committed_orders_preserved": 21,
+      "registry_publication": false
+    }
+  ],
+  "good_commit": "fa36a65f370e08672ce475e496196f315b869392",
+  "bad_commit": "a603b17982c319f23cc8604d1a37e940811823db",
+  "recovery_commit": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9"
+}

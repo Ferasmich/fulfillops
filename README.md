@@ -96,7 +96,7 @@ ruff check api common db worker tests scripts
 
 Tests create a separate uniquely named database, seed it, and remove that database afterwards. They do not reset `fulfillops_test`. The local development role needs CREATE DATABASE permission for this test setup. Two tests use real API subprocesses to verify restart persistence and concurrent requests across two replicas.
 
-Results: [Part 2 evidence](evid/02-api/README.md) and [Part 3 evidence](evid/03-worker/README.md). Current combined results: 69 tests passed; supplied checker with both flags: 15 passed / 0 failed / 0 skipped.
+Results: [Part 2 evidence](evid/02-api/README.md) and [Part 3 evidence](evid/03-worker/README.md). Current combined results: 74 tests passed; supplied checker with both flags: 15 passed / 0 failed / 0 skipped.
 
 To repeat the worker crash/poison drills and checker safely:
 
@@ -116,7 +116,7 @@ See [test strategy](docs/test-strategy.md) for unit/integration/race commands. [
 python scripts/regression_demo.py
 ```
 
-The deliberate bug is introduced only in a temporary code copy; the working API is not modified. CI red-to-green proof is still pending.
+The deliberate bug is introduced only in a temporary code copy; the working API is not modified. Live CI red-to-green proof is saved in Part 6.
 
 ## Stop
 
@@ -143,7 +143,11 @@ The local kind cluster runs two APIs, two workers and PostgreSQL with a PVC. Arg
 kubectl --context kind-fulfillops -n fulfillops port-forward --address 127.0.0.1 svc/fulfillops-api 8081:80
 ```
 
-Use `http://127.0.0.1:8081/health/ready`. This is a separate database from Compose on port 8080. The Kubernetes test inventory is exhausted after the saved checker/race run; automatic startup never restores it. Drift correction and order persistence across database-pod replacement are proven. Continuous rolling-update/fault evidence is next in Part 8.
+Use `http://127.0.0.1:8081/health/ready`. This is a separate database from Compose on port 8080. The Kubernetes test inventory is exhausted after the saved checker/race run; automatic startup never restores it. Drift correction and order persistence across database-pod replacement are proven. Part 8 verified the healthy rollout, rejected a bad readiness configuration and restored through a Git revert without losing the 21 stored orders.
+
+## Reliability
+
+[Part 8 results](evid/08-reliability/README.md): 250 successful catalog samples, p95 54.54 ms; healthy 30-second rollout, rejected unhealthy release and Git recovery. [Metrics/reproduction](docs/reliability.md), [incident postmortem](docs/incident-postmortem.md), [defense questions](docs/part8-notes.md). These are short local lab results.
 
 ## Notes and design
 
@@ -157,6 +161,7 @@ Use `http://127.0.0.1:8081/health/ready`. This is a separate database from Compo
 - [Part 5 report notes and defense questions](docs/part5-notes.md)
 - [Part 6 report notes and defense questions](docs/part6-notes.md)
 - [Part 7 report notes and defense questions](docs/part7-notes.md)
+- [Part 8 report notes and defense questions](docs/part8-notes.md)
 - [Assistance log](docs/assistance-log.md)
 
 The original source pack is kept locally in `FulfillOps_9_5_STUDENTS_COMPLETE/` and excluded from Git; unchanged text/checker copies are in `assessment/`. The assignment specifies teams of 2–3; solo assessment approval remains unverified. The project is pushed to [GitHub](https://github.com/Ferasmich/fulfillops). [PR #1](https://github.com/Ferasmich/fulfillops/pull/1) is open with green checks; no registry publication or PR merge was performed.

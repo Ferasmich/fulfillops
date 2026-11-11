@@ -1,0 +1,44 @@
+[
+  {
+    "time": "2026-11-11T19:07:35.885330+00:00",
+    "phase": "before",
+    "order_id": "52d2a135-64a1-46fc-a87f-782497b2fe10",
+    "state": {
+      "status": "queued",
+      "state": "queued",
+      "attempts": 0,
+      "receipts": 0,
+      "stock": 6
+    },
+    "live": 200,
+    "ready": 200
+  },
+  {
+    "time": "2026-11-11T19:07:36.071956+00:00",
+    "phase": "during",
+    "order_id": "52d2a135-64a1-46fc-a87f-782497b2fe10",
+    "state": {
+      "status": "processing",
+      "state": "processing",
+      "attempts": 1,
+      "receipts": 0,
+      "stock": 6
+    },
+    "live": 200,
+    "ready": 200
+  },
+  {
+    "time": "2026-11-11T19:07:36.675073+00:00",
+    "phase": "after",
+    "order_id": "52d2a135-64a1-46fc-a87f-782497b2fe10",
+    "state": {
+      "status": "completed",
+      "state": "completed",
+      "attempts": 2,
+      "receipts": 1,
+      "stock": 6
+    },
+    "live": 200,
+    "ready": 200
+  }
+]

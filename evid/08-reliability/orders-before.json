@@ -1,0 +1,137 @@
+{
+  "orders": [
+    {
+      "id": "08fcf4b2-4ede-4f47-9248-cf83d1caf57f",
+      "status": "completed",
+      "total_cents": 1299
+    },
+    {
+      "id": "35a63cbe-e30c-49d8-831b-b32e2874a236",
+      "status": "completed",
+      "total_cents": 1299
+    },
+    {
+      "id": "36725f59-172e-4d65-b2cd-a04d79354aeb",
+      "status": "completed",
+      "total_cents": 996
+    },
+    {
+      "id": "3da3aea5-0fb2-4d0e-92c0-48f1811b34e0",
+      "status": "completed",
+      "total_cents": 1299
+    },
+    {
+      "id": "3ea9cd91-1563-4070-a1f0-b5ddd061f79a",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "43a877ef-ba1c-421e-aad9-f51b79f309b9",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "52afcbac-baec-4de3-a7cd-bf63989798f0",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "59b11180-5c37-400d-9486-89ce6db6a9fb",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "5bc3fc2a-7104-46cd-aaed-e089f078f958",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "5c06348c-eec2-4d68-a654-5d3529f03f09",
+      "status": "completed",
+      "total_cents": 1299
+    },
+    {
+      "id": "5ef031d6-b93b-4c18-9ecf-356c488fb0a7",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "649b321c-2ec1-489a-8f6a-df09207f232a",
+      "status": "completed",
+      "total_cents": 1299
+    },
+    {
+      "id": "6868bc5f-8dbd-473e-9efd-38567d04e0d1",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "6a371337-6e91-4796-a163-5fee89ff13dc",
+      "status": "completed",
+      "total_cents": 249
+    },
+    {
+      "id": "9b9b8013-a77e-4923-aa4c-f463adf4cf57",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "a4b67d9a-1c91-42ba-9662-0562e487e12c",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "cac6d3a4-8bfe-4a2b-88b8-785c6e1c0403",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "d743380b-6b24-4d28-aee2-689b4dbee209",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "dc1d493b-2c43-44ee-964b-c584db20b780",
+      "status": "completed",
+      "total_cents": 599
+    },
+    {
+      "id": "dfe0ca2b-b84a-423d-bba9-55551905f885",
+      "status": "completed",
+      "total_cents": 1299
+    },
+    {
+      "id": "e6027f1b-d829-469b-8109-22b8a9f7efd9",
+      "status": "completed",
+      "total_cents": 1299
+    }
+  ],
+  "receipts": [
+    "08fcf4b2-4ede-4f47-9248-cf83d1caf57f",
+    "35a63cbe-e30c-49d8-831b-b32e2874a236",
+    "36725f59-172e-4d65-b2cd-a04d79354aeb",
+    "3da3aea5-0fb2-4d0e-92c0-48f1811b34e0",
+    "3ea9cd91-1563-4070-a1f0-b5ddd061f79a",
+    "43a877ef-ba1c-421e-aad9-f51b79f309b9",
+    "52afcbac-baec-4de3-a7cd-bf63989798f0",
+    "59b11180-5c37-400d-9486-89ce6db6a9fb",
+    "5bc3fc2a-7104-46cd-aaed-e089f078f958",
+    "5c06348c-eec2-4d68-a654-5d3529f03f09",
+    "5ef031d6-b93b-4c18-9ecf-356c488fb0a7",
+    "649b321c-2ec1-489a-8f6a-df09207f232a",
+    "6868bc5f-8dbd-473e-9efd-38567d04e0d1",
+    "6a371337-6e91-4796-a163-5fee89ff13dc",
+    "9b9b8013-a77e-4923-aa4c-f463adf4cf57",
+    "a4b67d9a-1c91-42ba-9662-0562e487e12c",
+    "cac6d3a4-8bfe-4a2b-88b8-785c6e1c0403",
+    "d743380b-6b24-4d28-aee2-689b4dbee209",
+    "dc1d493b-2c43-44ee-964b-c584db20b780",
+    "dfe0ca2b-b84a-423d-bba9-55551905f885",
+    "e6027f1b-d829-469b-8109-22b8a9f7efd9"
+  ],
+  "inventory": {
+    "PART-200": 0,
+    "PACK-300": 0,
+    "KIT-100": 0
+  }
+}

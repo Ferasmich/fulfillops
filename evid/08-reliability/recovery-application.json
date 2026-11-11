@@ -1,0 +1,335 @@
+{
+  "apiVersion": "argoproj.io/v1alpha1",
+  "kind": "Application",
+  "metadata": {
+    "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"name\":\"fulfillops\",\"namespace\":\"argocd\"},\"spec\":{\"destination\":{\"namespace\":\"fulfillops\",\"server\":\"https://kubernetes.default.svc\"},\"project\":\"fulfillops\",\"source\":{\"path\":\"infra/k8s\",\"repoURL\":\"https://github.com/Ferasmich/fulfillops.git\",\"targetRevision\":\"main\"},\"syncPolicy\":{\"automated\":{\"allowEmpty\":false,\"prune\":false,\"selfHeal\":true},\"retry\":{\"backoff\":{\"duration\":\"5s\",\"factor\":2,\"maxDuration\":\"30s\"},\"limit\":3}}}}\n"
+    },
+    "creationTimestamp": "2026-11-11T18:11:36Z",
+    "generation": 101,
+    "name": "fulfillops",
+    "namespace": "argocd",
+    "resourceVersion": "9011",
+    "uid": "ce75060c-bb15-4a08-a978-195a59a1ef85"
+  },
+  "spec": {
+    "destination": {
+      "namespace": "fulfillops",
+      "server": "https://kubernetes.default.svc"
+    },
+    "project": "fulfillops",
+    "source": {
+      "path": "infra/k8s",
+      "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+      "targetRevision": "main"
+    },
+    "syncPolicy": {
+      "automated": {
+        "allowEmpty": false,
+        "prune": false,
+        "selfHeal": true
+      },
+      "retry": {
+        "backoff": {
+          "duration": "5s",
+          "factor": 2,
+          "maxDuration": "30s"
+        },
+        "limit": 3
+      }
+    }
+  },
+  "status": {
+    "controllerNamespace": "argocd",
+    "health": {
+      "lastTransitionTime": "2026-11-11T20:21:34Z",
+      "status": "Healthy"
+    },
+    "history": [
+      {
+        "deployStartedAt": "2026-11-11T18:11:39Z",
+        "deployedAt": "2026-11-11T18:12:21Z",
+        "id": 0,
+        "initiatedBy": {
+          "automated": true
+        },
+        "revision": "933b087c2aa506558de0c57ab6af93ffe1c971e1",
+        "source": {
+          "path": "infra/k8s",
+          "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+          "targetRevision": "main"
+        }
+      },
+      {
+        "deployStartedAt": "2026-11-11T20:18:39Z",
+        "deployedAt": "2026-11-11T20:18:54Z",
+        "id": 1,
+        "initiatedBy": {
+          "automated": true
+        },
+        "revision": "fa36a65f370e08672ce475e496196f315b869392",
+        "source": {
+          "path": "infra/k8s",
+          "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+          "targetRevision": "main"
+        }
+      },
+      {
+        "deployStartedAt": "2026-11-11T20:19:27Z",
+        "deployedAt": "2026-11-11T20:19:42Z",
+        "id": 2,
+        "initiatedBy": {
+          "automated": true
+        },
+        "revision": "a603b17982c319f23cc8604d1a37e940811823db",
+        "source": {
+          "path": "infra/k8s",
+          "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+          "targetRevision": "main"
+        }
+      },
+      {
+        "deployStartedAt": "2026-11-11T20:21:19Z",
+        "deployedAt": "2026-11-11T20:21:33Z",
+        "id": 3,
+        "initiatedBy": {
+          "automated": true
+        },
+        "revision": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9",
+        "source": {
+          "path": "infra/k8s",
+          "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+          "targetRevision": "main"
+        }
+      }
+    ],
+    "operationState": {
+      "finishedAt": "2026-11-11T20:21:33Z",
+      "message": "successfully synced (all tasks run)",
+      "operation": {
+        "initiatedBy": {
+          "automated": true
+        },
+        "retry": {
+          "backoff": {
+            "duration": "5s",
+            "factor": 2,
+            "maxDuration": "30s"
+          },
+          "limit": 3
+        },
+        "sync": {
+          "revision": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9",
+          "source": {
+            "path": "infra/k8s",
+            "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+            "targetRevision": "main"
+          }
+        }
+      },
+      "phase": "Succeeded",
+      "startedAt": "2026-11-11T20:21:19Z",
+      "syncResult": {
+        "resources": [
+          {
+            "group": "",
+            "hookPhase": "Succeeded",
+            "kind": "ConfigMap",
+            "message": "configmap/fulfillops-config unchanged",
+            "name": "fulfillops-config",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "",
+            "hookPhase": "Succeeded",
+            "kind": "Service",
+            "message": "service/fulfillops-api unchanged",
+            "name": "fulfillops-api",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "",
+            "hookPhase": "Succeeded",
+            "kind": "Service",
+            "message": "service/db unchanged",
+            "name": "db",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "",
+            "hookPhase": "Succeeded",
+            "kind": "PersistentVolumeClaim",
+            "message": "persistentvolumeclaim/postgres-data unchanged",
+            "name": "postgres-data",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "apps",
+            "hookPhase": "Succeeded",
+            "images": [
+              "postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657"
+            ],
+            "kind": "StatefulSet",
+            "message": "partitioned roll out complete: 1 new pods have been updated...",
+            "name": "postgres",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "batch",
+            "hookPhase": "Succeeded",
+            "hookType": "Sync",
+            "images": [
+              "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4"
+            ],
+            "kind": "Job",
+            "message": "Reached expected number of succeeded pods",
+            "name": "fulfillops-bootstrap",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "apps",
+            "hookPhase": "Running",
+            "images": [
+              "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4"
+            ],
+            "kind": "Deployment",
+            "message": "deployment.apps/fulfillops-worker unchanged",
+            "name": "fulfillops-worker",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          },
+          {
+            "group": "apps",
+            "hookPhase": "Running",
+            "images": [
+              "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4"
+            ],
+            "kind": "Deployment",
+            "message": "deployment.apps/fulfillops-api configured",
+            "name": "fulfillops-api",
+            "namespace": "fulfillops",
+            "status": "Synced",
+            "syncPhase": "Sync",
+            "version": "v1"
+          }
+        ],
+        "revision": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9",
+        "source": {
+          "path": "infra/k8s",
+          "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+          "targetRevision": "main"
+        }
+      }
+    },
+    "reconciledAt": "2026-11-11T20:21:33Z",
+    "resourceHealthSource": "appTree",
+    "resources": [
+      {
+        "kind": "ConfigMap",
+        "name": "fulfillops-config",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": -2,
+        "version": "v1"
+      },
+      {
+        "kind": "PersistentVolumeClaim",
+        "name": "postgres-data",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": -1,
+        "version": "v1"
+      },
+      {
+        "kind": "Service",
+        "name": "db",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": -2,
+        "version": "v1"
+      },
+      {
+        "kind": "Service",
+        "name": "fulfillops-api",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": -2,
+        "version": "v1"
+      },
+      {
+        "group": "apps",
+        "kind": "Deployment",
+        "name": "fulfillops-api",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": 1,
+        "version": "v1"
+      },
+      {
+        "group": "apps",
+        "kind": "Deployment",
+        "name": "fulfillops-worker",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": 1,
+        "version": "v1"
+      },
+      {
+        "group": "apps",
+        "kind": "StatefulSet",
+        "name": "postgres",
+        "namespace": "fulfillops",
+        "status": "Synced",
+        "syncWave": -1,
+        "version": "v1"
+      },
+      {
+        "group": "batch",
+        "hook": true,
+        "kind": "Job",
+        "name": "fulfillops-bootstrap",
+        "namespace": "fulfillops",
+        "requiresPruning": true,
+        "version": "v1"
+      }
+    ],
+    "sourceHydrator": {},
+    "sourceType": "Kustomize",
+    "summary": {},
+    "sync": {
+      "comparedTo": {
+        "destination": {
+          "namespace": "fulfillops",
+          "server": "https://kubernetes.default.svc"
+        },
+        "source": {
+          "path": "infra/k8s",
+          "repoURL": "https://github.com/Ferasmich/fulfillops.git",
+          "targetRevision": "main"
+        }
+      },
+      "revision": "fa72fb1dde7a3f13a681e73b3d483462d4ad9cf9",
+      "status": "Synced"
+    }
+  }
+}

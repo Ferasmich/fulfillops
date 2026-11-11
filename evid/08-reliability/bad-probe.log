@@ -1,0 +1,2 @@
+$ /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/.venv/bin/python assessment/fulfillops_rollout_probe.py --base-url http://127.0.0.1:53309 --duration 120 --interval 0.25 --output /Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/08-reliability/bad-rollout.csv
+PROBE duration=120.0s total=476 success=476 failures=0 file=/Users/ferasmich/Documents/Feras/EPITA/DevOps/FulfillOps/evid/08-reliability/bad-rollout.csv

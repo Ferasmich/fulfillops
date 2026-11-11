@@ -8,7 +8,7 @@ Build the order-processing platform as a solo project. Start with the API and da
 
 This is a solo execution plan. The supplied assignment specifies teams of 2–3; solo submission and any assessment adjustments must be agreed with the instructor. The technical scope below retains the assignment's requirements. Two API replicas and two worker instances are still required: these are running processes, not people.
 
-**Current status:** Part 7 local Kubernetes/GitOps is verified: two APIs/two workers, Argo Synced/Healthy, real cross-pod races, drift correction and PVC persistence. Checker 15/0/0; host suite 69 passed. Evidence: `evid/07-gitops/`. Registry publication remains disabled; PR #1 remains unmerged. Part 8 rollout/fault/observability proof is next.
+**Current status:** Part 8 verified: 74 tests passed; 250 catalog requests succeeded with p95 54.54 ms; healthy 30-second rollout, rejected bad readiness configuration, Git revert recovery and all 21 stored orders/receipts preserved. Worker-crash metrics/logs and postmortem are saved in `evid/08-reliability/` and `docs/`. Part 9 final audit/report/demo remains. Registry publication is disabled; PR #1 remains unmerged.
 
 **Source pack:** `FulfillOps_9_5_STUDENTS_COMPLETE/` (inside the current project root).
 
@@ -213,8 +213,8 @@ Update `evid/INDEX.md` when a required piece of evidence is ready. Existing setu
 |---|---|---|---|
 | Cross-replica idempotency | Eight identical concurrent requests across two APIs; one order/reservation; replay survives restart | `evid/04-tests/` | Local proof in `evid/02-api/test-results.txt` and `evid/03-worker/test-results.txt` |
 | Worker resilience | Two workers; killed worker recovery exactly once; bounded poison-job attempts and retained failed state | `evid/03-worker/` | Local crash/poison proof passed; see README in that folder |
-| Safe delivery | Healthy 30-second rollout, halted unhealthy rollout, known-good GitOps restoration, no order loss | `evid/08-reliability/` | Not run |
-| Supply-chain quality gate | CI-produced SBOM, scan policy, red-to-green proof, blocked promotion and immutable image reference | `evid/06-ci/` | Not run |
+| Safe delivery | Healthy 30-second rollout, halted unhealthy rollout, known-good GitOps restoration, no order loss | `evid/08-reliability/` | Verified: 120/120 good probe, bad gate rejected, Git revert, 21 orders/receipts preserved |
+| Supply-chain quality gate | CI-produced SBOM, scan policy, red-to-green proof, blocked promotion and immutable image reference | `evid/06-ci/` | CI/SBOM/scan/red-to-green verified; registry publication not triggered |
 
 ## Suggested solo sequence
 

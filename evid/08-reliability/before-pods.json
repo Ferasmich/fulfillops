@@ -1,0 +1,573 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-11-11T18:12:21Z",
+        "generateName": "fulfillops-api-55cdc6dc75-",
+        "generation": 1,
+        "labels": {
+          "app": "fulfillops-api",
+          "pod-template-hash": "55cdc6dc75"
+        },
+        "name": "fulfillops-api-55cdc6dc75-jgqpl",
+        "namespace": "fulfillops",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "fulfillops-api-55cdc6dc75",
+            "uid": "05a2826f-e91c-42a7-bae3-1f4d2a1bfc54"
+          }
+        ],
+        "resourceVersion": "1591",
+        "uid": "6d189281-99ba-444c-8a74-4cd810cb6fa8"
+      },
+      "spec": {
+        "automountServiceAccountToken": false,
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POSTGRES_USER",
+                "value": "fulfillops_api"
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "api-password",
+                    "name": "fulfillops-db-credentials"
+                  }
+                }
+              }
+            ],
+            "envFrom": [
+              {
+                "configMapRef": {
+                  "name": "fulfillops-config"
+                }
+              }
+            ],
+            "image": "fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef",
+            "imagePullPolicy": "Never",
+            "livenessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health/live",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health/ready",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 2,
+              "successThreshold": 1,
+              "timeoutSeconds": 4
+            },
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "securityContext": {
+              "allowPrivilegeEscalation": false,
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              },
+              "readOnlyRootFilesystem": true
+            },
+            "startupProbe": {
+              "failureThreshold": 30,
+              "httpGet": {
+                "path": "/health/live",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 2,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/tmp",
+                "name": "tmp"
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "fulfillops-control-plane",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {
+          "fsGroup": 10001,
+          "runAsGroup": 10001,
+          "runAsNonRoot": true,
+          "runAsUser": 10001,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 20,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "emptyDir": {
+              "medium": "Memory",
+              "sizeLimit": "16Mi"
+            },
+            "name": "tmp"
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "64Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:22Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:21Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:24Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:24Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:21Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "containerID": "containerd://bf4a7976faebe2b084f4d92c0843ad42e2f5cbbe0af1d9323127a526624495f4",
+            "image": "docker.io/library/fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef",
+            "imageID": "docker.io/library/import-2026-11-11@sha256:9b8dc11a580e43d54042e9f4666bf7f992eaf6b7953a6c89c98635b3c7142000",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-11T18:12:22Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 10001,
+                "supplementalGroups": [
+                  10001
+                ],
+                "uid": 10001
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/tmp",
+                "name": "tmp"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.19.0.2",
+        "hostIPs": [
+          {
+            "ip": "172.19.0.2"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.244.0.16",
+        "podIPs": [
+          {
+            "ip": "10.244.0.16"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "cpu": "500m",
+            "memory": "192Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "64Mi"
+          }
+        },
+        "startTime": "2026-11-11T18:12:21Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-11-11T18:12:21Z",
+        "generateName": "fulfillops-api-55cdc6dc75-",
+        "generation": 1,
+        "labels": {
+          "app": "fulfillops-api",
+          "pod-template-hash": "55cdc6dc75"
+        },
+        "name": "fulfillops-api-55cdc6dc75-z476h",
+        "namespace": "fulfillops",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "fulfillops-api-55cdc6dc75",
+            "uid": "05a2826f-e91c-42a7-bae3-1f4d2a1bfc54"
+          }
+        ],
+        "resourceVersion": "1595",
+        "uid": "3c0db025-88aa-461f-b2ba-a7ffd101888b"
+      },
+      "spec": {
+        "automountServiceAccountToken": false,
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POSTGRES_USER",
+                "value": "fulfillops_api"
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "api-password",
+                    "name": "fulfillops-db-credentials"
+                  }
+                }
+              }
+            ],
+            "envFrom": [
+              {
+                "configMapRef": {
+                  "name": "fulfillops-config"
+                }
+              }
+            ],
+            "image": "fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef",
+            "imagePullPolicy": "Never",
+            "livenessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health/live",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health/ready",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 2,
+              "successThreshold": 1,
+              "timeoutSeconds": 4
+            },
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "securityContext": {
+              "allowPrivilegeEscalation": false,
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              },
+              "readOnlyRootFilesystem": true
+            },
+            "startupProbe": {
+              "failureThreshold": 30,
+              "httpGet": {
+                "path": "/health/live",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 2,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/tmp",
+                "name": "tmp"
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "fulfillops-control-plane",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {
+          "fsGroup": 10001,
+          "runAsGroup": 10001,
+          "runAsNonRoot": true,
+          "runAsUser": 10001,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 20,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "emptyDir": {
+              "medium": "Memory",
+              "sizeLimit": "16Mi"
+            },
+            "name": "tmp"
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "64Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:22Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:21Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:24Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:24Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-11T18:12:21Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "containerID": "containerd://44eb4cfc041330ba265a0dbd2970f3ecba0d98d4e452860332e68b7ef81a7c0e",
+            "image": "docker.io/library/fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef",
+            "imageID": "docker.io/library/import-2026-11-11@sha256:9b8dc11a580e43d54042e9f4666bf7f992eaf6b7953a6c89c98635b3c7142000",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-11T18:12:22Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 10001,
+                "supplementalGroups": [
+                  10001
+                ],
+                "uid": 10001
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/tmp",
+                "name": "tmp"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.19.0.2",
+        "hostIPs": [
+          {
+            "ip": "172.19.0.2"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.244.0.18",
+        "podIPs": [
+          {
+            "ip": "10.244.0.18"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "cpu": "500m",
+            "memory": "192Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "64Mi"
+          }
+        },
+        "startTime": "2026-11-11T18:12:21Z"
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

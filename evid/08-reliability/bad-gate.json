@@ -1,0 +1,35 @@
+{
+  "time": "2026-11-11T20:21:13.190912+00:00",
+  "passed": false,
+  "expected_revision": "a603b17982c319f23cc8604d1a37e940811823db",
+  "observed_revision": "a603b17982c319f23cc8604d1a37e940811823db",
+  "expected_release": "part8-bad-20261111T201834Z",
+  "observed_release": "part8-bad-20261111T201834Z",
+  "sync": "Synced",
+  "health": "Progressing",
+  "replicas": {
+    "replicas": 3,
+    "updatedReplicas": 1,
+    "readyReplicas": 2,
+    "availableReplicas": 2
+  },
+  "conditions": [
+    {
+      "lastTransitionTime": "2026-11-11T18:17:37Z",
+      "lastUpdateTime": "2026-11-11T18:17:37Z",
+      "message": "Deployment has minimum availability.",
+      "reason": "MinimumReplicasAvailable",
+      "status": "True",
+      "type": "Available"
+    },
+    {
+      "lastTransitionTime": "2026-11-11T20:21:12Z",
+      "lastUpdateTime": "2026-11-11T20:21:12Z",
+      "message": "ReplicaSet \"fulfillops-api-546c998445\" has timed out progressing.",
+      "reason": "ProgressDeadlineExceeded",
+      "status": "False",
+      "type": "Progressing"
+    }
+  ],
+  "reason": "ProgressDeadlineExceeded"
+}

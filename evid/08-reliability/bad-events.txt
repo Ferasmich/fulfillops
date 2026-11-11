@@ -1,0 +1,61 @@
+LAST SEEN   TYPE      REASON              OBJECT                                   MESSAGE
+70m         Normal    Started             pod/fulfillops-probe                     Container started
+70m         Normal    Created             pod/fulfillops-probe                     Container created
+70m         Normal    Pulled              pod/fulfillops-probe                     Container image "fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef" already present on machine and can be accessed by the pod
+70m         Normal    Scheduled           pod/fulfillops-probe                     Successfully assigned fulfillops/fulfillops-probe to fulfillops-control-plane
+70m         Warning   Unhealthy           pod/fulfillops-probe                     Readiness probe failed: dial tcp 10.244.0.21:8080: connect: connection refused
+2m29s       Normal    Scheduled           pod/fulfillops-bootstrap-zn77x           Successfully assigned fulfillops/fulfillops-bootstrap-zn77x to fulfillops-control-plane
+2m29s       Normal    SuccessfulCreate    job/fulfillops-bootstrap                 Created pod: fulfillops-bootstrap-zn77x
+2m29s       Normal    Started             pod/fulfillops-bootstrap-zn77x           Container started
+2m29s       Normal    Created             pod/fulfillops-bootstrap-zn77x           Container created
+2m29s       Normal    Pulled              pod/fulfillops-bootstrap-zn77x           Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+2m26s       Normal    Completed           job/fulfillops-bootstrap                 Job completed
+2m21s       Normal    Pulled              pod/fulfillops-api-668776b665-9mv9l      Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+2m21s       Normal    ScalingReplicaSet   deployment/fulfillops-worker             Scaled up replica set fulfillops-worker-8558cc8cf from 0 to 1
+2m21s       Normal    SuccessfulCreate    replicaset/fulfillops-worker-8558cc8cf   Created pod: fulfillops-worker-8558cc8cf-hwq5b
+2m21s       Normal    Scheduled           pod/fulfillops-api-668776b665-9mv9l      Successfully assigned fulfillops/fulfillops-api-668776b665-9mv9l to fulfillops-control-plane
+2m21s       Normal    Started             pod/fulfillops-worker-8558cc8cf-hwq5b    Container started
+2m21s       Normal    Created             pod/fulfillops-api-668776b665-9mv9l      Container created
+2m21s       Normal    Started             pod/fulfillops-api-668776b665-9mv9l      Container started
+2m21s       Normal    SuccessfulCreate    replicaset/fulfillops-api-668776b665     Created pod: fulfillops-api-668776b665-9mv9l
+2m21s       Normal    Created             pod/fulfillops-worker-8558cc8cf-hwq5b    Container created
+2m21s       Normal    ScalingReplicaSet   deployment/fulfillops-api                Scaled up replica set fulfillops-api-668776b665 from 0 to 1
+2m21s       Normal    Pulled              pod/fulfillops-worker-8558cc8cf-hwq5b    Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+2m21s       Normal    Scheduled           pod/fulfillops-worker-8558cc8cf-hwq5b    Successfully assigned fulfillops/fulfillops-worker-8558cc8cf-hwq5b to fulfillops-control-plane
+2m16s       Normal    ScalingReplicaSet   deployment/fulfillops-api                Scaled up replica set fulfillops-api-668776b665 from 1 to 2
+2m16s       Normal    Created             pod/fulfillops-api-668776b665-2p8jm      Container created
+2m16s       Normal    ScalingReplicaSet   deployment/fulfillops-api                Scaled down replica set fulfillops-api-55cdc6dc75 from 2 to 1
+2m16s       Normal    Started             pod/fulfillops-api-668776b665-2p8jm      Container started
+2m16s       Normal    SuccessfulCreate    replicaset/fulfillops-api-668776b665     Created pod: fulfillops-api-668776b665-2p8jm
+2m16s       Normal    Killing             pod/fulfillops-api-55cdc6dc75-jgqpl      Stopping container api
+2m16s       Normal    Pulled              pod/fulfillops-api-668776b665-2p8jm      Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+2m16s       Normal    Scheduled           pod/fulfillops-api-668776b665-2p8jm      Successfully assigned fulfillops/fulfillops-api-668776b665-2p8jm to fulfillops-control-plane
+2m16s       Normal    SuccessfulDelete    replicaset/fulfillops-api-55cdc6dc75     Deleted pod: fulfillops-api-55cdc6dc75-jgqpl
+2m14s       Normal    Pulled              pod/fulfillops-worker-8558cc8cf-q9nrv    Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+2m14s       Normal    Scheduled           pod/fulfillops-worker-8558cc8cf-q9nrv    Successfully assigned fulfillops/fulfillops-worker-8558cc8cf-q9nrv to fulfillops-control-plane
+2m14s       Normal    Created             pod/fulfillops-worker-8558cc8cf-q9nrv    Container created
+2m14s       Normal    Started             pod/fulfillops-worker-8558cc8cf-q9nrv    Container started
+2m14s       Normal    Killing             pod/fulfillops-worker-dc6dd65bf-m8mjd    Stopping container worker
+2m14s       Normal    ScalingReplicaSet   deployment/fulfillops-worker             Scaled down replica set fulfillops-worker-dc6dd65bf from 2 to 1
+2m14s       Normal    ScalingReplicaSet   deployment/fulfillops-worker             Scaled up replica set fulfillops-worker-8558cc8cf from 1 to 2
+2m14s       Normal    SuccessfulCreate    replicaset/fulfillops-worker-8558cc8cf   Created pod: fulfillops-worker-8558cc8cf-q9nrv
+2m14s       Normal    SuccessfulDelete    replicaset/fulfillops-worker-dc6dd65bf   Deleted pod: fulfillops-worker-dc6dd65bf-m8mjd
+2m11s       Normal    ScalingReplicaSet   deployment/fulfillops-api                Scaled down replica set fulfillops-api-55cdc6dc75 from 1 to 0
+2m11s       Normal    Killing             pod/fulfillops-api-55cdc6dc75-z476h      Stopping container api
+2m11s       Normal    SuccessfulDelete    replicaset/fulfillops-api-55cdc6dc75     Deleted pod: fulfillops-api-55cdc6dc75-z476h
+2m8s        Normal    Killing             pod/fulfillops-worker-dc6dd65bf-jhlp4    Stopping container worker
+2m8s        Normal    SuccessfulDelete    replicaset/fulfillops-worker-dc6dd65bf   Deleted pod: fulfillops-worker-dc6dd65bf-jhlp4
+2m8s        Normal    ScalingReplicaSet   deployment/fulfillops-worker             Scaled down replica set fulfillops-worker-dc6dd65bf from 1 to 0
+101s        Normal    SuccessfulCreate    job/fulfillops-bootstrap                 Created pod: fulfillops-bootstrap-nlhvv
+101s        Normal    Started             pod/fulfillops-bootstrap-nlhvv           Container started
+101s        Normal    Created             pod/fulfillops-bootstrap-nlhvv           Container created
+101s        Normal    Pulled              pod/fulfillops-bootstrap-nlhvv           Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+101s        Normal    Scheduled           pod/fulfillops-bootstrap-nlhvv           Successfully assigned fulfillops/fulfillops-bootstrap-nlhvv to fulfillops-control-plane
+98s         Normal    Completed           job/fulfillops-bootstrap                 Job completed
+93s         Normal    Pulled              pod/fulfillops-api-546c998445-68h5q      Container image "fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4" already present on machine and can be accessed by the pod
+93s         Normal    Created             pod/fulfillops-api-546c998445-68h5q      Container created
+93s         Normal    Started             pod/fulfillops-api-546c998445-68h5q      Container started
+93s         Normal    SuccessfulCreate    replicaset/fulfillops-api-546c998445     Created pod: fulfillops-api-546c998445-68h5q
+93s         Normal    ScalingReplicaSet   deployment/fulfillops-api                Scaled up replica set fulfillops-api-546c998445 from 0 to 1
+93s         Normal    Scheduled           pod/fulfillops-api-546c998445-68h5q      Successfully assigned fulfillops/fulfillops-api-546c998445-68h5q to fulfillops-control-plane
+44s         Warning   Unhealthy           pod/fulfillops-api-546c998445-68h5q      Readiness probe failed: HTTP probe failed with statuscode: 404
