@@ -19,6 +19,8 @@ spec:
       app: fulfillops-api
   template:
     metadata:
+      annotations:
+        fulfillops.io/release: part8-good-20261111T201834Z
       labels:
         app: fulfillops-api
     spec:
@@ -33,7 +35,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: api
-          image: fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef
+          image: fulfillops:d9a144cca067221ef8f02e3d652548cc85dcf0e4
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
@@ -60,6 +62,10 @@ spec:
             limits:
               cpu: 500m
               memory: 192Mi
+          lifecycle:
+            preStop:
+              exec:
+                command: [python, -c, "import time; time.sleep(3)"]
           startupProbe:
             httpGet:
               path: /health/live
