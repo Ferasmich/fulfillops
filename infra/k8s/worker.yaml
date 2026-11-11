@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fulfillops-worker
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  replicas: 2
+  revisionHistoryLimit: 5
+  minReadySeconds: 3
+  progressDeadlineSeconds: 90
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: fulfillops-worker
+  template:
+    metadata:
+      labels:
+        app: fulfillops-worker
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 20
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: worker
+          image: fulfillops:93a817a45f01d3dd3706207c8dffa706800ff0ef
+          imagePullPolicy: Never
+          command: [python, -m, worker.main]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          envFrom:
+            - configMapRef:
+                name: fulfillops-config
+          env:
+            - name: POSTGRES_USER
+              value: fulfillops_worker
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: fulfillops-db-credentials
+                  key: worker-password
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 192Mi
+          startupProbe:
+            exec:
+              command: [python, -m, worker.health]
+            periodSeconds: 2
+            failureThreshold: 30
+            timeoutSeconds: 4
+          readinessProbe:
+            exec:
+              command: [python, -m, worker.health]
+            periodSeconds: 5
+            timeoutSeconds: 4
+          livenessProbe:
+            exec:
+              command: [python, -c, "import time; from pathlib import Path; assert time.time() - Path('/tmp/fulfillops-worker-heartbeat').stat().st_mtime < 15"]
+            periodSeconds: 5
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir:
+            medium: Memory
+            sizeLimit: 16Mi
